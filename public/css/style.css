@@ -1,0 +1,205 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body{
+background-color:#CBE2CA;
+background-image: url("/images/social-media-1.png");
+height:100%;
+}
+
+.tituloRegistro{
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  font-family: 'Neucha', cursive;
+}
+input{
+  font-family: 'Helvetica', fontawesome;
+  font-weight: 900;
+}
+.camposForm{
+  font-family:'Asap Condensed', sans-serif !important;
+  font-size: 20px !important;
+  color:white !important;
+}
+.fondoFormulario{
+  background-color:#14A88D;
+  width: 100%;
+  padding: 3%;
+  margin-top: 2%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  }
+.btn-blanco{
+  background-color: white;
+  color:#14A88D;
+}
+
+
+
+h2{
+  text-align: center;
+color: white;
+margin-top: 1%;
+}
+
+.media{
+  background-color: white;
+  color:black;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+h5{
+  color: rgba(2,0,36,1);
+}
+
+
+.fondoVerde{
+margin:0;
+padding-left: 2%;
+padding-right: 2%;
+
+}
+
+.fondoAmarillo{
+  border: gray solid 1px;
+  background-color: white;
+
+}
+
+.fondoGris{
+  background-color: white;
+}
+
+.fondoBlanco{
+
+  color: black;
+  padding-left: 2%;
+  padding-right: 2%;
+  }
+
+img{
+  width:100%;
+}
+
+.invitacionesTitulo{
+  color:white;
+  width:100%;
+}
+
+.contactosTitulo{
+  color:white;
+}
+
+.tituloSeccion{
+  background-color: red;
+  padding-left: 2%;
+  padding-right: 2%;
+  width:100%;
+}
+
+
+.marca{
+font-size: 20px;
+font-family: 'Mansalva', cursive;
+color:green;
+}
+
+.SeccionSuperior{
+  background-color: blue;
+  border-radius: 10px;
+  font-family: Helvetica;
+  font-size: 20px;
+  text-align: center;
+  color:black;
+}
+
+.fa-user-check{
+  color:green;
+}
+
+.saludo{
+  color: black;
+}
+
+.TusContactos{
+  background-color: white;
+}
+
+.TusInvitaciones{
+    background-color: white;
+  }
+
+a{
+  text-decoration: none;
+}
+
+.fa-user-times{
+  color:red;
+}
+
+
+.Login{
+  width: 280px;
+  padding:10px;
+}
+
+
+
+.colorAzul{
+  color:#007bff;
+}
+
+
+
+.icono{
+  text-align: center;
+}
+
+.columnaTodo{
+padding-right:3%;
+padding-left: 3%;
+}
+
+.fotoPerfil{
+  border-radius: 150px;
+  width: 10%;
+  border-color: rgba(0,0,0,0.7);
+  border-width: medium;
+  border-style: solid;
+}
+
+.seccionSaludo{
+  text-align: center;
+  margin-top: 2%;
+  margin-left: 0;
+  margin-right: 0;
+  background-color: red;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-top:1%;
+  padding-bottom:1%;
+  color: black;
+}
+
+.filaSaludo{
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+}
+
+.fotoInv{
+  padding:3%;
+  align-self:center;
+
+}
+
+.areaTitulo{
+  align-self: center;
+
+}

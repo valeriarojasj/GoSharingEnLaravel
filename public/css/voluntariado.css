@@ -1,0 +1,47 @@
+.h1{
+color: rgb(255,255,255);
+text-align: center;
+font-family: 'Neucha', cursive;
+}
+
+body{
+  background-color:#CBE2CA;
+  height:100%;
+}
+
+header{
+margin-bottom: 2%;
+}
+
+input{
+font-family: 'Helvetica', fontawesome;
+font-weight: 900;
+}
+
+.textoIcono{
+font-family: helvetica;
+font-size: 10px;
+text-align: center;
+}
+
+.icono{
+text-align: center;
+}
+.verdeHeader{
+  background-color: #14A88D;
+  color:white;
+  font-family:'Asap Condensed', sans-serif !important;
+  font-size: 20px !important;
+}
+.opciones{
+  background-color: white;
+  color:#14A88D;
+  font-family:'Asap Condensed', sans-serif !important;
+  font-size: 20px !important;
+}
+.subOpciones{
+  background-color: white;
+  color:#14A88D;
+  font-family:'Asap Condensed', sans-serif !important;
+  font-size: 20px !important;
+}

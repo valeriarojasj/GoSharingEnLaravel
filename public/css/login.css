@@ -1,0 +1,68 @@
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+html{
+  height: 100%;
+}
+
+footer{
+   margin-top:2%;
+   width:100%;
+    position: fixed; bottom: 0px;
+
+}
+
+body{
+background-color:#CBE2CA;
+  background-image: url("/images/social-media-1.png");
+  background-size: cover;
+
+}
+.contenedor{
+  padding:0%;
+}
+
+.tituloLogin{
+  font-size: 46px;
+  font-weight: bold;
+  color: white;
+  font-family: 'Neucha', cursive;
+}
+input{
+  font-family: 'Helvetica', fontawesome;
+  font-weight: 900;
+}
+
+.fondoFormulario{
+  background-color:#14A88D;
+  width: 100%;
+  padding: 3%;
+  margin-top: 2%;
+  border-radius: 10px;
+
+  }
+
+.colorBlanco{
+  color:white;
+}
+.botonIngresar{
+  background-color: white;
+  color:#14A88D;
+  border-color: white;
+  float:right;
+}
+.camposForm{
+  font-family:'Asap Condensed', sans-serif !important;
+  font-size: 20px !important;
+  color:white !important;
+}
+
+h2{
+  text-align: center;
+color: white;
+margin-top: 1%;
+}

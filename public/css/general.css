@@ -1,0 +1,44 @@
+*{
+  box-sizing: border-box;
+  margin:0px;
+  padding: 0px;
+}
+body{
+background-color:#CBE2CA;
+height:100%;
+}
+header nav.navbar{
+  background-color: #14A88D !important;
+}
+span.marca{
+  color:#F8970A;
+  font-family: 'Neucha', cursive;
+  font-size: 30px;
+}
+a.tipografiaHeader{
+  font-family:'Asap Condensed', sans-serif !important;
+  font-size: 20px !important;
+  color:#CBE2CA  !important;
+}
+footer{
+  background-color: #14A88D !important;
+  overflow: hidden;
+}
+
+footer ul{
+  display: inline-block;
+}
+footer ul li{
+  list-style-type: none;
+  margin-right: 10px;
+}
+footer p{
+  display: inline-block;
+}
+@media only screen and (min-device-width:715px){
+
+  footer{
+    background-color: blue;
+    height: 40%;
+    }
+}

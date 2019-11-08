@@ -1,0 +1,76 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+body{
+  background-color:#CBE2CA;
+  background-image: url("/images/social-media-1.png");
+  height:100%;
+}
+h1{
+-webkit-text-stroke: 1px  white;
+color: orange;
+text-align: center;
+font-family: 'Asap Condensed', sans-serif !important;
+font-size: 60px;
+}
+h2{
+color: #14A88D;
+text-align: center;
+font-family: 'Asap Condensed', sans-serif !important;
+}
+
+main{
+  overflow: hidden;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+h5{
+  font-size: 30px;
+  color:white !important;
+  font-family:'Asap Condensed', sans-serif !important;
+}
+p{
+  font-size: 20px;
+  color:white !important;
+  font-family:'Asap Condensed', sans-serif !important;
+}
+
+div.contenedor{
+  height: 85vh;
+}
+div#carouselExampleCaptions{
+  width: 100%;
+  overflow: hidden;
+}
+
+div.carousel-inner{
+  display: inline;
+}
+a.carousel-control-prev{
+  width: 15%;
+}
+a.carousel-control-next{
+  width: 15%;
+}
+
+.fotoActividades{
+width:70%;
+}
+.areaCaption{
+background-color: rgba(255,255,255,0.5);
+}
+
+.carousel-inner{
+text-align: center;
+align-items: baseline;
+margin-top: 2%;
+margin-bottom: 2%;
+width:50%;
+  }
+.Login{
+width: 280px;
+padding:10px;
+  }

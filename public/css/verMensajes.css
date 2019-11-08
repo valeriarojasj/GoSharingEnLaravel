@@ -1,0 +1,56 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color:#CBE2CA;/*verde body*/
+  overflow: hidden;
+}
+.mensaje{
+  background-color: white;
+  border-radius: 3%;
+  margin:20px;
+  text-align: left;
+}
+.mensaje img{
+  width:5em;
+  border-radius: 50%;
+  margin:1%;
+  align-items: center;
+}
+.titulo{
+  margin: 15px;
+}
+.subtitulo{
+  padding:20px;
+}
+h1{
+  font-size: 40px;
+  font-weight: bold;
+  color: #14A88D;/*verde nav*/
+  font-family: 'Neucha', cursive;
+}
+h2{
+  font-size: 20px;
+}
+.btn-blanco{
+  background-color: white;
+  color:#14A88D;
+}
+.fotoUpload input{
+display:none;
+}
+
+.videoUpload input{
+display:none;
+}
+
+.docUpload input{
+display: none;
+}
+.btnGuardar{
+  background-color: #14A88D;/*verde nav*/
+  color:white;
+}

@@ -1,0 +1,175 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+.areaFoto{
+  margin:2%;
+
+}
+  .areaFoto img{
+border-radius: 50%;
+    width: 85%;
+    border-color: 	#14A88D;/*verde nav*/
+    border-width: medium;
+    border-style: solid;
+  }
+
+  .rowAmigoIzq{
+
+    background-color: white;
+
+
+
+  }
+  .rowAmigoDer{
+
+    background-color: white;
+
+
+  }
+
+  .colAmigoIzq{
+
+    padding-bottom: 0%;
+    padding-top: 0%;
+
+  }
+
+  .colAmigoDer{
+    padding-bottom: 0%;
+    padding-top: 0%;
+
+  }
+
+  .rowAmigo{
+    background-color: white;
+
+
+  }
+
+  html{
+
+  }
+
+  footer{
+    width:100%;
+    position: fixed;
+    bottom: 0px;
+margin-top: 10px;
+  }
+
+input{
+  font-family: 'Helvetica', fontawesome;
+  font-weight: 900;
+}
+
+body{
+  background-color:#CBE2CA;
+    height: 100%;
+
+}
+.contenedorTodo{
+  margin-bottom: 2%;
+}
+
+
+.divAvatar img{
+    border-radius: 50%;
+    height:5em;
+    border-color: 	#14A88D;/*verde nav*/
+    border-width: medium;
+    border-style: solid;
+
+  }
+
+  .divAvatar {
+      text-align: center;
+
+    }
+
+    .seccionSaludo{
+      text-align: center;
+      align-items: center;
+      align-content: center;
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+      color: black;
+      width: 100%;
+
+    }
+
+    .TusContactos{
+      width:100%;
+    }
+
+
+
+    .invitacionesTitulo{
+
+      width:100%;
+    }
+
+
+    .colTarjetaAmigo{
+
+
+    /*no agregar aca padding*/
+    }
+    .areaTextoAmigo{
+
+      color: black;
+
+
+      }
+
+
+
+
+      .fa-user-times{
+        color:red;
+      }
+
+      .fa-user-check{
+        color:green;
+      }
+      .fa-comment-dot{
+        color:
+      }
+
+
+
+
+
+      .cajaSaludo{
+
+        align-content: center;
+        width: 100%;
+      }
+      h1{
+        font-size: 40px;
+        font-weight: bold;
+        color: #14A88D;/*verde nav*/
+        font-family: 'Neucha', cursive;
+      }
+
+      h4{
+        color:black;}
+
+      p{
+        color:black;
+      font-weight: normal;
+    }
+      h6{
+        color:#14A88D;/*verde nav*/
+      font-weight: bold;}
+      .fa-comment-dots{
+        color:#14A88D;/*verde nav*/
+
+      }
+      .rowAmigosInvitaciones{
+        margin-bottom: 2%;
+      }

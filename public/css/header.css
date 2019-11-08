@@ -1,0 +1,45 @@
+.fondoMenu{
+  background-color: #14A88D;
+  width:100%;
+}
+div.dropdown-menu{
+  padding: 10px;
+}
+
+.tipografiaHeader{
+  font-family:'Asap Condensed', sans-serif !important;
+  font-size: 20px !important;
+  color: white !important;
+  }
+.tipografiaPiola{
+  font-family:'Asap Condensed', sans-serif !important;
+  font-size: 20px !important;
+  color:#14A88D;
+}
+.marca{
+  color:white !important;
+  font-family: 'Neucha', cursive;
+  font-size: 40px;
+}
+
+nav.navbar a.navbar-brand img{
+  width: 58px;
+}
+
+div.navbar-collapse ul.navbar-nav{
+  width: 95%;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.iconoHeader{
+  text-align: center;
+  color: white !important;
+}
+
+.textoIcono{
+  font-family:'Asap Condensed', sans-serif;
+  font-size: 14px;
+  color:white !important;
+  }

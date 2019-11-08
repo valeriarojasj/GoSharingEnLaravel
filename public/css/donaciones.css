@@ -1,0 +1,93 @@
+/*Desde aca son estilos de la barra de navegacion y de la pagina comunes para todas las paginas.*/
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+header{
+  margin-bottom: 2%;
+}
+footer{
+  margin-top: 2%;
+}
+
+input{
+  font-family: 'Helvetica', fontawesome;
+  font-weight: 900;
+}
+
+
+body{
+background-color:#CBE2CA;
+height:100%;
+}
+
+h2{
+  text-align: center;
+color: rgb(255,255,255);
+margin-top: 1%;
+font-family: 'Neucha', cursive;
+}
+
+
+.opciones{
+  background-color: white;
+  color:#14A88D;
+  font-family:'Asap Condensed', sans-serif !important;
+  font-size: 20px !important;
+}
+.subOpciones{
+  background-color: white;
+  color:#14A88D;
+  font-family:'Asap Condensed', sans-serif !important;
+  font-size: 20px !important;
+}
+
+.btnFollow{
+  background-color: #14A88D;
+  color:white;
+}
+
+.btnTipoDonaciones{
+  background-color: #14A88D;
+  color:white;
+  font-family:'Asap Condensed', sans-serif !important;
+  font-size: 20px !important;
+}
+
+.icono{
+  color: #14A88D;
+  text-align: center;
+}
+
+
+.cardTexto{
+  text-decoration: none;
+  color: black;
+  font-style: 'Helvetica',fontawesome;
+  font-weight: 400;
+
+}
+
+.cardButton{
+  margin-top: 2%;
+
+}
+
+h1{color:#F8970A;
+margin-bottom: 2%;}
+
+h5{color: black;
+
+}
+p{color: black;
+
+}
+a{color: black;
+
+}
+
+
+/*Hasta aca son estilos de la barra de navegacion y de la pagina comunes para todas las paginas.*/
