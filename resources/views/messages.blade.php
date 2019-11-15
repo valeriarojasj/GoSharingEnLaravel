@@ -79,7 +79,7 @@
           </div> <!--cierra el div de subir documento-->
         </ul>
     </div> <!--cierra el div de la lista de botones-->
-    <span><?=$mensajesDeError?></span>
+    <span>MENSAJE DE ERROR</span>
   </form>
           </div>
           <div class="modal-footer">

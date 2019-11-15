@@ -1,6 +1,6 @@
 @extends('layouts/goSharing')
 @section('css')
-  <link rel="stylesheet" href="/css/amigos.css">
+  <link rel="stylesheet" href="/css/amigosStyle.css">
 @endsection
 @section('main')
   <main>
@@ -14,7 +14,7 @@
             <div class="seccionSaludo media text-center ">
               <div class="cajaSaludo ">
                 <div class="divAvatar">
-                  <img class="fotoPerfil align-self-center" src="<?=$_SESSION["avatar"]?>" alt="">
+                  <img class="fotoPerfil align-self-center" src="" alt="">
                   <h1 class="saludo align-middle text-wrap  text-center d-lg-inline d-xl-inline d-md-inline d-sm-inline ">Mis Contactos</h1>
                 </div>
                 <div class="card-body media-body areaTitulo ">

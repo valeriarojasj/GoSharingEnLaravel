@@ -12,33 +12,33 @@
                 <h2 class="tituloRegistro">Regístrate ahora!</h2>
 
                 <label for="name" class="camposForm">Nombre</label>
-                <input name="name" type="text" class="form-control" id="inputName"  placeholder="Tu nombre" value="<?=$nombre?>">
-                <small id="nombreHelp" class="form-text errores text-white"><?=$arrayError["nombre"]?></small>
+                <input name="name" type="text" class="form-control" id="inputName"  placeholder="Tu nombre" value="">
+                <small id="nombreHelp" class="form-text errores text-white">ERROR NOMBRE</small>
               </div>
               <div class="form-group">
                 <label for="lastName" class="camposForm">Apellido</label>
-                <input name="lastName" type="text" class="form-control" id="inputLastName"  placeholder="Tu apellido" value="<?=$apellido?>">
-                <small id="apellidoHelp" class="form-text errores text-white"><?=$arrayError["apellido"]?></small>
+                <input name="lastName" type="text" class="form-control" id="inputLastName"  placeholder="Tu apellido" value="">
+                <small id="apellidoHelp" class="form-text errores text-white">ERROR APELLIDO</small>
               </div>
               <div class="form-group">
                 <label for="email" class="camposForm">Email</label>
-                <input name="email" type="email" class="form-control" id="inputEmail1"  placeholder="user@example.com" value="<?=$email?>">
-                <small id="emaildHelp" class="form-text errores text-white"><?=$arrayError["email"]?></small>
+                <input name="email" type="email" class="form-control" id="inputEmail1"  placeholder="user@example.com" value="">
+                <small id="emaildHelp" class="form-text errores text-white">ERROR EMAIL</small>
               </div>
               <div class="form-group">
                 <label for="password" class="camposForm">Contraseña</label>
                 <input  name="password" type="password" class="form-control" id="inputPassword1" placeholder="Tu contraseña" aria-describedby="emailHelp" value="" required>
-                <small id="passwordHelp" class="form-text errores text-white"><?=$arrayError["password"]?></small>
+                <small id="passwordHelp" class="form-text errores text-white">ERROR PASSWORD</small>
               </div>
               <div class="form-group">
                 <label for="confirm" class="camposForm">Confirmar Contraseña</label>
                 <input name="confirm" type="password" class="form-control" id="exampleInputPassword1" placeholder="Escribe nuevamente tu contraseña" value="" aria-describedby="emailHelp" required>
-                <small id="confirmHelp" class="form-text errores text-white"><?=$arrayError["confirm"]?></small>
+                <small id="confirmHelp" class="form-text errores text-white">ERROR CONFIRMACION</small>
 
               </div>
               <div class="form-group">
                 <input name="avatar" type="file" id="archivo" aria-describedby="archivoHelp">
-                <small id="archivoHelp" class="form-text errores text-white"><?=$arrayError["archivo"]?></small>
+                <small id="archivoHelp" class="form-text errores text-white">ERROR ARCHIVO</small>
               </div>
               <div class="form-group form-check">
                 <input name="recordar" type="checkbox" class="form-check-input" id="check1">
