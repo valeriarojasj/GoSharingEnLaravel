@@ -75,27 +75,22 @@
                       @csrf
 
                       <div class="form-group">
-                        <select class="custom-select" name="interestArea">
-                          <option value="">Area de interés</option>
-                          <option value="Salud">Salud</option>
-                          <option value="Educacion">Educación</option>
-                          <option value="Niñez">Niñez</option>
-                          <option value="TerceraEdad">TerceraEdad</option>
-                          <option value="Deporte">Deporte</option>
-                          <option value="Mujer">Mujer</option>
-                          <option value="Familia">Familia</option>
-                          <option value="MedioAmbiente">Medio Ambiente</option>
 
+                        <select class="custom-select" name="interestArea">
+                          <option value="">Área de Interés</option>
+                          @foreach($areasInteres as $interes)
+                            <option value="{{$interes->id}}">{{$interes->interestAreas}}</option>
+
+                          @endforeach
                         </select>
                       </div>     <!--cierra el div de las opciones de areas de interes-->
 
                     <div class="form-group">
                       <select class="custom-select" name="postType" >
-                        <option value="">Tipo de posteo</option>
-                        <option value="Donacion">Donación</option>
-                        <option value="EventoProximo">Evento Próximo</option>
-                        <option value="EventoPasado">Evento Pasado</option>
-                        <option value="Otros">Otros</option>
+                        <option value="">Tipo de Posteo</option>
+                        @foreach($tiposPosteos as $tipoPosteo)
+                        <option value="{{$tipoPosteo->id}}">{{$tipoPosteo->type}}</option>
+                          @endforeach
                         </select>
                     </div> <!--cierra el div de las opciones de tipo de posteo-->
 
@@ -144,11 +139,11 @@
 
 </div> <!--cierra el div del body del modal-->
 
-<div class="modal-footer">
-        <button type="button " class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="submit" class="btn btnGuardar" value="Enviar">Guardar Cambios</button>
-</div> <!--cierra el footer del modal-->
-                        </form><!--cierra el form de agregar posteo-->
+                <div class="modal-footer">
+                        <button type="button " class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btnGuardar" value="Enviar">Guardar Cambios</button>
+                </div> <!--cierra el footer del modal-->
+                    </form><!--cierra el form de agregar posteo-->
 
     </div><!--cierra el contenido del modal-->
   </div> <!--cierra el dialogo del modal-->
@@ -174,16 +169,18 @@
   </div>
 
 
-<div class="imgOvideo">
-
- <img src="" class="imagenPosteo" alt="">
-@if ($posteo->video)
- <video width="100%" poster="" controls>
- <source src="" class="videoPosteo" alt="" type"video/*">
-@endif
-<!-- ESTE ENLACE ES PARA LINK DE UN DOCUMENTO-->
-   <a href=""></a>
-
+            <div class="imgOvideo">
+              @if ($posteo->image)
+             <img src="/storage/{{$posteo->image}}" class="imagenPosteo" alt="">
+           @endif
+            @if ($posteo->video)
+             <video width="100%" poster="" controls>
+             <source src="/storage/{{$posteo->video}}" class="videoPosteo" alt="" type"video/*">
+            @endif
+            <!-- ESTE ENLACE ES PARA LINK DE UN DOCUMENTO-->
+              @if ($posteo->document)
+               <a href="/storage/{{$posteo->document}}">{{$posteo->document}}</a>
+             @endif
 
    </div>
    <div class="mb-3 divPosteo">

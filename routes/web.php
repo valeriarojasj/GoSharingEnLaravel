@@ -18,10 +18,7 @@ Route::get('/home', function () {
 //revisado
 Route::get('/main', 'PostController@showAllPosts');
 //revisado
-Route::get('/profile', function () {
-  $title='profile';
-    return view('profile',compact('title'));
-});
+Route::get('/profile', 'PostController@showMyPosts');
 //revisado
 Route::get('/friends', function () {
   $title='friends';
@@ -88,3 +85,5 @@ Route::post('/main','PostController@addPost');
   $password=$_POST['password'];
     return view('login',compact('title','email','password'));
 });*/
+
+Route::post('/profile', 'PostController@addPost');

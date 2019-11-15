@@ -103,20 +103,20 @@
       <ul class="list-group list-group-horizontal" type="none">
               <div class="form-group fotoUpload mr-3">
                 <li>
-                <label for="inputImagen"><i class="fas fa-camera align-middle"></i></label>
-                <input name="inputImagen" type="file" id="inputImagen" >
+                <label for="image"><i class="fas fa-camera align-middle"></i></label>
+                <input name="image" type="file" id="image" >
               </li>
               </div> <!--cierra el div de subir foto-->
           <div class="form-group videoUpload mr-3">
               <li>
-                <label for="inputVideo"><i class="fas fa-video align-middle"></i></label>
-                <input name="inputVideo" type="file" id="inputVideo">
+                <label for="video"><i class="fas fa-video align-middle"></i></label>
+                <input name="video" type="file" id="video">
               </li>
           </div><!--cierra el div de subir video-->
           <div class="form-group docUpload mr-3">
             <li>
-                <label for="inputDoc"><i class="fas fa-paperclip align-middle"></i></label>
-                <input name="inputDoc" type="file" id="inputDoc">
+                <label for="document"><i class="fas fa-paperclip align-middle"></i></label>
+                <input name="document" type="file" id="document">
             </li>
           </div> <!--cierra el div de subir documento-->
         </ul>
@@ -139,11 +139,10 @@
   <div class="tituloSeccionCentral">
   <h2 class="text-left">Mis Posteos</h2>
   </div>
-  <!--Aca va un forelse para recorrer mis posteos
-  if(!empty($misPosteos)){
-  foreach ($misPosteos as $miPosteo) {
+@forelse ($posteos as $posteo)
 
-  -->
+
+
   <div class="novedadYcomentarios">
   <div class="novedad "><!--comienza un posteo-->
     <div class=" perfilPost media">
@@ -156,19 +155,21 @@
 
 
     <div class="imgOvideo">
-
-     <img src="" class="imagenPosteo" alt="">
-    <!-- if del video -->
+  @if ($posteo->image)
+     <img src="/storage/{{$posteo->image}}"  class="imagenPosteo" alt="">
+   @endif
+    @if ($posteo->video)
      <video width="100%" poster="" controls>
-     <source src="" class="videoPosteo" alt="" type"video/*">
-    <!-- fin del IF video-->
+     <source src="/storage/{{$posteo->video}}" class="videoPosteo" alt="" type"video/*">
+      @endif
     <!-- ESTE ENLACE ES PARA LINK DE UN DOCUMENTO-->
-       <a href=""></a>
-
+    @if ($posteo->document)
+     <a href="/storage/{{$posteo->document}}">{{$posteo->document}}</a>
+   @endif
 
        </div>
      <div class="mb-3 divPosteo">
-       <p class="text-justify">Aca el texto del posteo</p>
+       <p class="text-justify">{{$posteo->text}}</p>
        <div class="invalid-feedback">
          <!--Aca puede ir el mensaje de error si esta vacio-->
        </div>     <!--cierra el div del  mensaje de error del text area-->
@@ -259,7 +260,9 @@
 
   </div> <!--CIERRA NOVEDADES Y COMENTARIOS-->
 
+@empty
 
+@endforelse
 
 
   </div><!--cierra novedades-->
