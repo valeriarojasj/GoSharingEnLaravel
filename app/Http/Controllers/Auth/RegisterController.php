@@ -10,16 +10,9 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
+  public function showRegisterForm(){
+    return view('register');
+  }
 
     use RegistersUsers;
 
@@ -52,6 +45,8 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'avatar' =>['string', 'max:250', 'image', 'size:4000'],
+            'last_name' => ['string', 'max:50', 'required']
         ]);
     }
 
@@ -67,6 +62,9 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'last_name'=> $data['last_name'],
+            'avatar'=>$data['avatar']
+
         ]);
     }
 }

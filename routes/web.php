@@ -12,8 +12,8 @@
 */
 //revisado
 Route::get('/home', function () {
-  $title='Home';
-    return view('home',compact('title'));
+
+    return view('home');
 });
 //revisado
 Route::get('/main', 'PostController@showAllPosts');
@@ -21,60 +21,57 @@ Route::get('/main', 'PostController@showAllPosts');
 Route::get('/profile', 'PostController@showMyPosts');
 //revisado
 Route::get('/friends', function () {
-  $title='friends';
-    return view('friends',compact('title'));
+
+    return view('friends');
 });
 //revisado
 Route::get('/messages', function () {
-  $title='messages';
-    return view('messages',compact('title'));
+
+    return view('messages');
 });
 //revisado, OJO ver css
 Route::get('/donations', function () {
-  $title='donations';
-    return view('donations',compact('title'));
+
+    return view('donations');
 });
 
 //revisado, OJO ver css
 Route::get('/volunteering', function () {
-  $title='volunteering'; //para que aparezca el titulo en el tab del header.
-    return view('volunteering',compact('title'));
+
+    return view('volunteering');
 });
 
 //revisado
 Route::get('/about', function () {
-  $title='about'; //para que aparezca el titulo en el tab del header.
-    return view('about',compact('title'));
+
+    return view('about');
 });
 
 //revisado
 Route::get('/faq', function () {
-  $title='faq'; //para que aparezca el titulo en el tab del header.
-    return view('faq',compact('title'));
+
+    return view('faq');
 });
 
 //revisado
 Route::get('/contact', function () {
-  $title='contact'; //para que aparezca el titulo en el tab del header.
-    return view('contact',compact('title'));
+
+    return view('contact');
 });
 //revisado
-Route::get('/register', function () {
-  $title='register'; //para que aparezca el titulo en el tab del header.
-    return view('register',compact('title'));
-});
+
 
 //revisado
 Route::get('/login', function () {
-  $title='login'; //para que aparezca el titulo en el tab del header.
+
   $email='';
   $password='';
-    return view('login',compact('title','email','password'));
+    return view('login',compact('email','password'));
 });
 //revisado, mejorar css
 Route::get('/forgotPassword',function(){
-  $title='forgotPassword';
-  return view('forgotPassword',compact('title'));
+
+  return view('forgotPassword');
 });
 
 
@@ -87,3 +84,11 @@ Route::post('/main','PostController@addPost');
 });*/
 
 Route::post('/profile', 'PostController@addPost');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

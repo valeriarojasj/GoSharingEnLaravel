@@ -1,3 +1,5 @@
+
+<!--Aca comienza lo nuestro-->
 @extends('layouts/goSharing')
 @section('css')
   <link rel="stylesheet" href="/css/style.css">
