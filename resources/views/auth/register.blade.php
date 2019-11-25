@@ -15,10 +15,10 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right camposForm">{{ __('Nombre') }}</label>
+                            <label for="first_name" class="col-md-4 col-form-label text-md-right camposForm">{{ __('Nombre') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  autocomplete="name" autofocus>
+                                <input id="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}"  autocomplete="first_name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -78,7 +78,7 @@
                         </div>
 
                         <div class="form-group">
-                          <input name="avatar" type="file" id="archivo" aria-describedby="archivoHelp">
+                          <input name="avatar" type="file" id="avatar" aria-describedby="archivoHelp">
                           <small id="archivoHelp" class="form-text errores text-white">ERROR ARCHIVO</small>
                         </div>
                         <div class="form-group form-check">

@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 //revisado
 Route::get('/home', function () {
 
@@ -85,10 +86,5 @@ Route::post('/main','PostController@addPost');
 
 Route::post('/profile', 'PostController@addPost');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
