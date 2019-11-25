@@ -7,7 +7,7 @@
 @section('main')
   <div class="container">
 
-        <form method='post' action='registro.php' enctype="multipart/form-data">
+        <form method='post' enctype="multipart/form-data">
           <div class="row">
             <div class="col-lg-6 col-xl-6 col-md-6 col-sm-10 col-10  mx-auto fondoFormulario">
               <div class="form-group">

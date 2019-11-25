@@ -11,9 +11,8 @@
                 <div class="tituloRegistro">{{ __('Regístrate ahora!') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
-
                         <div class="form-group row">
                             <label for="first_name" class="col-md-4 col-form-label text-md-right camposForm">{{ __('Nombre') }}</label>
 
@@ -79,7 +78,12 @@
 
                         <div class="form-group">
                           <input name="avatar" type="file" id="avatar" aria-describedby="archivoHelp">
-                          <small id="archivoHelp" class="form-text errores text-white">ERROR ARCHIVO</small>
+                          <small id="archivoHelp" class="form-text errores text-white">
+                            @error('avatar')
+                            {{$message}}
+                            @enderror
+
+                          </small>
                         </div>
                         <div class="form-group form-check">
                           <input name="recordar" type="checkbox" class="form-check-input" id="check1">

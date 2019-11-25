@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class postType extends Model
 {
-  public $table = 'postTypes';
+  public $table = 'post_types';
   public $timestamps = false;
   public $guarded = [];
 

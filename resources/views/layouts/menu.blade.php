@@ -1,8 +1,7 @@
-@if(!isset($_SESSION))
+@guest
 
 
-
-  <nav class="navbar navbar-expand-lg navbar-light fondoMenu mb-3">
+  <nav class="navbar navbar-expand-lg navbar-light navegacion mb-3">
 
     <a class="navbar-brand" href="/home"><img src="/images/icon3LU.png"  alt="logoDeRedSocial"><span class="marca">GoSharing</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,7 +83,16 @@
 <div class="dropdown-menu dropdown-menu-xl-right dropdown-menu-lg-right dropdown-menu-md-right ">
 <a class="dropdown-item tipografiaPiola" href="/profile">Ver Mi perfil</a>
 <a class="dropdown-item tipografiaPiola" href="/profile">Editar Mi Perfil</a>
-<a class="dropdown-item tipografiaPiola" href="cerrarSesion.php">Cerrar Sesión</a>
+    <a class="dropdown-item tipografiaPiola" href="{{ route('logout') }}"
+       onclick="event.preventDefault();
+                     document.getElementById('logout-form').submit();">
+        {{ __('Cerrar Sesión') }}
+    </a>
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
+
 </div>
 </li>
 <form class="form-inline">
@@ -99,4 +107,4 @@
 </div>
 </nav>
 </div>
-@endif
+@endguest

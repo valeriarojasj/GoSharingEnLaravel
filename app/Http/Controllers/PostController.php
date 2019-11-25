@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\interestArea;
 use App\postType;
-
+use Auth;
 class PostController extends Controller
 {
   public function showAllPosts()
@@ -15,6 +15,7 @@ class PostController extends Controller
     $posteos = Post::orderBy('id', 'DESC')->get();
     $areasInteres = interestArea::all();
     $tiposPosteos = postType::all();
+    
 
     return view('/main', compact('posteos','title','areasInteres','tiposPosteos'));
   }
@@ -50,10 +51,10 @@ class PostController extends Controller
       $nombreDoc=basename($rutaDoc);
       $posteo->document = $nombreDoc;
     }
-    $posteo->text = $req->text;
-    dd($req->interestArea);
-    $posteo->interestArea_id = $req->interestArea;
-    $posteo->postType_id = $req->postType;
+    $posteo->post_text = $req->post_text;
+  $posteo->user_id = Auth::user()->id;
+    $posteo->interest_area_id = $req->interest_area;
+    $posteo->post_type_id = $req->post_type;
 
 
 

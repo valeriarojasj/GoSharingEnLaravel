@@ -63,7 +63,7 @@ Route::get('/contact', function () {
 
 
 //revisado
-Route::get('/login', function () {
+/*Route::get('/login', function () {
 
   $email='';
   $password='';
@@ -73,7 +73,7 @@ Route::get('/login', function () {
 Route::get('/forgotPassword',function(){
 
   return view('forgotPassword');
-});
+});*/
 
 
 Route::post('/main','PostController@addPost');
@@ -88,3 +88,5 @@ Route::post('/profile', 'PostController@addPost');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', 'HomeController@index');

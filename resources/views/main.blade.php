@@ -1,6 +1,8 @@
 @extends('layouts/goSharing')
 @section('css')
   <link rel="stylesheet" href="/css/pagina-principal.css">
+  <link rel="stylesheet" href="/css/header.css">
+
 @endsection
 
 @section('main')
@@ -15,8 +17,8 @@
           <div class="miPerfil">
 
 
-          <img value="" src= alt="">
-          <h1>AQUI VA EL NOMBRE</h1>
+          <img value="" src="/storage/{{Auth::user()->avatar}}" alt="">
+          <h1>{{Auth::user()->first_name }} {{Auth::user()->last_name}}</h1>
           <div class="caja perfilPrincipal pt-3">
             <h4 class="text-primary"><b class="titulos">Experiencia: </b></h4>
             <ul class="perfilContenido" type="none">
@@ -70,32 +72,32 @@
                   <div class="modal-body">
 
 
-                    <form method='post' action="" enctype="multipart/form-data">
+                    <form method='post' action="/main" enctype="multipart/form-data">
 
                       @csrf
 
                       <div class="form-group">
 
-                        <select class="custom-select" name="interestArea">
+                        <select class="custom-select" name="interest_area">
                           <option value="">Área de Interés</option>
                           @foreach($areasInteres as $interes)
-                            <option value="{{$interes->id}}">{{$interes->interestAreas}}</option>
+                            <option value="{{$interes->id}}">{{$interes->name}}</option>
 
                           @endforeach
                         </select>
                       </div>     <!--cierra el div de las opciones de areas de interes-->
 
                     <div class="form-group">
-                      <select class="custom-select" name="postType" >
+                      <select class="custom-select" name="post_type" >
                         <option value="">Tipo de Posteo</option>
                         @foreach($tiposPosteos as $tipoPosteo)
-                        <option value="{{$tipoPosteo->id}}">{{$tipoPosteo->type}}</option>
+                        <option value="{{$tipoPosteo->id}}">{{$tipoPosteo->name}}</option>
                           @endforeach
                         </select>
                     </div> <!--cierra el div de las opciones de tipo de posteo-->
 
                     <div class="mb-3 divPosteo">
-                      <textarea name="text" class="form-control textoPost" rows="6" id="validationTextarea" placeholder="Escribe tu mensaje aquí" required></textarea>
+                      <textarea name="post_text" class="form-control textoPost" rows="6" id="validationTextarea" placeholder="Escribe tu mensaje aquí" required></textarea>
                       <div class="invalid-feedback">
                         <!--Aca puede ir el mensaje de error si esta vacio-->
                       </div>     <!--cierra el div del  mensaje de error del text area-->
@@ -184,7 +186,7 @@
 
    </div>
    <div class="mb-3 divPosteo">
-     <p class="textoPosteo">{{$posteo->text}}</p>
+     <p class="textoPosteo">{{$posteo->post_text}}</p>
      <div class="invalid-feedback">
        <!--Aca puede ir el mensaje de error si esta vacio-->
      </div>     <!--cierra el div del  mensaje de error del text area-->

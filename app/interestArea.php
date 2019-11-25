@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class interestArea extends Model
 {
-    public $table = 'interestAreas';
+    public $table = 'interest_areas';
     public $timestamps = false;
     public $guarded = [];
 
