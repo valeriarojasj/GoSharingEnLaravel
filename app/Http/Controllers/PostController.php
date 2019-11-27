@@ -18,7 +18,7 @@ class PostController extends Controller
                 ->get();
     $areasInteres = interestArea::all();
     $tiposPosteos = postType::all();
-  
+
 
 
 
@@ -38,10 +38,11 @@ class PostController extends Controller
 
   public function addPost(Request $req)
   {
+dd($req->file('image')->getMimeType());
     $rules=[
       'post_text'=> "string|min:3|max:500",
       'image'=> "nullable|image|between:10,25000",
-      'video' => "mimetypes:video/avi,video/mpeg,video/quicktime, video/mp4, video/mpg|size:100000|nullable",
+      'video' => "mimes:avi,mpeg,quicktime,mp4,mpg|size:100000|nullable",
       'document' => "mimes:doc,docx,pdf, ppt, pptx, xls, xlsx|nullable|size:8000"
     ];
     $messages = [
@@ -49,7 +50,7 @@ class PostController extends Controller
       'post_text.max'=> 'El mensaje es muy largo',
       'image.image'=> 'El archivo no es una imagen',
       'image.between' => 'El tamaño del archivo debe ser entre 1 y 25 MB',
-      'video.mimetypes' => 'El video no coincide con las extensiones aceptadas(avi, mpeg, quicktime, mp4 y mpg)',
+     'video.mimetypes' => 'El video no coincide con las extensiones aceptadas(avi, mpeg, quicktime, mp4 y mpg)',
       'video.size' => 'El video supera los 100MB',
       'document.mimes' => 'El archivo no coincide con las extensiones aceptadas(doc, docx, pdf, ppt, pptx, xls, xlsx)',
       'document.size' => 'El archivo supera los 8MB'
@@ -58,6 +59,7 @@ class PostController extends Controller
     $this->validate($req, $rules, $messages);
 
     $posteo = new Post();
+
     if($req->file('image')){
 
       $rutaImagen= $req->file('image')->store('public');

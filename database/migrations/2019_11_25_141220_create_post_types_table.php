@@ -17,7 +17,16 @@ class CreatePostTypesTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('name');
-        });
+});
+            DB::table('post_types')->insert([
+           ['name' => 'Evento Anterior'],
+           ['name' => 'Evento Próximo'],
+           ['name' => 'Donación'],
+           ['name' => 'Voluntariado'],
+           ['name' => 'Otros']
+
+       ]);
+
     }
 
     /**

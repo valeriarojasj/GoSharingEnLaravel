@@ -18,6 +18,17 @@ class CreateInterestAreasTable extends Migration
             $table->timestamps();
             $table->string('name');
         });
+
+        DB::table('interest_areas')->insert([
+       ['name' => 'Educación'],
+       ['name' => 'Salud'],
+       ['name' => 'Niñez'],
+       ['name' => 'Tercera Edad'],
+       ['name' => 'Mujer'],
+       ['name' => 'Medio Ambiente'],
+       ['name' => 'Animales'],
+       ['name' => 'Nutrición']
+      ]);
     }
 
     /**
