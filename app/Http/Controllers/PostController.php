@@ -12,10 +12,15 @@ class PostController extends Controller
   public function showAllPosts()
   {
     $title = 'main';
-    $posteos = Post::orderBy('id', 'DESC')->get();
+    //$posteos = Post::orderBy('id', 'DESC')->get();
+    $posteos = Post::select('posts.*', 'users.avatar', 'users.first_name', 'users.last_name')
+                ->join('users', 'users.id', '=', 'posts.user_id')
+                ->get();
     $areasInteres = interestArea::all();
     $tiposPosteos = postType::all();
-    
+  
+
+
 
     return view('/main', compact('posteos','title','areasInteres','tiposPosteos'));
   }
@@ -33,6 +38,24 @@ class PostController extends Controller
 
   public function addPost(Request $req)
   {
+    $rules=[
+      'post_text'=> "string|min:3|max:500",
+      'image'=> "nullable|image|between:10,25000",
+      'video' => "mimetypes:video/avi,video/mpeg,video/quicktime, video/mp4, video/mpg|size:100000|nullable",
+      'document' => "mimes:doc,docx,pdf, ppt, pptx, xls, xlsx|nullable|size:8000"
+    ];
+    $messages = [
+      'post_text.min'=> 'El mensaje es muy corto',
+      'post_text.max'=> 'El mensaje es muy largo',
+      'image.image'=> 'El archivo no es una imagen',
+      'image.between' => 'El tamaño del archivo debe ser entre 1 y 25 MB',
+      'video.mimetypes' => 'El video no coincide con las extensiones aceptadas(avi, mpeg, quicktime, mp4 y mpg)',
+      'video.size' => 'El video supera los 100MB',
+      'document.mimes' => 'El archivo no coincide con las extensiones aceptadas(doc, docx, pdf, ppt, pptx, xls, xlsx)',
+      'document.size' => 'El archivo supera los 8MB'
+
+    ];
+    $this->validate($req, $rules, $messages);
 
     $posteo = new Post();
     if($req->file('image')){
@@ -63,4 +86,5 @@ class PostController extends Controller
 
 
   }
+
 }

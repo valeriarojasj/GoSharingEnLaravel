@@ -42,14 +42,29 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-    {
+    {   $messages = [
+      'first_name.required' => 'Ingrese su nombre',
+      'first_name.max' => 'El nombre es muy largo',
+      'email.required' => 'Ingrese su email',
+      'email.max' => 'El email es muy largo',
+      'email.unique' => 'El email ya existe',
+      'email.email' => 'Ingrese un email válido',
+      'password.required' => 'Ingrese su contraseña',
+      'password.min' => 'La contraseña es muy corta, minimo 8 caracteres',
+      'password.confirmed' => 'Las contraseñas no coinciden',
+      'avatar.image' => 'El formato de imagen no es válido',
+      'avatar.between' => 'Solo se permiten imagenes entre 10KB y 8MB',
+      'last_name.required' => 'Ingrese su apellido',
+      
+      'last_name.max' => 'El apellido es muy largo',
+    ];
         return Validator::make($data, [
             'first_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'avatar' =>['nullable', 'image', 'between:10,8000'],
-            'last_name' => ['string', 'max:50', 'required']
-        ]);
+            'last_name' => ['required','string', 'max:50' ]
+        ],$messages);
     }
 
     /**

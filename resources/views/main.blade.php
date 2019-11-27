@@ -99,7 +99,7 @@
                     <div class="mb-3 divPosteo">
                       <textarea name="post_text" class="form-control textoPost" rows="6" id="validationTextarea" placeholder="Escribe tu mensaje aquí" required></textarea>
                       <div class="invalid-feedback">
-                        <!--Aca puede ir el mensaje de error si esta vacio-->
+
                       </div>     <!--cierra el div del  mensaje de error del text area-->
                     </div>     <!--cierra el div del textArea-->
 
@@ -130,8 +130,9 @@
         </div> <!--cierra el div de subir documento-->
       </ul>
   </div> <!--cierra el div de la lista de botones-->
-
-      <span>ACA VA EL MENSAJE</span>
+  <span> @error('video') {{$message}} @enderror </span>
+  <span> @error('image') {{$message}} @enderror </span>
+  <span> @error('document') {{$message}} @enderror </span>
 
 
 
@@ -163,9 +164,9 @@
 <div class="novedadYcomentarios">
 <div class="novedad "><!--comienza un posteo-->
   <div class=" perfilPost media">
-  <img class="avatarPosteo" src="" alt="">
+  <img class="avatarPosteo" src="/storage/{{$posteo->avatar}}" alt="">
   <div class="media-body nombrePosteo">
-    <h5 class=quienPostea >NOMBRE DE LA PERSONA</h5>
+    <h5 class=quienPostea >{{$posteo->first_name}} {{$posteo->last_name}}</h5>
 
     </div>
   </div>
@@ -290,16 +291,16 @@
           <!--publicidad-->
           <div class="avisoPublicitario">
             <h4 class="text-primary"><b class="titulos">Publicidad</b></h4>
-            <a href="#"><img src="img/ad-1.jpg" class="img-fluid" alt=""></a>
+            <a href="#"><img src="/images/ad-1.jpg" class="img-fluid" alt=""></a>
           </div><!--cierra el div de aviso publicitario-->
           <div class="avisoPublicitario">
-            <a href="#"><img src="img/ad-2.jpg" class="img-fluid" alt=""></a>
+            <a href="#"><img src="/images/ad-2.jpg" class="img-fluid" alt=""></a>
           </div><!--cierra el div de aviso publicitario-->
           <div class="avisoPublicitario">
-            <a href="#"><img src="img/ad-3.jpg" class="img-fluid" alt=""></a>
+            <a href="#"><img src="/images/ad-3.jpg" class="img-fluid" alt=""></a>
           </div> <!--cierra el div de aviso publicitario-->
           <div class="avisoPublicitario">
-            <a href="#"><img src="img/ad-4.jpg" class="img-fluid" alt=""></a>
+            <a href="#"><img src="/images/ad-4.jpg" class="img-fluid" alt=""></a>
           </div> <!--cierra el div de aviso publicitario-->
 
         </div> <!--cierra el div de publicidad-->

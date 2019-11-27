@@ -19,7 +19,7 @@
                             <div class="col-md-6">
                                 <input id="first_name" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}"  autocomplete="first_name" autofocus>
 
-                                @error('name')
+                                @error('first_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -77,10 +77,10 @@
                         </div>
 
                         <div class="form-group">
-                          <input name="avatar" type="file" id="avatar" aria-describedby="archivoHelp">
-                          <small id="archivoHelp" class="form-text errores text-white">
+                          <input name="avatar" type="file" id="avatar" aria-describedby="archivoHelp" class='is-invalid'>
+                          <small id="archivoHelp" class="form-text errores ">
                             @error('avatar')
-                            {{$message}}
+                          <span > {{$message}}</span>
                             @enderror
 
                           </small>
