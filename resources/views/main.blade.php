@@ -244,19 +244,19 @@
        <ul class="list-unstyled">
 <li class="media rounded liComentarioLista p-2">
 
-<img src="img/avatar-man.png" class="mr-3 avatarComentarios" alt="...">
+<img src="/images/avatar-man.png" class="mr-3 avatarComentarios" alt="...">
 <div class="media-body">
 <b><!--Aca el nombre y apellido--></b> <!--Aca el texto del comentario-->
 </div>
 </li>
 <li class="media my-4 rounded liComentarioLista p-2">
-<img src="img/avatar-man.png"  class="mr-3 avatarComentarios" alt="...">
+<img src="/images/avatar-man.png"  class="mr-3 avatarComentarios" alt="...">
 <div class="media-body">
 <b><!--Aca el nombre y apellido--></b> <!--Aca el texto del comentario-->
 </div>
 </li>
 <li class="media rounded liComentarioLista p-2">
-<img src="img/avatar-man.png"  class="mr-3 avatarComentarios" alt="...">
+<img src="/images/avatar-man.png"  class="mr-3 avatarComentarios" alt="...">
 <div class="media-body">
 <b><!--Aca el nombre y apellido--></b> <!--Aca el texto del comentario-->
 </div>

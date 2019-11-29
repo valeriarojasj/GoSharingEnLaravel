@@ -300,3 +300,8 @@ background-color: white;
 .quienPostea{
   color:#14A88D;/*verde nav*/
 }
+
+.botonEnviar{
+  background-color: #14A88D;/*verde nav*/
+  color:white;
+}

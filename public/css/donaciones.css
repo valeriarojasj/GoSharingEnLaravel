@@ -20,8 +20,8 @@ input{
 
 
 body{
-background-color:#CBE2CA;
-height:100%;
+  background-color:#CBE2CA;
+  height:100%;
 }
 
 h2{
@@ -29,6 +29,13 @@ h2{
 color: rgb(255,255,255);
 margin-top: 1%;
 font-family: 'Neucha', cursive;
+}
+
+h1{
+  font-size: 40px;
+  font-weight: bold;
+  color: #14A88D;/*verde nav*/
+  font-family: 'Neucha', cursive;
 }
 
 
@@ -57,6 +64,20 @@ font-family: 'Neucha', cursive;
   font-size: 20px !important;
 }
 
+h5{
+  background-color: white;
+  color:orange;
+  font-family:'Asap Condensed', sans-serif !important;
+  font-size: 20px !important;
+}
+p{
+
+  color:#14A88D;
+  font-family:'Asap Condensed', sans-serif !important;
+  font-size: 18px !important;
+}
+
+
 .icono{
   color: #14A88D;
   text-align: center;
@@ -65,7 +86,6 @@ font-family: 'Neucha', cursive;
 
 .cardTexto{
   text-decoration: none;
-  color: black;
   font-style: 'Helvetica',fontawesome;
   font-weight: 400;
 
@@ -75,14 +95,6 @@ font-family: 'Neucha', cursive;
   margin-top: 2%;
 
 }
-
-h1{color:#F8970A;
-margin-bottom: 2%;}
-
-h5{color: black;
-
-}
-p{color: black;
 
 }
 a{color: black;

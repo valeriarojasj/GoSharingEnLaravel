@@ -14,7 +14,7 @@
             <div class="seccionSaludo media text-center ">
               <div class="cajaSaludo ">
                 <div class="divAvatar">
-                  <img class="fotoPerfil align-self-center" src="" alt="">
+                  <img class="fotoPerfil align-self-center" src="/storage/{{Auth::user()->avatar}}" alt="">
                   <h1 class="saludo align-middle text-wrap  text-center d-lg-inline d-xl-inline d-md-inline d-sm-inline ">Mis Contactos</h1>
                 </div>
                 <div class="card-body media-body areaTitulo ">
@@ -39,7 +39,7 @@
                   <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoIzq card ">
                     <div class="row rowAmigoIzq">
                       <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 card-img-left areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
-                      <img src="img/man-1-500px.jpg" alt="foto Perfil" class="align-self-center card-img img-fluid max-width:100% height:auto ">
+                      <img src="/images/man-1-500px.jpg" alt="foto Perfil" class="align-self-center card-img img-fluid max-width:100% height:auto ">
                     </div>
                     <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 col-12 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
                       <a href="mailto:pedro@perez.com?"><i class="fas fa-comment-dots"></i></a>
@@ -52,7 +52,7 @@
                 <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoDer card">
                   <div class="row rowAmigoDer">
                     <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 card-img-left areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0  media">
-                      <img src="img/woman-1-500px.jpg" alt="foto Perfil" class="align-self-center card-img img-fluid max-width:100% height:auto ">
+                      <img src="/images/woman-1-500px.jpg" alt="foto Perfil" class="align-self-center card-img img-fluid max-width:100% height:auto ">
                     </div>
                     <div class="col-md-8  col-sm-8 col-lg-8 col-xl-8 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2  card-body media-body">
                       <a href="mailto:maria@garcia.com?"><i class="fas fa-comment-dots"></i></a>
@@ -69,7 +69,7 @@
                   <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoIzq card ">
                     <div class="row rowAmigoIzq">
                       <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 card-img-left areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
-                        <img src="img/man-2-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
+                        <img src="/images/man-2-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
                       </div>
                       <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
                         <a href="mailto:felipe@alvarez.com?"><i class="fas fa-comment-dots"></i></a>
@@ -81,7 +81,7 @@
                   <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoDer card">
                     <div class="row rowAmigoDer">
                       <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 card-img-left areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
-                        <img src="img/woman-2-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
+                        <img src="/images/woman-2-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
                       </div>
                       <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
                         <a href="mailto:isabel@gomez.com?"><i class="fas fa-comment-dots"></i></a>
@@ -99,7 +99,7 @@
                   <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6   colAmigoIzq card">
                     <div class="row rowAmigoIzq">
                       <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 card-img-left areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
-                        <img src="img/man-3-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
+                        <img src="/images/man-3-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
                       </div>
                       <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
                         <a href="mailto:andres@estrada.com?"><i class="fas fa-comment-dots"></i></a>
@@ -111,7 +111,7 @@
                   <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoDer card">
                     <div class="row rowAmigoDer">
                       <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 card-img-left areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
-                        <img src="img/woman-3-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
+                        <img src="/images/woman-3-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
                       </div>
                       <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
                         <a href="mailto:susana@florez.com?"><i class="fas fa-comment-dots"></i></a>
@@ -130,7 +130,7 @@
                     <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoIzq card ">
                       <div class="row rowAmigoIzq">
                         <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 card-img-left areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
-                          <img src="img/man-4-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
+                          <img src="/images/man-4-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
                         </div>
                         <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2  card-body media-body">
                           <a href="mailto:camilo@muñoz.com?"><i class="fas fa-comment-dots"></i></a>
@@ -142,7 +142,7 @@
                     <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoDer card   ">
                       <div class="row rowAmigoDer">
                         <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 card-img-left areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
-                          <img src="img/woman-4-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
+                          <img src="/images/woman-4-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
                         </div>
                         <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
                           <a href="mailto:silvia@smith.com?"><i class="fas fa-comment-dots"></i></a>
@@ -172,7 +172,7 @@
                   <div class="row rowAmigo">
 
                     <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0  card-img-left  media">
-                      <img src="img/avatar-man.png" alt="foto Perfil" class="align-self-center fotoInv  card-img img-fluid max-width:100% height:auto">
+                      <img src="/images/avatar-man.png" alt="foto Perfil" class="align-self-center fotoInv  card-img img-fluid max-width:100% height:auto">
                   </div>
 
                   <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 colTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
@@ -195,7 +195,7 @@
             <div class="row rowAmigo">
 
               <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0  card-img-left  media">
-                  <img src="img/avatar-man.png" alt="foto Perfil" class="align-self-center fotoInv card-img img-fluid max-width:100% height:auto">
+                  <img src="/images/avatar-man.png" alt="foto Perfil" class="align-self-center fotoInv card-img img-fluid max-width:100% height:auto">
               </div>
 
               <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 colTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2   card-body media-body">
@@ -219,7 +219,7 @@
         <div class="row rowAmigo">
 
           <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0  card-img-left  media">
-              <img src="img/avatar-man.png" alt="foto Perfil" class="align-self-center  fotoInv  card-img img-fluid max-width:100% height:auto">
+              <img src="/images/avatar-man.png" alt="foto Perfil" class="align-self-center  fotoInv  card-img img-fluid max-width:100% height:auto">
           </div>
 
           <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 colTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">

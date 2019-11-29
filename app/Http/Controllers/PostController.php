@@ -38,7 +38,7 @@ class PostController extends Controller
 
   public function addPost(Request $req)
   {
-dd($req->file('image')->getMimeType());
+
     $rules=[
       'post_text'=> "string|min:3|max:500",
       'image'=> "nullable|image|between:10,25000",
