@@ -34,6 +34,12 @@ footer{
   padding: 1%;
 }
 
+.botonAvatar{
+  border: none;
+background: none;
+
+}
+
 .divAvatar img{
     border-radius: 50%;
     width: 100%;
@@ -92,5 +98,3 @@ h1{
   .pHabilidades{
     color:black;
   }
-
-  

@@ -91,3 +91,5 @@ Route::post('/profile', 'PostController@addPost');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'HomeController@index');
+Route::get('/formProfile','ProfileController@showProfileForm');
+Route::post('/formProfile','ProfileController@editProfile');

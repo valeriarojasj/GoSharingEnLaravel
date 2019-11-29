@@ -55,7 +55,7 @@ class RegisterController extends Controller
       'avatar.image' => 'El formato de imagen no es válido',
       'avatar.between' => 'Solo se permiten imagenes entre 10KB y 8MB',
       'last_name.required' => 'Ingrese su apellido',
-      
+
       'last_name.max' => 'El apellido es muy largo',
     ];
         return Validator::make($data, [
@@ -89,8 +89,9 @@ class RegisterController extends Controller
             'last_name'=> $data['last_name'],
             'avatar'=>$ruta
 
-
+            
         ]);
+
     }
     public function showRegistrationForm()
     {
