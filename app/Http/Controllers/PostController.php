@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
 
+namespace App\Http\Controllers;
+ini_set('upload_max_size','100M');
 use Illuminate\Http\Request;
 use App\Post;
 use App\interestArea;
@@ -27,12 +28,19 @@ class PostController extends Controller
 
   public function showMyPosts()
   {
+
+
     $title = 'profile';
     //aca tenemos que filtrar por mis posteos peroaun no podemos porque no tenemos session.
-    $posteos = Post::orderBy('id', 'DESC')->get();
+    $posteos = Post::select('posts.*', 'users.avatar', 'users.first_name', 'users.last_name')
+                ->join('users', 'users.id', '=', 'posts.user_id')
+                ->where('user_id', '=', Auth::user()->id)
+                ->get();
+    $areasInteres = interestArea::all();
+    $tiposPosteos = postType::all();
 
 
-    return view('/main', compact('posteos','title'));
+    return view('/profile', compact('posteos','title','areasInteres','tiposPosteos'));
   }
 
 

@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Auth::routes();
 //revisado
 Route::get('/home', function () {
@@ -17,9 +18,9 @@ Route::get('/home', function () {
     return view('home');
 });
 //revisado
-Route::get('/main', 'PostController@showAllPosts');
+Route::get('/main', 'PostController@showAllPosts')->middleware('auth');
 //revisado
-Route::get('/profile', 'PostController@showMyPosts');
+Route::get('/profile', 'PostController@showMyPosts')->middleware('auth');
 //revisado
 Route::get('/friends', function () {
 
