@@ -10,6 +10,9 @@
 
 <div class="container">
 
+@php
+
+@endphp
 
       <section>    <!-- Aca comienza la seccion de informacion personal -->
         <div class="row">
@@ -38,7 +41,7 @@
 
                 <div class="media-body divNomOcup">
                   <h1 class = "textoNombre" id="textoNombre"> {{Auth::user()->first_name }} {{Auth::user()->last_name}}</h1>
-                  <h2 id="textoOcupacion">{{$miPerfil->personalTitle??""}}</h2>
+                  <h2 id="textoOcupacion">{{$miPerfil->personalTitle}}</h2>
                 </div>
 
                 </div>
@@ -48,7 +51,13 @@
           <h3 class="">Acerca de mí   </h3>
 
           <div class="caja pt-3">
-            <p class="pl-3 pb-3" id="textoAcerca">{{$newProfile->aboutMe?? ""}}</p>
+            <p class="pl-3 pb-3" id="textoAcerca">{{$miPerfil->aboutMe??""}}</p>
+          </div>
+
+          <h3 class="">Intereses</h3>
+
+          <div class="caja pt-3">
+            <p class="pl-3 pb-3" id="textoIntereses">{{$miPerfil->interest??""}}</p>
           </div>
 
 
@@ -84,8 +93,13 @@
                                          </div>
   <div class="mb-2 divPosteo">
      <label class="mt-3"for="aboutMe">Acerca de mí</label>
-  <textarea name="aboutMe" class="form-control textoAcerca text-left" rows="6" id="validationTextarea" placeholder="Escribe un corto resumen sobre tu experiencia, intereses y objetivos"></textarea>
-  </div>     <!--cierra el div del textArea-->
+  <textarea name="aboutMe" class="form-control textoAcerca text-left" rows="6" id="validationTextarea" placeholder="Escribe un corto resumen sobre tu experiencia y objetivos"></textarea>
+  </div>
+
+  <div class="mb-2 divPosteo">
+     <label class="mt-3"for="interest">Intereses</label>
+  <textarea name="interest" class="form-control textoAcerca text-left" rows="2" id="validationTextarea" placeholder="Lista tus intereses"></textarea>
+  </div>    <!--cierra el div del textArea-->
 
 
 
@@ -107,9 +121,9 @@
               </section>
 
                 <section>   <!-- Aca comienza la seccion de experiencia -->
-                  <div class="row">
-                  <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 col-12 mt-3">
-                    <div class="perfil">
+                  <div class="row ">
+                  <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 col-12 mt-3 ">
+                    <div class="perfil ">
 
 
                       <div class="Descripcion">
@@ -126,7 +140,7 @@
 
                             <!-- Button trigger modal -->
                             <div class="d-flex justify-content-between">
-                              <h5 class="mb-0 ml-3 mt-0 d-inline align-middle">MI cargo</h5>
+                              <h5 class="mb-0 ml-3 mt-0 d-inline align-middle">Mi cargo</h5>
                           <button type="button" class="btn btn-white d-inline" data-toggle="modal" data-target="#experienciaModal1">
                             <i class="far fa-edit text-primary"></i>
                           </button>
@@ -240,67 +254,7 @@
 
 
 </section>
-<section>    <!-- Aca comienza la seccion de Intereses -->
 
-
-  <div class="row">
-  <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 col-12">
-    <div class="perfil Descripcion divIntereses">
-      <!-- Button trigger modal -->
-      <div class="text-right">
-      <button type="button" class="btn btn-white " data-toggle="modal" data-target="#interesesModal">
-        <i class="far fa-edit text-primary"></i>
-      </button>
-      </div>
-
-                <h3 class="">Intereses</h3>
-
-                <div class="caja pt-3">
-                  <p class="pl-3 pb-3" id="textoIntereses">Aca va el texto de interes</p>
-                </div>
-
-
-
-                <!-- Modal -->
-                <div class="modal fade" id="interesesModal" tabindex="-1" role="dialog" aria-labelledby="interesesModalLabel" aria-hidden="true">
-
-
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="intereses">Intereses</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-
-                                            <form method='post' action="" enctype="multipart/form-data">
-
-
-        <div class="mb-2 divIntereses">
-           <label class="mt-3"for="textoIntereses">Intereses</label>
-        <textarea name="textoIntereses" class="form-control textoIntereses" rows="6" id="validationTextarea" placeholder="Escribe cuales son tus intereses"></textarea>
-        </div>     <!--cierra el div del textArea-->
-
-
-
-                        </div> <!--cierra el div del body del modal-->
-
-                        <div class="modal-footer">
-                                <button type="button " class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                <button type="submit" class="btn btn-primary" value="Enviar">Guardar Cambios</button>
-                        </div> <!--cierra el footer del modal-->
-                                                </form><!--cierra el form de agregar posteo-->
-                      </div><!--cierra el div ModalContent-->
-
-                    </div><!--cierra el div ModalDialog-->
-                  </div><!--cierra el div ModalFade-->
-                </div><!--cierra el div debajo de col-->
-              </div><!--cierra el div col-->
-            </div><!--cierra el div row-->
-
-                    </section>
 
 
 

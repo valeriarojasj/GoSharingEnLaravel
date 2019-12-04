@@ -74,4 +74,3 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index');
 Route::get('/formProfile','ProfileController@showProfileForm');
 Route::post('/formProfile','ProfileController@addProfile');
-Route::post('/formProfile','ProfileController@showMyProfile');

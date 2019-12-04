@@ -8,7 +8,11 @@ use Auth;
 class ProfileController extends Controller
 {
     public function showProfileForm(){
-      return view('/formProfile');
+
+      $usuarioLog = Auth::user()->id;
+       $miPerfil=Auth::user()->profile;
+
+      return view('/formProfile', compact('miPerfil'));
     }
 
     public function addProfile(Request $req)
@@ -21,33 +25,16 @@ class ProfileController extends Controller
     $personalTitle=$req['personalTitle'];
     $aboutMe=$req['aboutMe'];
     $gender=$req['gender'];
-    $gender=$req['gender'];
+    $interest=$req['interest'];
 
 
-    $newProfile=  \App\Profile::updateOrCreate(['user_id' => $usuarioLog] , ['personalTitle' => $personalTitle, 'aboutMe'=>$aboutMe, 'gender'=>$gender]);
+    $miPerfil=  \App\Profile::updateOrCreate(['user_id' => $usuarioLog] , ['personalTitle' => $personalTitle, 'aboutMe'=>$aboutMe, 'gender'=>$gender, 'interest'=>$interest]);
 
-  return view('/formProfile', compact('newProfile'));
-
-
-
-    }
-    public function showMyProfile()
-    {
-
-      //encuentra el perfil de la persona logueada
-      $usuarioLog = Auth::user()->id;
-    //  $profile=Profile::where('user_id', '=',$usuarioLog) // este es el perfil de quien esta logueado
-    //  ->get();
-
-
-    $miPerfil = Profile::where('user_id', '=', Auth::user()->id)
-                ->get();
-
-
-    return view('/formProfile', compact('miPerfil'));
+  return view('/formProfile', compact('miPerfil'));
 
 
 
     }
+
 
 }

@@ -22,7 +22,7 @@ class PostController extends Controller
     $tiposPosteos = postType::all();
 
     $miPerfil = Profile::where('profiles.user_id', '=', Auth::user()->id)
-                ->get();
+                ->get()->first();
 
 
 
@@ -38,10 +38,7 @@ class PostController extends Controller
 
     $title = 'profile';
     //aca tenemos que filtrar por mis posteos peroaun no podemos porque no tenemos session.
-    $posteos = Post::select('posts.*', 'users.avatar', 'users.first_name', 'users.last_name')
-                ->join('users', 'users.id', '=', 'posts.user_id')
-                ->where('user_id', '=', Auth::user()->id)
-                ->get();
+    $posteos = Auth::user()->posts;
     $areasInteres = interestArea::all();
     $tiposPosteos = postType::all();
 
@@ -72,7 +69,7 @@ class PostController extends Controller
     ];
     $this->validate($req, $rules, $messages);
 
-    $posteo = new Post();
+      $posteo = new Post();
 
     if($req->file('image')){
 

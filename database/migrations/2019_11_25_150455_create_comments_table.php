@@ -20,6 +20,11 @@ class CreateCommentsTable extends Migration
             $table->string('image', 250)->nullable();
             $table->string('video', 250)->nullable();
             $table->string('file', 250)->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('post_id');
+            $table->foreign('post_id')->references('id')->on('posts');
+
         });
     }
 

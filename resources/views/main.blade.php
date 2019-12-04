@@ -6,6 +6,7 @@
 @endsection
 
 @section('main')
+<script type="text/javascript" src="js/validaciones.js"></script>
 <main>
   <div class="container-fluid">
 
@@ -38,7 +39,7 @@
         </div>
           <h4 class="subtitulos"><b class="titulos">Ocupación Actual:</b></h4>
           <ul class="perfilContenido" type="none">
-            <li class="text-left textoPerfil" name="personalTitle">{{Auth:user()::Profile}}</li>
+            <li class="text-left textoPerfil" name="personalTitle">{{$miPerfil->personalTitle}}</li>
           </ul>
 
           <h4 class="text-primary textoPerfil"><b class="titulos">Residencia Actual:</b></h4>
@@ -129,7 +130,11 @@
           </li>
         </div> <!--cierra el div de subir documento-->
       </ul>
+      <div id="nombreArchivo">
+
+      </div>
   </div> <!--cierra el div de la lista de botones-->
+
   <span> @error('video') {{$message}} @enderror </span>
   <span> @error('image') {{$message}} @enderror </span>
   <span> @error('document') {{$message}} @enderror </span>

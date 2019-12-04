@@ -19,8 +19,6 @@ class CreateForeignKeyTable extends Migration
           $table->foreign('post_type_id')->references('id')->on('post_types');
           $table->unsignedBigInteger('interest_area_id');
           $table->foreign('interest_area_id')->references('id')->on('interest_areas');
-          $table->unsignedBigInteger('comment_id')->nullable();
-          $table->foreign('comment_id')->references('id')->on('comments');
           $table->unsignedBigInteger('user_id');
           $table->foreign('user_id')->references('id')->on('users');
         });
