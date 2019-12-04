@@ -35,7 +35,7 @@
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                   <div class="card-body">
-                    Podes contactarnos a través del <a href="contactanos.php"> Formulario de contacto </a> o enviando tu inquietudes a sharityx@gmail.com
+                    Podes contactarnos a través del <a href="/contact"> Formulario de contacto </a> o enviando tu inquietudes a sharityx@gmail.com
                   </div>
                 </div>
               </div>
@@ -80,7 +80,7 @@
                 </div>
                 <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
                   <div class="card-body">
-                    Podes cambiar la información de tu perfil a través de la pestaña "Editar" en la solapa <a href="perfil.php">Perfil </a>.
+                    Podes cambiar la información de tu perfil a través de la pestaña "Editar Perfil" en la solapa <a href="/formProfile">Perfil </a>.
                   </div>
                 </div>
               </div>

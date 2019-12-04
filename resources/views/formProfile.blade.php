@@ -7,12 +7,11 @@
 @section('main')
 
 
+
 <div class="container">
 
 
       <section>    <!-- Aca comienza la seccion de informacion personal -->
-
-
         <div class="row">
         <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 col-12">
           <div class="perfil">
@@ -28,7 +27,8 @@
 
 
                 <div class="divAvatar">
-                  <form class="" action="index.html" method="post">
+                  <form class="" action="" method="post" enctype="multipart/form-data">
+                    @csrf
                     <button type="button" name="button" class="botonAvatar">
                       <img class="align-self-center" src="/storage/{{Auth::user()->avatar}}" alt="">
                     </button>
@@ -38,7 +38,7 @@
 
                 <div class="media-body divNomOcup">
                   <h1 class = "textoNombre" id="textoNombre"> {{Auth::user()->first_name }} {{Auth::user()->last_name}}</h1>
-                  <h2 id="textoOcupacion">Aca va el titulo personal</h2>
+                  <h2 id="textoOcupacion">{{$miPerfil->personalTitle??""}}</h2>
                 </div>
 
                 </div>
@@ -48,7 +48,7 @@
           <h3 class="">Acerca de mí   </h3>
 
           <div class="caja pt-3">
-            <p class="pl-3 pb-3" id="textoAcerca">Acerca de mi aca va mi texto</p>
+            <p class="pl-3 pb-3" id="textoAcerca">{{$newProfile->aboutMe?? ""}}</p>
           </div>
 
 
@@ -71,19 +71,20 @@
                                         @csrf
                                         <div class="form-group ">
                                            <label class="mt-3"for="tituloPersonal">Titulo</label>
-                                           <input name="tituloPersonal" type="text" class="form-control mb-2 " id="tituloPersonal" placeholder="Ingresa tu titulo o cargo actual">
+                                           <input name="personalTitle" type="text" class="form-control mb-2 " id="tituloPersonal" placeholder="Ingresa tu titulo o cargo actual">
                                          </div>
-                                        <div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="hombre" name="genero" class="custom-control-input">
-  <label class="custom-control-label" for="hombre">Hombre</label>
-</div>
-<div class="custom-control custom-radio custom-control-inline">
-  <input type="radio" id="mujer" name="genero" class="custom-control-input">
-  <label class="custom-control-label" for="mujer">Mujer</label>
-</div>
+
+                                         <div class="form-check form-check-inline">
+                                           <input class="form-check-input" type="radio" name="gender" id="hombre" value="Hombre">
+                                           <label class="form-check-label" for="Hombre">Hombre</label>
+                                         </div>
+                                         <div class="form-check form-check-inline">
+                                           <input class="form-check-input" type="radio" name="gender" id="mujer" value="Mujer">
+                                           <label class="form-check-label" for="Mujer">Mujer</label>
+                                         </div>
   <div class="mb-2 divPosteo">
-     <label class="mt-3"for="acercaDeMi">Acerca de mí</label>
-  <textarea name="acercaDeMi" class="form-control textoAcerca" rows="6" id="validationTextarea" placeholder="Escribe un corto resumen sobre tu experiencia, intereses y objetivos"></textarea>
+     <label class="mt-3"for="aboutMe">Acerca de mí</label>
+  <textarea name="aboutMe" class="form-control textoAcerca text-left" rows="6" id="validationTextarea" placeholder="Escribe un corto resumen sobre tu experiencia, intereses y objetivos"></textarea>
   </div>     <!--cierra el div del textArea-->
 
 

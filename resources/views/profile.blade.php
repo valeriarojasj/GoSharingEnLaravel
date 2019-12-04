@@ -153,7 +153,7 @@
 </div><!--cierra el modal-->
 </div>  <!--cierra posteos-->
 <div class="tituloSeccionCentral">
-<h2 class="text-left">Novedades</h2>
+<h2 class="text-left">Mi Actividad</h2>
 </div>
 
 

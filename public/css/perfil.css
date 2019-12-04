@@ -84,6 +84,7 @@ h1{
     border-radius: 5px;
     padding: 5px;
 
+
   }
 
   input{
@@ -97,4 +98,7 @@ h1{
   }
   .pHabilidades{
     color:black;
+  }
+  #textoAcerca{
+    text-align: justify;
   }

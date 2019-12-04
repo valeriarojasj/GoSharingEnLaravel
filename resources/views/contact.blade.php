@@ -9,7 +9,7 @@
 
       <form>
         <div class="row">
-          <div class="col-lg-7 col-xl-7 col-md-7 col-sm-11 col-12  mx-auto fondoFormulario">
+          <div class="col-lg-7 col-xl-7 col-md-7 col-sm-11 col-12  mx-auto mt-3 fondoFormulario">
             <h2 class="tituloContactanos">Ponte en contacto con nosotros!</h2>
             <div class="form-group">
               <label for="formControlInput1" class="camposForm">Nombre</label>

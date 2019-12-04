@@ -8,6 +8,7 @@ use App\Post;
 use App\interestArea;
 use App\postType;
 use Auth;
+use App\Profile;
 class PostController extends Controller
 {
   public function showAllPosts()
@@ -20,10 +21,15 @@ class PostController extends Controller
     $areasInteres = interestArea::all();
     $tiposPosteos = postType::all();
 
+    $miPerfil = Profile::where('profiles.user_id', '=', Auth::user()->id)
+                ->get();
 
 
 
-    return view('/main', compact('posteos','title','areasInteres','tiposPosteos'));
+
+
+
+    return view('/main', compact('posteos','title','areasInteres','tiposPosteos','miPerfil'));
   }
 
   public function showMyPosts()

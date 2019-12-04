@@ -13,53 +13,34 @@
 
 Auth::routes();
 //revisado
-Route::get('/home', function () {
 
-    return view('home');
-});
-//revisado
+
 Route::get('/main', 'PostController@showAllPosts')->middleware('auth');
 //revisado
 Route::get('/profile', 'PostController@showMyPosts')->middleware('auth');
 //revisado
-Route::get('/friends', function () {
+Route::get('/friends','FriendsController@showFriends')->middleware('auth');
 
-    return view('friends');
-});
 //revisado
-Route::get('/messages', function () {
-
-    return view('messages');
-});
-//revisado, OJO ver css
-Route::get('/donations', function () {
-
-    return view('donations');
-});
+Route::get('/messages', 'MessagesController@showMessages')->middleware('auth');
 
 //revisado, OJO ver css
-Route::get('/volunteering', function () {
+Route::get('/donations', 'DonationsController@showDonations')->middleware('auth');
 
-    return view('volunteering');
-});
-
-//revisado
-Route::get('/about', function () {
-
-    return view('about');
-});
+//revisado, OJO ver css
+Route::get('/volunteering', 'VolunteeringController@showVolunteering')->middleware('auth');
 
 //revisado
-Route::get('/faq', function () {
+Route::get('/about', 'aboutController@showAbout');
 
-    return view('faq');
-});
 
 //revisado
-Route::get('/contact', function () {
+Route::get('/faq', 'FaqController@showFaq')->middleware('auth');
 
-    return view('contact');
-});
+
+//revisado
+Route::get('/contact', 'ContactController@showContact');
+
 //revisado
 
 
@@ -92,4 +73,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'HomeController@index');
 Route::get('/formProfile','ProfileController@showProfileForm');
-Route::post('/formProfile','ProfileController@editProfile');
+Route::post('/formProfile','ProfileController@addProfile');
+Route::post('/formProfile','ProfileController@showMyProfile');

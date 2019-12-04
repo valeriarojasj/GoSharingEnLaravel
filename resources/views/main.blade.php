@@ -38,7 +38,7 @@
         </div>
           <h4 class="subtitulos"><b class="titulos">Ocupación Actual:</b></h4>
           <ul class="perfilContenido" type="none">
-            <li class="text-left textoPerfil">Estudiante</li>
+            <li class="text-left textoPerfil" name="personalTitle">{{Auth:user()::Profile}}</li>
           </ul>
 
           <h4 class="text-primary textoPerfil"><b class="titulos">Residencia Actual:</b></h4>

@@ -72,7 +72,7 @@
 <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-comments iconoHeader"><span class="textoIcono"><br>Mis mensajes</span></i></a>
 <div class="dropdown-menu dropdown-menu-xl-right dropdown-menu-lg-right dropdown-menu-md-right">
 <a class="dropdown-item tipografiaPiola" href="/messages">Ver Mis Mensajes</a>
-<a class="dropdown-item tipografiaPiola" href="#">Enviar Mensaje</a>
+<a class="dropdown-item tipografiaPiola" href="/messages">Enviar Mensaje</a>
 <a class="dropdown-item tipografiaPiola" href="#">Notificaciones</a>
 </div>
 </li>
@@ -82,7 +82,7 @@
 <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user iconoHeader"><span class="textoIcono"><br>Mi Perfil</span></i></a>
 <div class="dropdown-menu dropdown-menu-xl-right dropdown-menu-lg-right dropdown-menu-md-right ">
 <a class="dropdown-item tipografiaPiola" href="/profile">Ver Mi perfil</a>
-<a class="dropdown-item tipografiaPiola" href="/profile">Editar Mi Perfil</a>
+<a class="dropdown-item tipografiaPiola" href="/formProfile">Editar Mi Perfil</a>
     <a class="dropdown-item tipografiaPiola" href="{{ route('logout') }}"
        onclick="event.preventDefault();
                      document.getElementById('logout-form').submit();">
