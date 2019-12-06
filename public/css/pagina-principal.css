@@ -67,6 +67,18 @@ display: none;
 display: none;
 }
 
+.fotoComment input{
+display: none;
+}
+
+.videoComment input{
+display: none;
+}
+
+.docComment input{
+display: none;
+}
+
 .miPerfil{
   background-color: white;
   border-radius: 10px;

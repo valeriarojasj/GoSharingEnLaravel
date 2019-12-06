@@ -89,7 +89,7 @@ class RegisterController extends Controller
             'last_name'=> $data['last_name'],
             'avatar'=>$ruta
 
-            
+
         ]);
 
     }

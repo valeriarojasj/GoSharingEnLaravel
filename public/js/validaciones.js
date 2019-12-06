@@ -22,6 +22,17 @@ miDocumento.onchange = function(){
   document.getElementById("nombreArchivo").innerHTML=miDocumento.files[0].name;
 }
 
+var commentFile = document.querySelectorAll('.commentFiles')
+
+for(var fileType of commentFile){
+
+fileType.onchange = function(){
+
+  this.parentElement.parentElement.parentElement.parentElement.querySelector(".archivoComentario").innerHTML=this.files[0].name;
 
 
-};
+
+
+}
+}
+}

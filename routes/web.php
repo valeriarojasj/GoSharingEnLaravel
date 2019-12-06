@@ -74,3 +74,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index');
 Route::get('/formProfile','ProfileController@showProfileForm');
 Route::post('/formProfile','ProfileController@addProfile');
+
+Route::get('/posts/{id}/comments','CommentController@showComment');
+Route::post('/posts/{id}/comments','CommentController@addComment');

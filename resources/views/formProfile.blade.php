@@ -41,7 +41,7 @@
 
                 <div class="media-body divNomOcup">
                   <h1 class = "textoNombre" id="textoNombre"> {{Auth::user()->first_name }} {{Auth::user()->last_name}}</h1>
-                  <h2 id="textoOcupacion">{{$miPerfil->personalTitle}}</h2>
+                  <h2 id="textoOcupacion">{{$miPerfil->personalTitle??""}}</h2>
                 </div>
 
                 </div>

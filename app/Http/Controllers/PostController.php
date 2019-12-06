@@ -8,6 +8,7 @@ use App\Post;
 use App\interestArea;
 use App\postType;
 use Auth;
+use App\User;
 use App\Profile;
 class PostController extends Controller
 {
@@ -49,12 +50,13 @@ class PostController extends Controller
 
   public function addPost(Request $req)
   {
+    
 
     $rules=[
       'post_text'=> "string|min:3|max:500",
       'image'=> "nullable|image|between:10,25000",
-      'video' => "mimes:avi,mpeg,quicktime,mp4,mpg|size:100000|nullable",
-      'document' => "mimes:doc,docx,pdf, ppt, pptx, xls, xlsx|nullable|size:8000"
+      'video' => "mimes:avi,mpeg,quicktime,mp4,mpg|max:100000|nullable",
+      'file' => "mimes:doc,docx,pdf, ppt, pptx, xls, xlsx|nullable|max:8000"
     ];
     $messages = [
       'post_text.min'=> 'El mensaje es muy corto',
@@ -63,8 +65,8 @@ class PostController extends Controller
       'image.between' => 'El tamaño del archivo debe ser entre 1 y 25 MB',
      'video.mimetypes' => 'El video no coincide con las extensiones aceptadas(avi, mpeg, quicktime, mp4 y mpg)',
       'video.size' => 'El video supera los 100MB',
-      'document.mimes' => 'El archivo no coincide con las extensiones aceptadas(doc, docx, pdf, ppt, pptx, xls, xlsx)',
-      'document.size' => 'El archivo supera los 8MB'
+      'file.mimes' => 'El archivo no coincide con las extensiones aceptadas(doc, docx, pdf, ppt, pptx, xls, xlsx)',
+      'file.size' => 'El archivo supera los 8MB'
 
     ];
     $this->validate($req, $rules, $messages);
@@ -82,10 +84,10 @@ class PostController extends Controller
       $nombreVideo=basename($rutaVideo);
       $posteo->video = $nombreVideo;
     }
-    if($req->file('document')){
-      $rutaDoc= $req->file('document')->store('public');
+    if($req->file('file')){
+      $rutaDoc= $req->file('file')->store('public');
       $nombreDoc=basename($rutaDoc);
-      $posteo->document = $nombreDoc;
+      $posteo->file = $nombreDoc;
     }
     $posteo->post_text = $req->post_text;
   $posteo->user_id = Auth::user()->id;

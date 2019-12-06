@@ -11,13 +11,13 @@ class Profile extends Model
   public $guarded = [];
 
   public function experience(){
-    $this->hasMany('App\Experience','profile_id');
+    return $this->hasMany('App\Experience','profile_id');
   }
   public function education(){
-    $this->hasMany('App\Education','profile_id');
+   return  $this->hasMany('App\Education','profile_id');
   }
   public function skill(){
-    $this->hasMany('App\Skill','profile_id');
+    return $this->hasMany('App\Skill','profile_id');
   }
   public function user()
 {

@@ -12,10 +12,16 @@ class Post extends Model
   public $guarded = [];
 
   public function interestArea(){
-    $this->belongsTo('App\interestArea','interest_area_id');
+  return  $this->belongsTo('App\interestArea','interest_area_id');
   }
 
   public function postType(){
-    $this->belongsTo('App\postType','post_type_id');
+  return  $this->belongsTo('App\postType','post_type_id');
   }
+
+  public function comment(){
+    return $this->hasMany('App\Comment');
+  }
+
+
 }

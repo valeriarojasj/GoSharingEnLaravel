@@ -39,7 +39,7 @@
         </div>
           <h4 class="subtitulos"><b class="titulos">Ocupación Actual:</b></h4>
           <ul class="perfilContenido" type="none">
-            <li class="text-left textoPerfil" name="personalTitle">{{$miPerfil->personalTitle}}</li>
+            <li class="text-left textoPerfil" name="personalTitle">{{$miPerfil->personalTitle??""}}</li>
           </ul>
 
           <h4 class="text-primary textoPerfil"><b class="titulos">Residencia Actual:</b></h4>
@@ -73,7 +73,7 @@
                   <div class="modal-body">
 
 
-                    <form method='post' action="/main" enctype="multipart/form-data">
+                    <form method='post' action="/main" enctype="multipart/form-data" id='form-post'>
 
                       @csrf
 
@@ -109,23 +109,23 @@
     <ul class="list-group list-group-horizontal" type="none">
             <div class="form-group fotoUpload mr-3">
               <li>
-              <label for="image"><i class="fas fa-camera align-middle"></label></i>
+              <label for="image-post"><i class="fas fa-camera align-middle"></i></label>
 
-              <input name="image" type="file" id="image" >
+              <input name="image" type="file" id="image-post" >
 
             </li>
             </div> <!--cierra el div de subir foto-->
         <div class="form-group videoUpload mr-3">
             <li>
-              <label for="video"><i class="fas fa-video align-middle"></i></label>
-              <input name="video" type="file" id="video">
+              <label for="video-post"><i class="fas fa-video align-middle"></i></label>
+              <input name="video" type="file" id="video-post">
               <span></span>
             </li>
         </div><!--cierra el div de subir video-->
         <div class="form-group docUpload mr-3">
           <li>
-              <label for="document"><i class="fas fa-paperclip align-middle"></i></label>
-              <input name="document" type="file" id="document">
+              <label for="file-post"><i class="fas fa-paperclip align-middle"></i></label>
+              <input name="file" type="file" id="file-post">
                 <span></span>
           </li>
         </div> <!--cierra el div de subir documento-->
@@ -137,7 +137,7 @@
 
   <span> @error('video') {{$message}} @enderror </span>
   <span> @error('image') {{$message}} @enderror </span>
-  <span> @error('document') {{$message}} @enderror </span>
+  <span> @error('file') {{$message}} @enderror </span>
 
 
 
@@ -171,7 +171,7 @@
   <div class=" perfilPost media">
   <img class="avatarPosteo" src="/storage/{{$posteo->avatar}}" alt="">
   <div class="media-body nombrePosteo">
-    <h5 class=quienPostea >{{$posteo->first_name}} {{$posteo->last_name}}</h5>
+    <h5 class="quienPostea" >{{$posteo->first_name}} {{$posteo->last_name}}</h5>
 
     </div>
   </div>
@@ -186,8 +186,8 @@
              <source src="/storage/{{$posteo->video}}" class="videoPosteo" alt="" type"video/*">
             @endif
             <!-- ESTE ENLACE ES PARA LINK DE UN DOCUMENTO-->
-              @if ($posteo->document)
-               <a href="/storage/{{$posteo->document}}">{{$posteo->document}}</a>
+              @if ($posteo->file)
+               <a href="/storage/{{$posteo->file}}">{{$posteo->file}}</a>
              @endif
 
    </div>
@@ -207,7 +207,7 @@
 
      </div>
      <div class="dropdown dropComentar">
-       <button class="btn btnAcciones" type="button" data-toggle="collapse" data-target="#collapseComentarios8" aria-expanded="false" aria-controls="collapseComentarios8">
+       <button class="btn btnAcciones" type="button" data-toggle="collapse" data-target="#collapseComentarios{{$posteo->id}}" aria-expanded="false" aria-controls="collapseComentarios{{$posteo->id}}">
          <i class=" iconosAcciones fas fa-comment-alt"></i> Comentar
        </button>
 
@@ -227,31 +227,94 @@
    <div class="row">
 
 
-    <div class="collapse col-md-12 col-sm-12 col-lg-12 col-xl-12 divComentarioNuevo" id="collapseComentarios8">
-      <form class="" action="pagina-principal.php#areaComentarios" method="post">
+    <div class="collapse col-md-12 col-sm-12 col-lg-12 col-xl-12 divComentarioNuevo" id="collapseComentarios{{$posteo->id}}">
+      <form  action="/posts/{{$posteo->id}}/comments" method="post" enctype="multipart/form-data" id='form-comment'>
 
+        @csrf
+          <textarea class = "comentarioNuevo" name="comment_text" rows="2" ></textarea>
+          <div class="listaBotones">
+            <ul class="list-group list-group-horizontal" type="none">
+                    <div class="form-group  fotoComment mr-3 ml-3">
+                      <li>
+                      <label for="image-comment{{$posteo->id}}"><i class="fas fa-camera align-middle"></i></label>
 
-          <textarea class = "comentarioNuevo" name="comentarioNuevo" rows="2" ></textarea>
+                      <input name="image" class = "commentFiles" id="image-comment{{$posteo->id}}" type="file" >
+
+                    </li>
+                    </div> <!--cierra el div de subir foto-->
+                <div class="form-group  videoComment mr-3">
+                    <li>
+                      <label for="video-comment{{$posteo->id}}"><i class="fas fa-video align-middle"></i></label>
+                      <input name="video-comment" class = "commentFiles" id="video-comment{{$posteo->id}}" type="file">
+                      <span></span>
+                    </li>
+                </div><!--cierra el div de subir video-->
+                <div class="form-group docComment mr-3">
+                  <li>
+                      <label for="file-comment{{$posteo->id}}"><i class="fas fa-paperclip align-middle"></i></label>
+                      <input name="file-comment" class = "commentFiles" id="file-comment{{$posteo->id}}" type="file">
+                        <span></span>
+                  </li>
+                </div> <!--cierra el div de subir documento-->
+              </ul>
+              <div class="archivoComentario">
+
+              </div>
+
+          </div> <!--cierra el div de la lista de botones-->
+
+          <!-- <span> @error('video') {{$message}} @enderror </span>
+          <span> @error('image') {{$message}} @enderror </span>
+          <span> @error('file') {{$message}} @enderror </span> -->
+
    <div class="divBotonEnviar">
 
 
-        <button name="submitComentario" type="submit" class="btn botonEnviar">Enviar</button>
+
+
+        <button name="submitComentario" type="submit" value="enviarComentario" class="btn botonEnviar">Enviar</button>
         </div>
-      </form>
+      </form> <!-- Cierre de formulario comentario-->
         </div>
 
 
    </div>
+
+   @forelse($posteo->comment as $comentario)
    <div class="row rowListaComentarios">
 
 
-     <div class="collapse col-md-12 col-sm-12 col-lg-12 col-xl-12 divListaComentarios" id="collapseComentarios8">
+     <div class="collapse col-md-12 col-sm-12 col-lg-12 col-xl-12 divListaComentarios" id="collapseComentarios{{$posteo->id}}">
        <ul class="list-unstyled">
+
+
 <li class="media rounded liComentarioLista p-2">
 
-<img src="/images/avatar-man.png" class="mr-3 avatarComentarios" alt="...">
+<img src="/storage/{{$comentario->user->avatar}}" class="mr-3 avatarComentarios" alt="...">
 <div class="media-body">
-<b><!--Aca el nombre y apellido--></b> <!--Aca el texto del comentario-->
+<b>{{$comentario->user->first_name }} {{$comentario->user->last_name}}</b>
+<div class="textFile">
+
+
+<p class="text-justify">{{$comentario->comment_text}}</p>
+
+            <div class="imgOvideo">
+              @if ($comentario->image)
+             <img src="/storage/{{$comentario->image}}" class="imagenPosteo" alt="">
+           @endif
+            @if ($comentario->video)
+             <video width="100%" poster="" controls>
+             <source src="/storage/{{$comentario->video}}" class="videoPosteo" alt="" type"video/*">
+            @endif
+            <!-- ESTE ENLACE ES PARA LINK DE UN DOCUMENTO-->
+              @if ($comentario->file)
+               <a href="/storage/{{$comentario->file}}">{{$comentario->file}}</a>
+             @endif
+
+             </div>
+
+
+   </div>
 </div>
 </li>
 <li class="media my-4 rounded liComentarioLista p-2">
@@ -276,6 +339,9 @@
 
 </div> <!--CIERRA EL ROW DE LISTA DE COMENTARIOS-->
 
+@empty
+
+@endforelse
 
    </div>
 
