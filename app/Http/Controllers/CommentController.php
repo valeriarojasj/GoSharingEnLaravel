@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 ini_set('upload_max_size','100M');
+ini_set('post_max_size','200M');
 
 use Illuminate\Http\Request;
 use App\Post;
@@ -36,19 +37,20 @@ class CommentController extends Controller
 
         $comentario = new Comment();
 
-        if($req->file('image')){
+        if($req->file('image-comment')){
 
-          $rutaImagen= $req->file('image')->store('public/images');
+
+          $rutaImagen= $req->file('image-comment')->store('public/images');
           $nombreImagen=basename($rutaImagen);
           $comentario->image = $nombreImagen;
         }
-        if($req->file('video')){
-          $rutaVideo= $req->file('video')->store('public');
+        if($req->file('video-comment')){
+          $rutaVideo= $req->file('video-comment')->store('public/');
           $nombreVideo=basename($rutaVideo);
           $comentario->video = $nombreVideo;
         }
-        if($req->file('file')){
-          $rutaDoc= $req->file('file')->store('public');
+        if($req->file('file-comment')){
+          $rutaDoc= $req->file('file-comment')->store('public/');
           $nombreDoc=basename($rutaDoc);
           $comentario->file = $nombreDoc;
         }
