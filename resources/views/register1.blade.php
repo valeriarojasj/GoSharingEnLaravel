@@ -3,11 +3,12 @@
 @extends('layouts/goSharing')
 @section('css')
   <link rel="stylesheet" href="/css/style.css">
+<script src="validation.js" charset="utf-8"></script>
 @endsection
 @section('main')
   <div class="container">
 
-        <form method='post' enctype="multipart/form-data">
+        <form method='post' class 'theForm' enctype="multipart/form-data">
           <div class="row">
             <div class="col-lg-6 col-xl-6 col-md-6 col-sm-10 col-10  mx-auto fondoFormulario">
               <div class="form-group">
@@ -39,7 +40,8 @@
 
               </div>
               <div class="form-group">
-                <input name="avatar" type="file" id="archivo" aria-describedby="archivoHelp">
+                <input name="avatar" type="file" id="archivo" aria-describedby="archivoHelp" onchange="return fileValidation()">
+                <div id="imagePreview"></div> <!--en este div se muestra la imagen seleccionada -->
                 <small id="archivoHelp" class="form-text errores text-white">ERROR ARCHIVO</small>
               </div>
               <div class="form-group form-check">

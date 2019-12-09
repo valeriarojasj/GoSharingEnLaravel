@@ -6,7 +6,7 @@
   <main>
 
 
-         <form method='post' action=>
+         <form method='post' class='theForm' action=>
            @csrf
            <div class="row">
              <div class="col-lg-6 col-xl-6 col-md-6 col-sm-10 col-11  mx-auto fondoFormulario">
