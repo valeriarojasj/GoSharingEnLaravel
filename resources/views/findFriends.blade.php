@@ -18,7 +18,7 @@
               <div class="cajaSaludo ">
                 <div class="divAvatar">
                   <img class="fotoPerfil align-self-center" src="/storage/{{Auth::user()->avatar}}" alt="">
-                  <h1 class="saludo align-middle text-wrap  text-center d-lg-inline d-xl-inline d-md-inline d-sm-inline ">Mis Contactos</h1>
+                  <h1 class="saludo align-middle text-wrap  text-center d-lg-inline d-xl-inline d-md-inline d-sm-inline ">Agrega nuevos amigos</h1>
                 </div>
                 <div class="card-body media-body areaTitulo ">
 
@@ -33,7 +33,7 @@
             <div class="paddingCentroA px-md-1 px-sm-1 px-lg-1 px-xl-1">
               <div class="areaContactosTitulo">
                 <div class="contactosTitulo">
-                  <h6 class="tituloSeccion">Mis Amigos (8)</h6>
+                  <h6 class="tituloSeccion">Sugerencias de amistad</h6>
                 </div>
               </div>
 
@@ -45,7 +45,7 @@
                         <img src="/images/man-1-500px.jpg" alt="foto Perfil" class="align-self-center card-img img-fluid max-width:100% height:auto ">
                       </div>
                       <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 col-12 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
-                        <a href="mailto:pedro@perez.com?"><i class="fas fa-comment-dots"></i></a>
+                        <a href="mailto:pedro@perez.com?"><i class="fas fa-user-plus"></i></a>
                         <h4>Pedro Pérez</h4>
                         <p class="text-left">Estudiante Digital House</p>
                       </div>
@@ -58,7 +58,7 @@
                       <img src="/images/woman-1-500px.jpg" alt="foto Perfil" class="align-self-center card-img img-fluid max-width:100% height:auto ">
                     </div>
                     <div class="col-md-8  col-sm-8 col-lg-8 col-xl-8 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2  card-body media-body">
-                      <a href="mailto:maria@garcia.com?"><i class="fas fa-comment-dots"></i></a>
+                      <a href="mailto:maria@garcia.com?"><i class="fas fa-user-plus"></i></a>
                       <h4>María García</h4>
                       <p class="text-left">Diseñadora Gráfica</p>
                     </div>
@@ -72,7 +72,7 @@
                         <img src="/images/man-2-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
                       </div>
                       <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
-                        <a href="mailto:felipe@alvarez.com?"><i class="fas fa-comment-dots"></i></a>
+                        <a href="mailto:felipe@alvarez.com?"><i class="fas fa-user-plus"></i></a>
                         <h4>Felipe Álvarez</h4>
                         <p class="text-left">Estudiante de Derecho</p>
                       </div>
@@ -84,7 +84,7 @@
                         <img src="/images/woman-2-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
                       </div>
                       <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
-                        <a href="mailto:isabel@gomez.com?"><i class="fas fa-comment-dots"></i></a>
+                        <a href="mailto:isabel@gomez.com?"><i class="fas fa-user-plus"></i></a>
                         <h4>Isabel Gómez</h4>
                         <p class="text-left">Trabajadora Social</p>
                       </div>
@@ -99,7 +99,7 @@
                         <img src="/images/man-3-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
                       </div>
                       <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
-                        <a href="mailto:andres@estrada.com?"><i class="fas fa-comment-dots"></i></a>
+                        <a href="mailto:andres@estrada.com?"><i class="fas fa-user-plus"></i></a>
                         <h4>Andrés Estrada</h4>
                         <p class="text-left">Profesor de Ingles</p>
                       </div>
@@ -111,7 +111,7 @@
                         <img src="/images/woman-3-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
                       </div>
                       <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
-                        <a href="mailto:susana@florez.com?"><i class="fas fa-comment-dots"></i></a>
+                        <a href="mailto:susana@florez.com?"><i class="fas fa-user-plus"></i></a>
                         <h4>Susana Flórez</h4>
                         <p class="text-left">Estudiante de Psicologia</p>
                       </div>
@@ -124,13 +124,13 @@
                           <img src="/images/man-4-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
                         </div>
                         <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2  card-body media-body">
-                          <a href="mailto:camilo@muñoz.com?"><i class="fas fa-comment-dots"></i></a>
+                          <a href="mailto:camilo@muñoz.com?"><i class="fas fa-user-plus"></i></a>
                           <h4>Camilo Muñóz</h4>
                           <p class="text-left">Ingeniero Civil</p>
                         </div>
                       </div>
                     </div>
-                
+
                   </div><!-- aca termina un par de contactos-->
                 </div> <!-- aca termina la seccion de contactos-->
               </div>

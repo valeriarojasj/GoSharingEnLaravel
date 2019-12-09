@@ -10,4 +10,9 @@ class FriendsController extends Controller
   {
       return view('friends');
   }
+
+  public function findFriends()
+  {
+      return view('findFriends');
+  }
 }

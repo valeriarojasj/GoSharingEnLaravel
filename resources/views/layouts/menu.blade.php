@@ -52,7 +52,7 @@
               <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="amigos.php" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-friends iconoHeader"><span class="textoIcono"><br>Mis amigos</span></i></a>
             <div class="dropdown-menu dropdown-menu-xl-right dropdown-menu-lg-right dropdown-menu-md-right">
               <a class="dropdown-item tipografiaPiola" href="/friends">Ver Mis amigos</a>
-              <a class="dropdown-item tipografiaPiola" href="/friends">Buscar Contactos</a>
+              <a class="dropdown-item tipografiaPiola" href="/findFriends">Buscar Contactos</a>
             </div>
 
         </li>
@@ -97,7 +97,7 @@
 </li>
 <form class="form-inline">
 
-    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+    <input class="form-control mr-sm-2" type="search" placeholder="Buscar Amigos" aria-label="Search">
     <button class="btn btn-warning my-2 my-sm-0" type="submit"><i class="fas fa-search iconoHeader"></i></button>
 </form>
 

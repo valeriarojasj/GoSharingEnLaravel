@@ -5,9 +5,6 @@
 @section('main')
   <main>
 
-@php
-
-@endphp
 
 
     <div class="contenedorTodo container-fluid py-2 mb-5">
@@ -18,7 +15,7 @@
               <div class="cajaSaludo ">
                 <div class="divAvatar">
                   <img class="fotoPerfil align-self-center" src="/storage/{{Auth::user()->avatar}}" alt="">
-                  <h1 class="saludo align-middle text-wrap  text-center d-lg-inline d-xl-inline d-md-inline d-sm-inline ">Mis Contactos</h1>
+                  <h1 class="saludo align-middle text-wrap  text-center d-lg-inline d-xl-inline d-md-inline d-sm-inline ">Buscar Amigos</h1>
                 </div>
                 <div class="card-body media-body areaTitulo ">
 
@@ -39,101 +36,134 @@
 
               <div class="row rowParAmigos card-group">
 
-                  <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoIzq  ">
+                  <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoIzq card ">
                     <div class="row rowAmigoIzq">
-                      <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 card-img-left areaFoto px-2 px-md-0 px-sm-0 px-lg-0  px-xl-0 media">
-                        <img src="/images/man-1-500px.jpg" alt="foto Perfil" class="align-self-center card-img img-fluid max-width:100% height:auto ">
-                      </div>
-                      <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 col-12 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
-                        <a href="mailto:pedro@perez.com?"><i class="fas fa-comment-dots"></i></a>
-                        <h4>Pedro Pérez</h4>
-                        <p class="text-left">Estudiante Digital House</p>
-                      </div>
+                      <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 card-img-left areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
+                      <img src="/images/man-1-500px.jpg" alt="foto Perfil" class="align-self-center card-img img-fluid max-width:100% height:auto ">
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 col-12 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
+                      <a href="mailto:pedro@perez.com?"><i class="fas fa-user-plus"></i></a>
+                      <h4>Pedro Pérez</h4>
+                      <p class="text-left">Estudiante Digital House</p>
                     </div>
                   </div>
+                </div>
 
-                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoDer ">
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoDer card">
+                  <!--
                   <div class="row rowAmigoDer">
                     <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 card-img-left areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0  media">
                       <img src="/images/woman-1-500px.jpg" alt="foto Perfil" class="align-self-center card-img img-fluid max-width:100% height:auto ">
                     </div>
                     <div class="col-md-8  col-sm-8 col-lg-8 col-xl-8 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2  card-body media-body">
-                      <a href="mailto:maria@garcia.com?"><i class="fas fa-comment-dots"></i></a>
+                      <a href="mailto:maria@garcia.com?"><i class="fas fa-user-plus"></i></a>
                       <h4>María García</h4>
                       <p class="text-left">Diseñadora Gráfica</p>
                     </div>
-                  </div>
+                  </div>-->
                 </div>
+              </div><!-- aca termina un par de contactos-->
 
 
-                  <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoIzq  ">
+              <!-- aca empieza un par de contactos-->
+                <div class="row rowParAmigos card-group">
+                  <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoIzq card ">
+                    <!--
                     <div class="row rowAmigoIzq">
                       <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 card-img-left areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
                         <img src="/images/man-2-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
                       </div>
                       <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
-                        <a href="mailto:felipe@alvarez.com?"><i class="fas fa-comment-dots"></i></a>
+                        <a href="mailto:felipe@alvarez.com?"><i class="fas fa-user-plus"></i></a>
                         <h4>Felipe Álvarez</h4>
                         <p class="text-left">Estudiante de Derecho</p>
                       </div>
-                    </div>
+                    </div>  -->
                   </div>
-                  <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoDer ">
+
+                  <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoDer card">
+                    <!--
                     <div class="row rowAmigoDer">
                       <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 card-img-left areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
                         <img src="/images/woman-2-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
                       </div>
                       <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
-                        <a href="mailto:isabel@gomez.com?"><i class="fas fa-comment-dots"></i></a>
+                        <a href="mailto:isabel@gomez.com?"><i class="fas fa-user-plus"></i></a>
                         <h4>Isabel Gómez</h4>
                         <p class="text-left">Trabajadora Social</p>
                       </div>
-                    </div>
+                    </div>  -->
                   </div>
+                </div><!-- aca termina un par de contactos-->
 
 
 
-                  <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6   colAmigoIzq ">
+                <!-- aca empieza un par de contactos-->
+                <div class="row rowParAmigos card-group">
+                  <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6   colAmigoIzq card">
+
+<!--
                     <div class="row rowAmigoIzq">
                       <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 card-img-left areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
                         <img src="/images/man-3-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
                       </div>
                       <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
-                        <a href="mailto:andres@estrada.com?"><i class="fas fa-comment-dots"></i></a>
+                        <a href="mailto:andres@estrada.com?"><i class="fas fa-user-plus"></i></a>
                         <h4>Andrés Estrada</h4>
                         <p class="text-left">Profesor de Ingles</p>
                       </div>
                     </div>
+  -->
                   </div>
-                  <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoDer ">
+                  <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoDer card">
+                    <!--
                     <div class="row rowAmigoDer">
                       <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 card-img-left areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
                         <img src="/images/woman-3-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
                       </div>
                       <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
-                        <a href="mailto:susana@florez.com?"><i class="fas fa-comment-dots"></i></a>
+                        <a href="mailto:susana@florez.com?"><i class="fas fa-user-plus"></i></a>
                         <h4>Susana Flórez</h4>
                         <p class="text-left">Estudiante de Psicologia</p>
                       </div>
                     </div>
+                  -->
                   </div>
+                </div><!-- aca termina un par de contactos-->
 
-                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoIzq  ">
+
+<!--
+
+                  aca empieza un par de contactos
+                  <div class="row rowParAmigos card-group ">
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoIzq card ">
                       <div class="row rowAmigoIzq">
                         <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 card-img-left areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
                           <img src="/images/man-4-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
                         </div>
                         <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2  card-body media-body">
-                          <a href="mailto:camilo@muñoz.com?"><i class="fas fa-comment-dots"></i></a>
+                          <a href="mailto:camilo@muñoz.com?"><i class="fas fa-user-plus"></i></a>
                           <h4>Camilo Muñóz</h4>
                           <p class="text-left">Ingeniero Civil</p>
                         </div>
                       </div>
                     </div>
-                
-                  </div><!-- aca termina un par de contactos-->
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoDer card   ">
+                      <div class="row rowAmigoDer">
+                        <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 card-img-left areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0    media">
+                          <img src="/images/woman-4-500px.jpg" alt="foto Perfil" class="align-self-center  card-img img-fluid max-width:100% height:auto">
+                        </div>
+                        <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
+                          <a href="mailto:silvia@smith.com?"><i class="fas fa-comment-dots"></i></a>
+                          <h4>Silvia Smith</h4>
+                          <p class="text-left">Enfermera</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div> aca termina un par de contactos-->
                 </div> <!-- aca termina la seccion de contactos-->
               </div>
+
 
             <!-- aca comienza la seccion de invitaciones-->
 

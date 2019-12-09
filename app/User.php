@@ -51,4 +51,22 @@ class User extends Authenticatable
       return $this->hasMany('App\Comment');
     }
 
+    public function friendsOfThisUser()
+{
+  return $this->belongsToMany('App\User', 'friendships', 'user_id', 'friend_id');
+
+}
+
+// friendship that this user was asked for
+public function thisUserFriendOf()
+{
+  return $this->belongsToMany('App\User', 'friendships', 'friend_id', 'user_id');
+
+}
+
+public function mergeFriends()
+	{
+		return $this->friendsOfThisUser->merge($this->thisUserFriendOf);
+	}
+
 }
