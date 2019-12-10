@@ -4,15 +4,51 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\User;
+use App\Profile;
+use App\Friendship;
+
 class FriendsController extends Controller
 {
   public function showFriends()
   {
-      return view('friends');
+    $amigos = Auth::user()->allFriends();
+
+      return view('friends',compact('amigos'));
   }
 
   public function findFriends()
-  {
-      return view('findFriends');
+{
+  $otros = User::where('id','!=',Auth::user()->id)->get();
+
+  $amigos = Auth::user()->allFriends();
+  $idAmigos = $amigos->pluck('id');
+  $idOtros = $otros->pluck('id');
+
+  $noAmigosId=$idOtros->diff($idAmigos);
+  $noAmigos = $otros->whereIn('id', $noAmigosId);
+
+
+
+
+    return view('findFriends',compact('noAmigos'));
+
   }
+
+
+
+
+  public function addFriend()
+
+  {
+      return Auth::user()->allFriends()->attach(ß);
+  }
+
+  public function removeFriend()
+  {
+      return Auth::user()->allFriends()->dettach();
+  }
+
+
+
 }

@@ -50,7 +50,7 @@ class PostController extends Controller
 
   public function addPost(Request $req)
   {
-    
+
 
     $rules=[
       'post_text'=> "string|min:3|max:500",

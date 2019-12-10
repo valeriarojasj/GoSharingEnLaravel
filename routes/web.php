@@ -21,6 +21,7 @@ Route::get('/profile', 'PostController@showMyPosts')->middleware('auth');
 //revisado
 Route::get('/friends','FriendsController@showFriends')->middleware('auth');
 Route::get('/findFriends','FriendsController@findFriends')->middleware('auth');
+
 //revisado
 Route::get('/messages', 'MessagesController@showMessages')->middleware('auth');
 

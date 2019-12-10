@@ -64,7 +64,7 @@ public function thisUserFriendOf()
 
 }
 
-public function mergeFriends()
+public function allFriends()
 	{
 		return $this->friendsOfThisUser->merge($this->thisUserFriendOf);
 	}
