@@ -37,7 +37,9 @@
               </div>
 
 
-  @forelse($amigos as $amigo)
+
+    <div class="row rowParAmigos card-group">
+      @forelse($amigos as $amigo)
                   <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoIzq  ">
 
                     <div class="row rowAmigoIzq">
@@ -53,9 +55,11 @@
                       </div>
                     </div>
                   </div>
-                  @empty
+                @empty
 
-                  @endforelse
+                @endforelse
+                  </div>
+
 
                 </div> <!-- aca termina la seccion de contactos-->
 
