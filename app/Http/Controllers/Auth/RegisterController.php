@@ -62,7 +62,7 @@ class RegisterController extends Controller
             'first_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'avatar' =>['nullable', 'image', 'between:10,8000'],
+            'avatar' =>['nullable', 'mimes:jpeg,jpg,png,gif,bmp}', 'between:10,8000'],
             'last_name' => ['required','string', 'max:50' ]
         ],$messages);
     }

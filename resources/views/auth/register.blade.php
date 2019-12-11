@@ -4,6 +4,7 @@
 @endsection
 
 @section('main')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -11,7 +12,7 @@
                 <div class="tituloRegistro">{{ __('Regístrate ahora!') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data" class='theForm'>
                         @csrf
                         <div class="form-group row">
                             <label for="first_name" class="col-md-4 col-form-label text-md-right camposForm">{{ __('Nombre') }}</label>
@@ -103,4 +104,10 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src='js/functions.js'>
+
+</script>
+<script type="text/javascript" src='js/validation.js'>
+
+</script>
 @endsection

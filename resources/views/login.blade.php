@@ -5,7 +5,9 @@
 @section('main')
   <main>
 
+    <script type="text/javascript" src='js/validation.js'>
 
+    </script>
          <form method='post' class='theForm' action=>
            @csrf
            <div class="row">
