@@ -3,9 +3,15 @@
 @extends('layouts/goSharing')
 @section('css')
   <link rel="stylesheet" href="/css/style.css">
-<script src="validation.js" charset="utf-8"></script>
+
 @endsection
 @section('main')
+  <script type="text/javascript" src='js/validationRegister.js'>
+
+  </script>
+  <script type="text/javascript" src='js/functions.js'>
+
+  </script>
   <div class="container">
 
         <form method='post' class 'theForm' enctype="multipart/form-data">
@@ -53,4 +59,5 @@
           </div>
         </form>
       </div>
+
 @endsection

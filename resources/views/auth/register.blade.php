@@ -5,6 +5,7 @@
 
 @section('main')
 
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -107,7 +108,9 @@
 <script type="text/javascript" src='js/functions.js'>
 
 </script>
-<script type="text/javascript" src='js/validation.js'>
+<script type="text/javascript" src='js/validationRegister.js'>
 
 </script>
+
+
 @endsection
