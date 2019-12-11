@@ -47,7 +47,9 @@ class FriendsController extends Controller
 
   public function removeFriend($id)
   {
-      return Auth::user()->friendsOfThisUser()->dettach($id);
+    $removerAmigo =  Auth::user()->friendsOfThisUser()->detach($id);
+
+    return response()->json(['message' =>'Amigo Eliminado']);
   }
 
 

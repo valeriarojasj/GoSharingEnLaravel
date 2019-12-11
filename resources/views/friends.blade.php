@@ -5,7 +5,7 @@
 @section('main')
   <main>
 
-
+<script type="text/javascript" src="/js/removeFriends.js"></script>
 
 
 
@@ -37,7 +37,9 @@
               </div>
 
 
-  @forelse($amigos as $amigo)
+
+    <div class="row rowParAmigos card-group">
+      @forelse($amigos as $amigo)
                   <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoIzq  ">
 
                     <div class="row rowAmigoIzq">
@@ -46,16 +48,19 @@
                       </div>
                       <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 col-12 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
 
-                        <a href="mailto:{{$amigo->email}} ?"><i class="fas fa-comment-dots"></i></a>
-                        <a href="#"><i class="fas fa-user-times"></i></a>
+                        <a  href="mailto:{{$amigo->email}} ?"><i class="fas fa-comment-dots"></i></a>
+                        <a class= 'btnRemoveFriend' id={{$amigo->id}} href="#"><i class="fas fa-user-times"></i></a>
+                        <span class="borrar"></span>
                         <h4>{{$amigo->first_name}} {{$amigo->last_name}}</h4>
                         <p class="text-left">{{$amigo->profile->personalTitle??""}}</p>
                       </div>
                     </div>
                   </div>
-                  @empty
+                @empty
 
-                  @endforelse
+                @endforelse
+                  </div>
+
 
                 </div> <!-- aca termina la seccion de contactos-->
 

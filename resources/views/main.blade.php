@@ -7,6 +7,8 @@
 
 @section('main')
 <script type="text/javascript" src="/js/validaciones.js"></script>
+<script type="text/javascript" src="/js/like.js"></script>
+
 <main>
   <div class="container-fluid">
 
