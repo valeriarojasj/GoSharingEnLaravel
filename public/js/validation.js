@@ -1,6 +1,6 @@
 /* validación formulario de login */
 window.onload = function(){
-  
+
   console.log('EStoy en Js')
 var email = document.querySelector('input[name = email]');
 var password = document.querySelector('input[name = password]');

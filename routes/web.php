@@ -78,3 +78,4 @@ Route::post('/formProfile','ProfileController@addProfile');
 
 Route::get('/posts/{id}/comments','CommentController@showComment');
 Route::post('/posts/{id}/comments','CommentController@addComment');
+Route::post('addFriend/{id}','FriendsController@addFriend');

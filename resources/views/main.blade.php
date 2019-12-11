@@ -263,9 +263,21 @@
 
           </div> <!--cierra el div de la lista de botones-->
 
-          <!-- <span> @error('video') {{$message}} @enderror </span>
-          <span> @error('image') {{$message}} @enderror </span>
-          <span> @error('file') {{$message}} @enderror </span> -->
+        <span> @error('video') <script>
+      window.onload = function(){
+        $("#postear").click();
+      };
+      </script>';{{$message}} @enderror </span>
+          <span> @error('image')  <script>
+        window.onload = function(){
+          $("#postear").click();
+        };
+        </script> {{$message}} @enderror </span>
+          <span> @error('file')  <script>
+        window.onload = function(){
+          $("#postear").click();
+        };
+        </script>'{{$message}} @enderror </span> 
 
    <div class="divBotonEnviar">
 

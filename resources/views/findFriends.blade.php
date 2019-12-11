@@ -5,7 +5,7 @@
 @section('main')
   <main>
 
-
+<script type="text/javascript" src="/js/friends.js"></script>
 
 
 
@@ -37,24 +37,31 @@
               </div>
 
 
-  @forelse($noAmigos as $noAmigo)
+    @forelse($noAmigos as $noAmigo)
+      <div class="row rowParAmigos card-group">
                   <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoIzq  ">
 
                     <div class="row rowAmigoIzq">
+
                       <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 card-img-left areaFoto px-2 px-md-0 px-sm-0 px-lg-0  px-xl-0 media">
                         <img src="/storage/{{$noAmigo->avatar}}" alt="foto Perfil" class="align-self-center card-img img-fluid max-width:100% height:auto ">
                       </div>
                       <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 col-12 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
+                      <!--<button class="btn btnAddFriend" id=$noAmigo->id}} type="button">
+                          <i class=" iconosAcciones fas fa-user-plus">      </i>
+                        </button>-->
 
-                        <a href=""><i class="fas fa-user-plus"></i></a>
+                        <a class= 'btnAddFriend' id={{$noAmigo->id}} href=""><i class="fas fa-user-plus "></i> </a>
+                        <span class="solicitud"></span>
                         <h4>{{$noAmigo->first_name}} {{$noAmigo->last_name}}</h4>
                         <p class="text-left">{{$noAmigo->profile->personalTitle??""}}</p>
                       </div>
                     </div>
-                  </div>
-                  @empty
 
-                  @endforelse
+                  </div>
+                @empty
+
+                @endforelse
 
                 </div> <!-- aca termina la seccion de contactos-->
 

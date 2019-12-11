@@ -38,15 +38,16 @@ class FriendsController extends Controller
 
 
 
-  public function addFriend()
-
+  public function addFriend($id)
   {
-      return Auth::user()->allFriends()->attach(ß);
+    $misAmigos= Auth::user()->friendsOfThisUser()->attach($id);
+
+      return response()->json(['message' =>'Solicitud enviada']);
   }
 
-  public function removeFriend()
+  public function removeFriend($id)
   {
-      return Auth::user()->allFriends()->dettach();
+      return Auth::user()->friendsOfThisUser()->dettach($id);
   }
 
 
