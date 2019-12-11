@@ -4,7 +4,12 @@
 @endsection
 
 @section('main')
+  <script type="text/javascript" src='js/functions.js'>
 
+  </script>
+  <script type="text/javascript" src='js/validationRegister.js'>
+
+  </script>
 
 <div class="container">
     <div class="row justify-content-center">
@@ -105,12 +110,8 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src='js/functions.js'>
 
-</script>
-<script type="text/javascript" src='js/validationRegister.js'>
 
-</script>
 
 
 @endsection

@@ -79,7 +79,7 @@
 
                       <div class="form-group">
 
-                        <select class="custom-select" name="interest_area">
+                        <select class="custom-select" name="interest_area" id='interest_area'>
                           <option value="">Área de Interés</option>
                           @foreach($areasInteres as $interes)
                             <option value="{{$interes->id}}">{{$interes->name}}</option>
@@ -89,7 +89,7 @@
                       </div>     <!--cierra el div de las opciones de areas de interes-->
 
                     <div class="form-group">
-                      <select class="custom-select" name="post_type" >
+                      <select class="custom-select" name="post_type" id='post_type'>
                         <option value="">Tipo de Posteo</option>
                         @foreach($tiposPosteos as $tipoPosteo)
                         <option value="{{$tipoPosteo->id}}">{{$tipoPosteo->name}}</option>
@@ -277,7 +277,7 @@
         window.onload = function(){
           $("#postear").click();
         };
-        </script>'{{$message}} @enderror </span> 
+        </script>'{{$message}} @enderror </span>
 
    <div class="divBotonEnviar">
 

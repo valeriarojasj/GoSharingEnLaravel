@@ -6,6 +6,12 @@
 <!--arrobaextends('layouts.app')-->
 
 @section('main')
+  <script type="text/javascript" src='js/functions.js'>
+
+  </script>
+  <script type="text/javascript" src='js/validationLogin.js'>
+
+  </script>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 ">
@@ -15,7 +21,7 @@
       <div  class=" tituloLogin text-center">{{ __(' Te damos la bienvenida! Inicia tu sesión') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" class="theForm" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -81,4 +87,6 @@
         </div>
     </div>
 </div>
+
+
 @endsection
