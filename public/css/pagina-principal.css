@@ -208,9 +208,7 @@ padding-left: 1%;
   margin-bottom: 3%;
 }
 
-.textoPost{
 
-}
 .divPosteo{
   padding:1%;
 }
@@ -258,12 +256,9 @@ background-color: white;
   box-sizing: border-box;
 }
 .divListaComentarios{
-
-  width=100%
+  width:100%;
   box-sizing: border-box;
   text-align: left;
-
-
 }
 .liComentarioLista{
   margin-left: 2%;
