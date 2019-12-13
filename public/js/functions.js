@@ -52,13 +52,13 @@ function validarAvatar(avatar){
       }
   }
 }
-function validarTextoPosteo(textoPost){
-  if(textoPost.length == 0){
+var errorTextoPosteo = function validarTextoPosteo(textoPost){
+  if(this.length == 0){
     alert('El posteo está vacío')
-  }
+  } return false;
 }
-function validarContenidoPost(file){
-  
+var errorContenidoPosteo = function validarContenidoPost(file){
+
   var contenidoPath = this.value;
   var allowedExtensions = /(.jpeg|.jpg|.bmp|.gif|.svg|.png|.doc|.docx|.ppt|.xls|.xlsx|.pptx|.pdf|.mp4|.vga)$/i;
   if(!allowedExtensions.exec(contenidoPath)){
@@ -81,10 +81,20 @@ function validarContenidoPost(file){
 
 
 function submitPosteo(){
-  console-log(interestArea)
-if(interestArea.getAtributte('value') == 0){
-  alert('No has elegido el area de interés')
-}
+
+console.log('estoy en submit posteo')
+    if(interestArea.getAtributte('value') == 0){
+      alert('No has elegido el area de interés');
+      event.preventDefault();
+    }
+    else if(postType.getAtributte('value') == 0){
+      alert('No has elegido el tipo de posteo');
+      event.preventDefault();
+    }
+    if(errorContenidoPosteo == true || errorTextoPosteo == true){
+      alert('Hay un error en la carga del contenido');
+      event.preventDefault();
+  }
 }
 
 function submit(email, password){

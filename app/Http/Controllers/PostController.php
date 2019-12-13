@@ -9,6 +9,7 @@ use App\interestArea;
 use App\postType;
 use Auth;
 use App\User;
+Use App\Like;
 use App\Profile;
 class PostController extends Controller
 {
@@ -16,18 +17,12 @@ class PostController extends Controller
   {
     $title = 'main';
     //$posteos = Post::orderBy('id', 'DESC')->get();
-    $posteos = Post::select('posts.*', 'users.avatar', 'users.first_name', 'users.last_name')
-                ->join('users', 'users.id', '=', 'posts.user_id')
-                ->get();
+    $posteos = Post::with(['user', 'likes', 'comment'])->get();
+
     $areasInteres = interestArea::all();
     $tiposPosteos = postType::all();
-
     $miPerfil = Profile::where('profiles.user_id', '=', Auth::user()->id)
                 ->get()->first();
-
-
-
-
 
 
     return view('/main', compact('posteos','title','areasInteres','tiposPosteos','miPerfil'));
