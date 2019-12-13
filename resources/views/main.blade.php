@@ -203,7 +203,7 @@
 
    <div class="list-group list-group-horizontal acciones">
      <div class="divMeGusta">
-       <button class="btn btnAcciones meGustaButton" type="button" id="">
+       <button class="btn btnAcciones meGustaButton" type="button" id="{{$posteo->id}}">
          <i class=" iconosAcciones fas fa-thumbs-up">      </i> Me gusta
        </button>
 

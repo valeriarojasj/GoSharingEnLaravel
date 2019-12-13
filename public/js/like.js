@@ -5,12 +5,13 @@ window.addEventListener('load', function(){
       var ruta = ''
       var imgLike = this.querySelector('i');
       var color;
+      var idPosteo = this.getAttribute('id');
       if(this.style.color == "blue"){
         color = "";
-        ruta = '/removeLike'
+        ruta = '/removeLike/'+idPosteo
       }else{
-        color = "blue";
-        ruta = '/addLike'
+        color = "blue"
+        ruta = 'addLike/'+idPosteo
       }
       fetch(ruta,{
         headers: {
