@@ -94,4 +94,6 @@ $cuantasInvitaciones = $collectionInvitaciones->count();
 
 
 
+
+
 }

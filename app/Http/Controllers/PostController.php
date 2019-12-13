@@ -11,6 +11,7 @@ use Auth;
 use App\User;
 Use App\Like;
 use App\Profile;
+use App\Friendship;
 class PostController extends Controller
 {
   public function showAllPosts()
@@ -25,7 +26,20 @@ class PostController extends Controller
                 ->get()->first();
 
 
-    return view('/main', compact('posteos','title','areasInteres','tiposPosteos','miPerfil'));
+                $amigos = Auth::user()->allFriends();
+
+                $solicitudes = Auth::user()->requestsOfThisUser()->get();
+
+                $collectionSolicitudes = collect($solicitudes);
+                $invitaciones = Auth::user()->invitationsOfThisUser()->get();
+                $collectionInvitaciones = collect($invitaciones);
+
+                $cuantosAmigos = $amigos->count();
+                $cuantasSolicitudes = $collectionSolicitudes->count();
+                $cuantasInvitaciones = $collectionInvitaciones->count();
+
+
+    return view('/main', compact('posteos','title','areasInteres','tiposPosteos','miPerfil', 'cuantasSolicitudes', 'cuantasInvitaciones','cuantosAmigos'));
   }
 
   public function showMyPosts()

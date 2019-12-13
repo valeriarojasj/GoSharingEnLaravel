@@ -38,8 +38,8 @@ window.addEventListener('load', function(){
     }
 
   }
-var btnAcceptFriend = document.querySelectorAll('.btnAcceptFriend');
-for(var pending of btnAcceptFriend){
+var btnAcceptInvitation = document.querySelectorAll('.btnAcceptInvitation');
+for(var pending of btnAcceptInvitation){
   pending.onclick= function(event){
     event.preventDefault();
     var pendingId = this.getAttribute('id');
@@ -50,7 +50,7 @@ for(var pending of btnAcceptFriend){
     var span = padre.querySelector('.invitacion');
       console.log(span);
 
-    var mensaje = fetch('acceptFriend/'+pendingId,{
+    var mensaje = fetch('acceptInvitation/'+pendingId,{
     headers: {
       "Content-Type": "application/json",
       "Accept": "application/json",
@@ -74,8 +74,8 @@ for(var pending of btnAcceptFriend){
 
   }
 
-}
-
-
-
 });
+
+
+
+}

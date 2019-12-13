@@ -1,4 +1,4 @@
-window.onload = function() {
+window.addEventListener('load', function(){
 
   var btnRemoveFriend= document.querySelectorAll('.btnRemoveFriend');
 
@@ -55,4 +55,4 @@ window.onload = function() {
 
 
 
-}
+});
