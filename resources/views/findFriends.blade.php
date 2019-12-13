@@ -64,6 +64,31 @@
 
                 </div>
               @empty
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoIzq  ">
+
+
+                    <div class="row ">
+
+
+                      <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 card-img-left areaFoto px-2 px-md-0 px-sm-0 px-lg-0  px-xl-0 media">
+                        <img src="/images/avatar-man.png" alt="foto Perfil" class="align-self-center card-img img-fluid max-width:100% height:auto ">
+                      </div>
+                      <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 col-12 areaTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
+                        <!--<button class="btn btnAddFriend" id=$noAmigo->id}} type="button">
+                            <i class=" iconosAcciones fas fa-user-plus">      </i>
+                          </button>-->
+                          <a class= 'btnAddFriend' href=""><i class="fas fa-user-plus "></i> </a>
+                          <span class="solicitud"></span>
+                          <h4>No hay sugerencias de amigos</h4>
+
+                        </div>
+
+
+                      </div>
+
+
+                  </div>
+
               @endforelse
 
               </div>
@@ -89,16 +114,34 @@
         <img src="/images/avatar-man.png" alt="foto Perfil" class="align-self-center fotoInv  card-img img-fluid max-width:100% height:auto">
       </div>
       <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 colTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
-        <a href="#"><i class="fas fa-user-check"></i></a>
-        <a href="#"><i class="fas fa-user-times"></i></a>
+        <a href="#" id={{$invitacion->id}} class= "btnAcceptFriend"><i class="fas fa-user-check"></i></a>
+        <span class ="invitacion"></span>
+        <a href="#" ><i class="fas fa-user-times"></i></a>
         <h4>{{$invitacion->first_name}} {{$invitacion->last_name}}</h4>
         <p class="text-left">{{$invitacion->profile->personalTitle??""}}</p>
       </div>
-    </div>
   </div>
+</div>
 
 </div>
 @empty
+  <div class=" rowAmigoDer ">
+
+<div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 card colTarjetaAmigo">
+  <div class="row rowAmigo">
+    <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0  card-img-left  media">
+      <img src="/images/avatar-man.png" alt="foto Perfil" class="align-self-center fotoInv  card-img img-fluid max-width:100% height:auto">
+    </div>
+    <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 colTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
+
+      <h4>No tienes invitaciones</h4>
+
+    </div>
+</div>
+</div>
+
+</div>
+
 @endforelse
 </div>
 
@@ -121,8 +164,7 @@
                 <img src="/images/avatar-man.png" alt="foto Perfil" class="align-self-center fotoInv  card-img img-fluid max-width:100% height:auto">
               </div>
               <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 colTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
-                <a href="#"><i class="fas fa-user-check"></i></a>
-                <a href="#"><i class="fas fa-user-times"></i></a>
+              <span class = "solicitudText">Solicitud Enviada</span>
                 <h4>{{$solicitud->first_name}} {{$solicitud->last_name}}</h4>
                 <p class="text-left">{{$solicitud->profile->personalTitle??""}}</p>
               </div>
@@ -131,6 +173,22 @@
 
         </div>
         @empty
+          <div class=" rowAmigoDer ">
+
+              <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 card colTarjetaAmigo">
+                <div class="row rowAmigo">
+                  <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0  card-img-left  media">
+                    <img src="/images/avatar-man.png" alt="foto Perfil" class="align-self-center fotoInv  card-img img-fluid max-width:100% height:auto">
+                  </div>
+                  <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 colTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
+                  
+                    <h4>No tienes solicitudes</h4>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
         @endforelse
       </div><!-- aca termina una invitacion-->
 
