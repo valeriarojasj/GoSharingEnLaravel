@@ -225,6 +225,22 @@
        </div>
      </div>
 
+     <span> @error('video') <script>
+   window.onload = function(){
+     $("#postear").click();
+   };
+   </script>';{{$message}} @enderror </span>
+       <span> @error('image')  <script>
+     window.onload = function(){
+       $("#postear").click();
+     };
+     </script> {{$message}} @enderror </span>
+       <span> @error('file')  <script>
+     window.onload = function(){
+       $("#postear").click();
+     };
+     </script>'{{$message}} @enderror </span>
+
    </div><!--cierra un posteo-->
    <div class="row">
 
@@ -240,7 +256,7 @@
                       <li>
                       <label for="image-comment{{$posteo->id}}"><i class="fas fa-camera align-middle"></i></label>
 
-                      <input name="image" class = "commentFiles" id="image-comment{{$posteo->id}}" type="file" >
+                      <input name="image-comment" class = "commentFiles" id="image-comment{{$posteo->id}}" type="file" >
 
                     </li>
                     </div> <!--cierra el div de subir foto-->
@@ -265,21 +281,7 @@
 
           </div> <!--cierra el div de la lista de botones-->
 
-        <span> @error('video') <script>
-      window.onload = function(){
-        $("#postear").click();
-      };
-      </script>';{{$message}} @enderror </span>
-          <span> @error('image')  <script>
-        window.onload = function(){
-          $("#postear").click();
-        };
-        </script> {{$message}} @enderror </span>
-          <span> @error('file')  <script>
-        window.onload = function(){
-          $("#postear").click();
-        };
-        </script>'{{$message}} @enderror </span>
+
 
    <div class="divBotonEnviar">
 
@@ -314,7 +316,7 @@
 
             <div class="imgOvideo">
               @if ($comentario->image)
-             <img src="/storage/images/{{$comentario->image}}" class="imagenPosteo" alt="">
+             <img src="/storage/{{$comentario->image}}" class="imagenPosteo" alt="">
            @endif
             @if ($comentario->video)
              <video width="100%" poster="" controls>

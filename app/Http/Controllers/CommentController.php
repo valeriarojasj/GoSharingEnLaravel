@@ -18,15 +18,15 @@ class CommentController extends Controller
 
       $rules=[
         'comment_text'=> "string|min:3|max:500",
-        'image'=> "nullable|image|between:10,25000",
+        'image'=> "nullable|mimes:jpeg,jpg,png,gif,bmp|between:10,8000",
         'video' => "mimes:avi,mpeg,quicktime,mp4,mpg|max:100000|nullable",
         'file' => "mimes:doc,docx,pdf, ppt, pptx, xls, xlsx|nullable|max:8000"
       ];
       $messages = [
         'comment_text.min'=> 'El mensaje es muy corto',
         'comment_text.max'=> 'El mensaje es muy largo',
-        'image.image'=> 'El archivo no es una imagen',
-        'image.between' => 'El tamaño del archivo debe ser entre 1 y 25 MB',
+        'image.mimes'=> 'El archivo no es una imagen con formato válido (jpeg,jpg,png,gif,bmp)',
+        'image.between' => 'El tamaño del archivo debe ser entre 1 y 8 MB',
         'video.mimetypes' => 'El video no coincide con las extensiones aceptadas(avi, mpeg, quicktime, mp4 y mpg)',
         'video.size' => 'El video supera los 100MB',
         'file.mimes' => 'El archivo no coincide con las extensiones aceptadas(doc, docx, pdf, ppt, pptx, xls, xlsx)',
@@ -39,18 +39,18 @@ class CommentController extends Controller
 
         if($req->file('image-comment')){
 
-
-          $rutaImagen= $req->file('image-comment')->store('public/images');
+          $rutaImagen= $req->file('image-comment')->store('public');
           $nombreImagen=basename($rutaImagen);
+          
           $comentario->image = $nombreImagen;
         }
         if($req->file('video-comment')){
-          $rutaVideo= $req->file('video-comment')->store('public/');
+          $rutaVideo= $req->file('video-comment')->store('public');
           $nombreVideo=basename($rutaVideo);
           $comentario->video = $nombreVideo;
         }
         if($req->file('file-comment')){
-          $rutaDoc= $req->file('file-comment')->store('public/');
+          $rutaDoc= $req->file('file-comment')->store('public');
           $nombreDoc=basename($rutaDoc);
           $comentario->file = $nombreDoc;
         }

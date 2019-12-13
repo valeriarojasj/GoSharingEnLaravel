@@ -11,7 +11,7 @@ class Comment extends Model
   public $timestamps = false;
   public $guarded = [];
   protected $fillable = [
-      'file', 'video','image', 'comment_text'
+      'image','video','file','comment_text'
   ];
 
   public function user(){
