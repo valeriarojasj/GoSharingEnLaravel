@@ -16,10 +16,11 @@ border-radius: 50%;
     border-style: solid;
   }
 
+
+
   .rowAmigoIzq{
 
-    background-color: white;
-    border: 1px solid lightgray;
+
 
 
 
@@ -34,7 +35,8 @@ border-radius: 50%;
   }
 
   .colAmigoIzq{
-
+    background-color: white;
+    border: 1px solid lightgray;
 
     padding-bottom: 0%;
     padding-top: 0%;
