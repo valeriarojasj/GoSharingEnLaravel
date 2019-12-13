@@ -82,3 +82,4 @@ Route::post('addFriend/{id}','FriendsController@addFriend');
 Route::post('removeFriend/{id}','FriendsController@removeFriend');
 Route::post('addLike/{idPosteo}','LikeController@addLike');
 Route::post('/removeLike/{idPosteo}','LikeController@removeLike');
+Route::get('/showLikes', 'LikeController@showLikes');

@@ -6,8 +6,11 @@
 @endsection
 
 @section('main')
+<script type="text/javascript" src="/js/functions.js"></script>
 <script type="text/javascript" src="/js/validaciones.js"></script>
 <script type="text/javascript" src="/js/like.js"></script>
+
+<script type="text/javascript" src="/js/validationPosts.js"></script>
 
 <main>
   <div class="container-fluid">
@@ -100,7 +103,7 @@
                     </div> <!--cierra el div de las opciones de tipo de posteo-->
 
                     <div class="mb-3 divPosteo">
-                      <textarea name="post_text" class="form-control textoPost" rows="6" id="validationTextarea" placeholder="Escribe tu mensaje aquí" required></textarea>
+                      <textarea name="post_text" class="form-control textoPost" rows="6" id="validationTextarea" placeholder="Escribe tu mensaje aquí" ></textarea>
                       <div class="invalid-feedback">
 
                       </div>     <!--cierra el div del  mensaje de error del text area-->
@@ -171,9 +174,9 @@
 <div class="novedadYcomentarios">
 <div class="novedad "><!--comienza un posteo-->
   <div class=" perfilPost media">
-  <img class="avatarPosteo" src="/storage/{{$posteo->avatar}}" alt="">
+  <img class="avatarPosteo" src="/storage/{{$posteo->user->avatar}}" alt="">
   <div class="media-body nombrePosteo">
-    <h5 class="quienPostea" >{{$posteo->first_name}} {{$posteo->last_name}}</h5>
+    <h5 class="quienPostea" >{{$posteo->user->first_name}} {{$posteo->user->last_name}}</h5>
 
     </div>
   </div>
@@ -204,13 +207,12 @@
    <div class="list-group list-group-horizontal acciones">
      <div class="divMeGusta">
        <button class="btn btnAcciones meGustaButton" type="button" id="{{$posteo->id}}">
-         <i class=" iconosAcciones fas fa-thumbs-up">      </i> Me gusta
-       </button>
+         <i class=" iconosAcciones fas fa-thumbs-up">      </i> Me gusta {{$posteo->likes->count()}}
 
      </div>
      <div class="dropdown dropComentar">
        <button class="btn btnAcciones" type="button" data-toggle="collapse" data-target="#collapseComentarios{{$posteo->id}}" aria-expanded="false" aria-controls="collapseComentarios{{$posteo->id}}">
-         <i class=" iconosAcciones fas fa-comment-alt"></i> Comentar
+         <i class=" iconosAcciones fas fa-comment-alt"></i> Comentar {{$posteo->comment->count()}}
        </button>
 
 
