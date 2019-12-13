@@ -92,5 +92,9 @@ public function allFriends()
 	{
 		return $this->friendsOfThisUser->merge($this->thisUserFriendOf);
 	}
+  public function likes()
+  {
+    return $this->hasMany('App\Like');
+  }
 
 }

@@ -80,3 +80,5 @@ Route::get('/posts/{id}/comments','CommentController@showComment');
 Route::post('/posts/{id}/comments','CommentController@addComment');
 Route::post('addFriend/{id}','FriendsController@addFriend');
 Route::post('removeFriend/{id}','FriendsController@removeFriend');
+Route::post('addLike/{idPosteo}','LikeController@addLike');
+Route::post('/removeLike/{idPosteo}','LikeController@removeLike');
