@@ -58,6 +58,7 @@ function validarTextoPosteo(textoPost){
   }
 }
 function validarContenidoPost(file){
+  
   var contenidoPath = this.value;
   var allowedExtensions = /(.jpeg|.jpg|.bmp|.gif|.svg|.png|.doc|.docx|.ppt|.xls|.xlsx|.pptx|.pdf|.mp4|.vga)$/i;
   if(!allowedExtensions.exec(contenidoPath)){

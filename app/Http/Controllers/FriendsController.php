@@ -14,24 +14,54 @@ class FriendsController extends Controller
   {
     $amigos = Auth::user()->allFriends();
 
-      return view('friends',compact('amigos'));
+    $solicitudes = Auth::user()->requestsOfThisUser()->get();
+
+    $collectionSolicitudes = collect($solicitudes);
+    $invitaciones = Auth::user()->invitationsOfThisUser()->get();
+    $collectionInvitaciones = collect($invitaciones);
+
+    $cuantosAmigos = $amigos->count();
+    $cuantasSolicitudes = $collectionSolicitudes->count();
+    $cuantasInvitaciones = $collectionInvitaciones->count();
+
+
+
+      return view('friends',compact('amigos','cuantosAmigos','solicitudes','cuantasSolicitudes','invitaciones','cuantasInvitaciones'));
   }
+
+
 
   public function findFriends()
 {
   $otros = User::where('id','!=',Auth::user()->id)->get();
-
   $amigos = Auth::user()->allFriends();
+  $collectionAmigos = collect($amigos);
+  $solicitudes = Auth::user()->requestsOfThisUser()->get();
+
+  $collectionSolicitudes = collect($solicitudes);
+  $invitaciones = Auth::user()->invitationsOfThisUser()->get();
+  $collectionInvitaciones = collect($invitaciones);
+
+$cuantosAmigos = $collectionAmigos->count();
+$cuantasSolicitudes = $collectionSolicitudes->count();
+$cuantasInvitaciones = $collectionInvitaciones->count();
+
   $idAmigos = $amigos->pluck('id');
   $idOtros = $otros->pluck('id');
+  $idInvitaciones = $invitaciones->pluck('id');
+  $idSolicitudes = $solicitudes->pluck('id');
 
-  $noAmigosId=$idOtros->diff($idAmigos);
+  $noAmigosId1=$idOtros->diff($idAmigos);
+  $noAmigosId2=$noAmigosId1->diff($idInvitaciones);
+  $noAmigosId=$noAmigosId2->diff($idSolicitudes);
+
+
   $noAmigos = $otros->whereIn('id', $noAmigosId);
 
 
 
 
-    return view('findFriends',compact('noAmigos'));
+    return view('findFriends',compact('noAmigos', 'amigos','cuantosAmigos','solicitudes','cuantasSolicitudes','invitaciones','cuantasInvitaciones'));
 
   }
 

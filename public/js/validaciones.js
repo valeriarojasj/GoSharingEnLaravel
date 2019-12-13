@@ -1,4 +1,4 @@
-window.onload = function() {
+window.addEventListener('load',function() {
 
 var miFoto = document.querySelector('.fotoUpload input')
 var miVideo = document.querySelector('.videoUpload input')
@@ -35,4 +35,4 @@ fileType.onchange = function(){
 
 }
 }
-}
+});

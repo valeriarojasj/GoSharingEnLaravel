@@ -312,3 +312,6 @@ background-color: white;
   background-color: #14A88D;/*verde nav*/
   color:white;
 }
+.listaAmigos{
+  list-style:none;
+}

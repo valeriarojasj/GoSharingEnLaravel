@@ -53,16 +53,40 @@ class User extends Authenticatable
 
     public function friendsOfThisUser()
 {
-  return $this->belongsToMany('App\User', 'friendships', 'user_id', 'friend_id');
+  return $this->belongsToMany('App\User', 'friendships', 'user_id', 'friend_id')
+  ->withPivot('status')
+  ->wherePivot('status','confirmed');
+
 
 }
 
 // friendship that this user was asked for
 public function thisUserFriendOf()
 {
-  return $this->belongsToMany('App\User', 'friendships', 'friend_id', 'user_id');
+  return $this->belongsToMany('App\User', 'friendships', 'friend_id', 'user_id')
+  ->withPivot('status')
+  ->wherePivot('status','confirmed');
+}
+
+public function requestsOfThisUser()
+{
+return $this->belongsToMany('App\User', 'friendships', 'user_id', 'friend_id')
+->withPivot('status')
+->wherePivot('status','pending');
+
 
 }
+
+public function invitationsOfThisUser()
+{
+return $this->belongsToMany('App\User', 'friendships', 'friend_id', 'user_id')
+->withPivot('status')
+->wherePivot('status','pending');
+
+
+}
+
+
 
 public function allFriends()
 	{

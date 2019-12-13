@@ -14,7 +14,7 @@
 
 
 <div class="row">
-        <div class="col-md-3 col-sm-12 col-lg-3 col-xl-3 seccionIzquierda">
+        <div class="col-md-3 col-sm-12 col-lg-3 col-xl-3 seccionIzquierda mb-sm-3">
           <!--mi perfil-->
 
           <div class="miPerfil">
@@ -53,9 +53,9 @@
 
 
 
-        <div class="col-md-6 col-sm-12 col-lg-6 col-xl-6  seccionCentral">
-          <div class="novedades">
-          <div class="posteos">
+        <div class="col-md-6 col-sm-12 col-lg-6 col-xl-6 mb-sm-3 mb-5   seccionCentral">
+          <div class="novedades mb-sm-3 mb-5">
+          <div class="posteos ">
 
             <!-- Button trigger modal -->
           <button type="button" id="postear" class="btn botonPostear" data-toggle="modal" data-target="#Modal">
@@ -360,8 +360,26 @@
 
 </div><!--cierra novedades-->
         </div> <!--cierra el div de la columna central-->
-        <div class="col-md-3 col-sm-12 col-lg-3 col-xl-3 seccionDerecha">
-          <div class="publicidad">
+        <div class="col-md-3 col-sm-12 col-lg-3 col-xl-3 seccionDerecha mb-sm-5 ">
+          <div class="publicidad mb-3">
+
+
+          <!--publicidad-->
+          <div class="avisoPublicitario">
+            <h4 class="text-primary"><b class="titulos">Mis Contactos</b></h4>
+            <ul>
+              <li class="listaAmigos"><a href="/friends">Solicitudes de Amistad ()</a></li>
+              <li class="listaAmigos"><a href="/friends">Invitaciones ()</a></li>
+              <li class="listaAmigos"><a href="/friends">Amigos ()</a></li>
+            </ul>
+
+
+
+          </div><!--cierra el div de aviso publicitario-->
+
+        </div> <!--cierra el div de publicidad-->
+
+          <div class="publicidad mb-5">
 
 
           <!--publicidad-->

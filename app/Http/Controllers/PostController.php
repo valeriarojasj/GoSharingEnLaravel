@@ -64,9 +64,9 @@ class PostController extends Controller
       'image.image'=> 'El archivo no es una imagen',
       'image.between' => 'El tamaño del archivo debe ser entre 1 y 25 MB',
      'video.mimetypes' => 'El video no coincide con las extensiones aceptadas(avi, mpeg, quicktime, mp4 y mpg)',
-      'video.size' => 'El video supera los 100MB',
+      'video.max' => 'El video supera los 100MB',
       'file.mimes' => 'El archivo no coincide con las extensiones aceptadas(doc, docx, pdf, ppt, pptx, xls, xlsx)',
-      'file.size' => 'El archivo supera los 8MB'
+      'file.max' => 'El archivo supera los 8MB'
 
     ];
     $this->validate($req, $rules, $messages);
