@@ -35,10 +35,16 @@
                   <h6 class="tituloSeccion">Sugerencias de amistad</h6>
                 </div>
               </div>
+
               <div class="row  card-group">
                 @forelse($noAmigos as $noAmigo)
-                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoIzq  ">
-                  <div class="row rowAmigoIzq">
+
+              <div class="col-md-6 col-sm-6 col-lg-6 col-xl-6 colAmigoIzq  ">
+
+
+                  <div class="row ">
+
+
                     <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 card-img-left areaFoto px-2 px-md-0 px-sm-0 px-lg-0  px-xl-0 media">
                       <img src="/storage/{{$noAmigo->avatar}}" alt="foto Perfil" class="align-self-center card-img img-fluid max-width:100% height:auto ">
                     </div>
@@ -51,12 +57,17 @@
                         <h4>{{$noAmigo->first_name}} {{$noAmigo->last_name}}</h4>
                         <p class="text-left">{{$noAmigo->profile->personalTitle??""}}</p>
                       </div>
+
+
                     </div>
 
+
                 </div>
-                @empty
-                @endforelse
+              @empty
+              @endforelse
+
               </div>
+
             </div>
           </div><!-- aca termina la seccion de contactos-->
 
