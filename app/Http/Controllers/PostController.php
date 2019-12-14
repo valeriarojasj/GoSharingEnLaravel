@@ -33,7 +33,6 @@ class PostController extends Controller
 
 
     $title = 'profile';
-    //aca tenemos que filtrar por mis posteos peroaun no podemos porque no tenemos session.
     $posteos = Auth::user()->posts;
     $areasInteres = interestArea::all();
     $tiposPosteos = postType::all();
