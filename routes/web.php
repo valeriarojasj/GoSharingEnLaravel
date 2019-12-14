@@ -16,36 +16,37 @@ Auth::routes();
 
 
 Route::get('/main', 'PostController@showAllPosts')->middleware('auth');
-//revisado
 Route::get('/profile', 'PostController@showMyPosts')->middleware('auth');
-//revisado
 Route::get('/friends','FriendsController@showFriends')->middleware('auth');
 Route::get('/findFriends','FriendsController@findFriends')->middleware('auth');
-
-//revisado
 Route::get('/messages', 'MessagesController@showMessages')->middleware('auth');
-
-//revisado, OJO ver css
 Route::get('/donations', 'DonationsController@showDonations')->middleware('auth');
-
-//revisado, OJO ver css
 Route::get('/volunteering', 'VolunteeringController@showVolunteering')->middleware('auth');
-
-//revisado
 Route::get('/about', 'aboutController@showAbout');
-
-
-//revisado
 Route::get('/faq', 'FaqController@showFaq')->middleware('auth');
-
-
-//revisado
 Route::get('/contact', 'ContactController@showContact');
+Route::post('/main','PostController@addPost');
+Route::post('/profile', 'PostController@addPost');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index');
+Route::get('/formProfile','ProfileController@showProfileForm');
+Route::post('/formProfile','ProfileController@addProfile');
+Route::get('/posts/{id}/comments','CommentController@showComment');
+Route::post('/posts/{id}/comments','CommentController@addComment');
+Route::post('addFriend/{id}','FriendsController@addFriend');
+Route::post('removeFriend/{id}','FriendsController@removeFriend');//para el view findFriends
+Route::get('/acceptInvitation/{id}', 'FriendsController@acceptFriend'); //para el view Friends
+Route::post('acceptFriend/{id}','FriendsController@acceptFriend');
+Route::post('addLike/{idPosteo}','LikeController@addLike');
+Route::post('/removeLike/{idPosteo}','LikeController@removeLike');
+Route::get('/showLikes', 'LikeController@showLikes');
 
-//revisado
-
-
-//revisado
+/*Route::post('/login', function () {
+  $title='login'; //para que aparezca el titulo en el tab del header.
+  $email=$_POST['email'];
+  $password=$_POST['password'];
+    return view('login',compact('title','email','password'));
+});*/
 /*Route::get('/login', function () {
 
   $email='';
@@ -57,29 +58,3 @@ Route::get('/forgotPassword',function(){
 
   return view('forgotPassword');
 });*/
-
-
-Route::post('/main','PostController@addPost');
-/*Route::post('/login', function () {
-  $title='login'; //para que aparezca el titulo en el tab del header.
-  $email=$_POST['email'];
-  $password=$_POST['password'];
-    return view('login',compact('title','email','password'));
-});*/
-
-Route::post('/profile', 'PostController@addPost');
-
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/', 'HomeController@index');
-Route::get('/formProfile','ProfileController@showProfileForm');
-Route::post('/formProfile','ProfileController@addProfile');
-
-Route::get('/posts/{id}/comments','CommentController@showComment');
-Route::post('/posts/{id}/comments','CommentController@addComment');
-Route::post('addFriend/{id}','FriendsController@addFriend');
-Route::post('removeFriend/{id}','FriendsController@removeFriend');
-Route::post('addLike/{idPosteo}','LikeController@addLike');
-Route::post('/removeLike/{idPosteo}','LikeController@removeLike');
-Route::get('/showLikes', 'LikeController@showLikes');

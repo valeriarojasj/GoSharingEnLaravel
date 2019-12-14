@@ -82,6 +82,18 @@ $cuantasInvitaciones = $collectionInvitaciones->count();
     return response()->json(['message' =>'Amigo Eliminado']);
   }
 
+  public function acceptFriend($id)
+  {
+    $user = Auth::user();
+    $estaSolicitud = Friendship::where('user_id', '=',$id )
+                                ->where('friend_id', '=',$user->id )
+                                ->first()->update(['status' => 'confirmed']);
+
+    return response()->json(['message' => 'Invitación Aceptada']);
+  }
+
+
+
 
 
 }

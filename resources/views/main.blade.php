@@ -383,9 +383,9 @@
           <div class="avisoPublicitario">
             <h4 class="text-primary"><b class="titulos">Mis Contactos</b></h4>
             <ul>
-              <li class="listaAmigos"><a href="/friends">Solicitudes de Amistad ()</a></li>
-              <li class="listaAmigos"><a href="/friends">Invitaciones ()</a></li>
-              <li class="listaAmigos"><a href="/friends">Amigos ()</a></li>
+              <li class="listaAmigos"><a href="/friends">Solicitudes de Amistad ({{$cuantasSolicitudes}})</a></li>
+              <li class="listaAmigos"><a href="/friends">Invitaciones ({{$cuantasInvitaciones}})</a></li>
+              <li class="listaAmigos"><a href="/friends">Amigos ({{$cuantosAmigos}})</a></li>
             </ul>
 
 
