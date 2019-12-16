@@ -7,10 +7,11 @@
 
 @section('main')
 <script type="text/javascript" src="/js/functions.js"></script>
+<script type="text/javascript" src="/js/validationPosts.js"></script>
 <script type="text/javascript" src="/js/validaciones.js"></script>
 <script type="text/javascript" src="/js/like.js"></script>
 
-<script type="text/javascript" src="/js/validationPosts.js"></script>
+
 
 <main>
   <div class="container-fluid">
@@ -118,21 +119,21 @@
               <li>
               <label for="image-post"><i class="fas fa-camera align-middle"></i></label>
 
-              <input name="image" type="file" id="image-post" >
+              <input name="image" type="file" id="image-post" class= "media" >
 
             </li>
             </div> <!--cierra el div de subir foto-->
         <div class="form-group videoUpload mr-3">
             <li>
               <label for="video-post"><i class="fas fa-video align-middle"></i></label>
-              <input name="video" type="file" id="video-post">
+              <input name="video" type="file" id="video-post" class= "media">
               <span></span>
             </li>
         </div><!--cierra el div de subir video-->
         <div class="form-group docUpload mr-3">
           <li>
               <label for="file-post"><i class="fas fa-paperclip align-middle"></i></label>
-              <input name="file" type="file" id="file-post">
+              <input name="file" type="file" id="file-post" class= "media">
                 <span></span>
           </li>
         </div> <!--cierra el div de subir documento-->
@@ -156,7 +157,7 @@
 
                 <div class="modal-footer">
                         <button type="button " class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="submit" class="btn btnGuardar" value="Enviar">Guardar Cambios</button>
+                        <button type="button" class="btn btnGuardar" value="Enviar">Guardar Cambios</button>
                 </div> <!--cierra el footer del modal-->
                     </form><!--cierra el form de agregar posteo-->
 

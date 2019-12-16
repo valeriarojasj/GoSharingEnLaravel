@@ -52,13 +52,12 @@ function validarAvatar(avatar){
       }
   }
 }
-var errorTextoPosteo = function validarTextoPosteo(textoPost){
-  if(this.length == 0){
+function validarTextoPosteo(textoPosteo){
+  if(this.value.length == 0){
     alert('El posteo está vacío')
   } return false;
 }
-var errorContenidoPosteo = function validarContenidoPost(file){
-
+function validarContenidoPosteo(media){
   var contenidoPath = this.value;
   var allowedExtensions = /(.jpeg|.jpg|.bmp|.gif|.svg|.png|.doc|.docx|.ppt|.xls|.xlsx|.pptx|.pdf|.mp4|.vga)$/i;
   if(!allowedExtensions.exec(contenidoPath)){
@@ -80,9 +79,8 @@ var errorContenidoPosteo = function validarContenidoPost(file){
 
 
 
-function submitPosteo(){
-
-console.log('estoy en submit posteo')
+function submitPosteo(interestArea, postType, textoPosteo, contenidoPosteo){
+console.log(interestArea)
     if(interestArea.getAtributte('value') == 0){
       alert('No has elegido el area de interés');
       event.preventDefault();
@@ -91,10 +89,13 @@ console.log('estoy en submit posteo')
       alert('No has elegido el tipo de posteo');
       event.preventDefault();
     }
-    if(errorContenidoPosteo == true || errorTextoPosteo == true){
-      alert('Hay un error en la carga del contenido');
+
+
+    if(textoPosteo.value== ''){
+      alert('El posteo está vacío.');
       event.preventDefault();
-  }
+    }
+
 }
 
 function submit(email, password){

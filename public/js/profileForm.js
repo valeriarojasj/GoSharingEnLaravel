@@ -11,13 +11,6 @@ window.addEventListener('load', function(){
     var btnEnviar1 =document.querySelector(".btnEnviar1");
 
 
-
-
-
-
-
-
-
   var campoPaises=document.querySelector('select[name=paises]');
   fetch('https://restcountries.eu/rest/v2/all')
   .then(function(response){
