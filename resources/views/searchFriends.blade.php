@@ -5,8 +5,7 @@
 @section('main')
   <main>
 
-<script type="text/javascript" src="/js/friends.js"></script>
-
+<script type="text/javascript" src="/js/searchFriend.js"></script>
 
 
 
@@ -18,7 +17,7 @@
               <div class="cajaSaludo ">
                 <div class="divAvatar">
                   <img class="fotoPerfil align-self-center" src="/storage/{{Auth::user()->avatar}}" alt="">
-                  <h1 class="saludo align-middle text-wrap  text-center d-lg-inline d-xl-inline d-md-inline d-sm-inline ">Agrega nuevos amigos</h1>
+                  <h1 class="saludo align-middle text-wrap  text-center d-lg-inline d-xl-inline d-md-inline d-sm-inline ">Resultado de Busqueda</h1>
                 </div>
                 <div class="card-body media-body areaTitulo ">
 
@@ -27,6 +26,7 @@
             </div>
           </div>
         </div>
+
         <div class="row rowAmigosInvitaciones">
           <div class="col-md-9 col-sm-9 col-lg-9 col-xl-9 col-12 mb-2 colAmigos">
             <div class="paddingCentroA px-md-1 px-sm-1 px-lg-1 px-xl-1">
@@ -79,7 +79,7 @@
                           </button>-->
                           <a class= 'btnAddFriend' href=""><i class="fas fa-user-plus "></i> </a>
                           <span class="solicitud"></span>
-                          <h4>No hay sugerencias de amigos</h4>
+                          <h4>No se encontraron sugerencias de amistad que coincidan con tu busqueda</h4>
 
                         </div>
 
@@ -134,7 +134,7 @@
     </div>
     <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 colTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
 
-      <h4>No tienes invitaciones</h4>
+      <h4>No tienes invitaciones que coincidan con tu busqueda</h4>
 
     </div>
 </div>
@@ -182,7 +182,7 @@
                   </div>
                   <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 colTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
 
-                    <h4>No tienes solicitudes</h4>
+                    <h4>No se encontraron solicitudes de amistad pendientes que coincidan con tu busqueda</h4>
 
                   </div>
                 </div>

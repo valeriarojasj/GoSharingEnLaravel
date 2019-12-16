@@ -79,12 +79,15 @@ display: none;
 display: none;
 }
 
+
+
 .miPerfil{
   background-color: white;
   border-radius: 10px;
   margin-top: 0px;
   text-align: center;
   padding: 20px;
+
 }
 .miPerfil img{
     border-radius: 50%;
@@ -92,6 +95,7 @@ display: none;
     border-color: #14A88D;/*verde nav*/
     border-width: medium;
     border-style: solid;
+
   }
 
 .perfilPost img{

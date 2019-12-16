@@ -1,9 +1,9 @@
 window.addEventListener('load', function(){
 
-  var btnAddFriend= document.querySelectorAll('.btnAddFriend');
+  var btnSearch= document.querySelectorAll('.btnSearchPeople');
 
-  for(var noAmigo of btnAddFriend){
-    noAmigo.onclick= function(event){
+
+    btnSearchPeople.onclick= function(event){
       event.preventDefault();
       var noAmigoId = this.getAttribute('id');
       var padre = this.parentElement;
@@ -38,12 +38,11 @@ window.addEventListener('load', function(){
     }
 
   }
-var btnAcceptInvitation = document.querySelectorAll('.btnAcceptInvitation');
-for(var pending of btnAcceptInvitation){
+var btnAcceptFriend = document.querySelectorAll('.btnAcceptFriend');
+for(var pending of btnAcceptFriend){
   pending.onclick= function(event){
     event.preventDefault();
     var pendingId = this.getAttribute('id');
-
     var padre = this.parentElement;
 
 
@@ -51,7 +50,7 @@ for(var pending of btnAcceptInvitation){
     var span = padre.querySelector('.invitacion');
       console.log(span);
 
-    var mensaje = fetch('acceptInvitation/'+pendingId,{
+    var mensaje = fetch('acceptFriend/'+pendingId,{
     headers: {
       "Content-Type": "application/json",
       "Accept": "application/json",

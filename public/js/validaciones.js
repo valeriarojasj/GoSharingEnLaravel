@@ -1,8 +1,11 @@
 window.addEventListener('load',function() {
 
+
+
 var miFoto = document.querySelector('.fotoUpload input')
 var miVideo = document.querySelector('.videoUpload input')
 var miDocumento = document.querySelector('.docUpload input')
+
 
 miFoto.onchange = function(){
 

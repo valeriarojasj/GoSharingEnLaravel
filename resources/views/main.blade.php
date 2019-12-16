@@ -21,42 +21,44 @@
           <!--mi perfil-->
 
           <div class="miPerfil">
+            <div class="divImg">
+
+
 
 
           <img value="" src="/storage/{{Auth::user()->avatar}}" alt="">
+          </div>
           <h1>{{Auth::user()->first_name }} {{Auth::user()->last_name}}</h1>
+          <h4 class="subtitulos text-center"><b class="" name=personalTitle>{{$miPerfil->personalTitle??""}}</b></h4><?php if (isset($miPerfil->currentCountry)):echo'<i class="fas fa-map-marker-alt titulos">' ?>
+
+          <?php endif; ?>
+          </i>  {{$miPerfil->currentCountry??""}}
+
           <div class="caja perfilPrincipal pt-3">
-            <h4 class="text-primary"><b class="titulos">Experiencia: </b></h4>
+
+
+
+            <?php if (isset($miPerfil->experiences)):echo'
+            <h4 class="text-primary"><b class="titulos">Experiencia</b></h4>';?>
+          @foreach($experiencias as $experiencia)
             <ul class="perfilContenido" type="none">
-              <li class="text-left subtitulos"><b class="subtitulos">Directora</b></li>
-              <li class="text-left textoPerfil">Fundacion para la niñez ABGS</li>
-              <li class="text-left textoPerfil">Lima, Peru</li>
-              <li class="text-left textoPerfil">Jun 2018-Abr 2019</li>
+              <li class="text-left subtitulos"><b class="subtitulos">{{$experiencia->position}}</b></li>
+              <li class="text-left textoPerfil">{{$experiencia->organization}}</li>
+              <li class="text-left textoPerfil">{{$experiencia->city.$experiencia->country}}</li>
+              <li class="text-left textoPerfil">{{$experiencia->start_date - $experiencia->end_date}}</li>
             </ul>
 
-            <ul class="perfilContenido" type="none">
-              <li class="text-left textoPerfil"><b class="subtitulos">Coordinadora de Area de Voluntariado</b></li>
-              <li class="text-left textoPerfil">Fundacion de niños GXTZ</li>
-              <li class="text-left textoPerfil">Buenos Aires, Argentina</li>
-              <li class="text-left textoPerfil">Feb 2011 - May 2018</li>
-            </ul>
+            @endforeach
+                <?php endif; ?>
 
         </div>
-          <h4 class="subtitulos"><b class="titulos">Ocupación Actual:</b></h4>
-          <ul class="perfilContenido" type="none">
-            <li class="text-left textoPerfil" name="personalTitle">{{$miPerfil->personalTitle??""}}</li>
-          </ul>
 
-          <h4 class="text-primary textoPerfil"><b class="titulos">Residencia Actual:</b></h4>
-          <ul class="perfilContenido" type="none">
-            <li class="text-left textoPerfil">Lima, Peru</li>
-          </ul>
         </div><!--cierra el div de mi perfil-->
       </div> <!--cierra el div de la columna Izq-->
 
 
 
-        <div class="col-md-6 col-sm-12 col-lg-6 col-xl-6 mb-sm-3 mb-5   seccionCentral">
+        <div class="col-md-6 col-sm-12 col-lg-6 col-xl-6 mb-sm-3 mb-5 mb-xl-5 mb-lg-5 seccionCentral">
           <div class="novedades mb-sm-3 mb-5">
           <div class="posteos ">
 

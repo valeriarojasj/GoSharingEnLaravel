@@ -92,6 +92,17 @@ $cuantasInvitaciones = $collectionInvitaciones->count();
     return response()->json(['message' => 'Invitación Aceptada']);
   }
 
+  public function searchFriend($string)
+  {
+
+    $user = Auth::user();
+    $otros = User::where('id','!=',Auth::user()->id)->get();
+    $search= otros::where('first_name', 'ilike','%'. $string .'%')
+                ->orWhere('last_name', 'ilike','%'. $string .'%')->get();
+
+    return response()->json(['usuarios' => $search]);
+  }
+
 
 
 

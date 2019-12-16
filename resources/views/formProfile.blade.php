@@ -10,9 +10,7 @@
 
 <div class="container">
 
-@php
-
-@endphp
+<script type="text/javascript" src="/js/profileForm.js"></script>
 
       <section>    <!-- Aca comienza la seccion de informacion personal -->
         <div class="row">
@@ -30,13 +28,17 @@
 
 
                 <div class="divAvatar">
-                  <form class="" action="" method="post" enctype="multipart/form-data">
-                    @csrf
-                    <button type="button" name="button" class="botonAvatar">
-                      <img class="align-self-center" src="/storage/{{Auth::user()->avatar}}" alt="">
-                    </button>
 
-                  </form>
+
+
+
+
+                      <img class="align-self-center avatarImg"  src="/storage/{{Auth::user()->avatar}}" alt=""></label>
+
+
+
+
+
                 </div>
 
                 <div class="media-body divNomOcup">
@@ -60,6 +62,12 @@
             <p class="pl-3 pb-3" id="textoIntereses">{{$miPerfil->interest??""}}</p>
           </div>
 
+          <h3 class="">Ubicación Actual</h3>
+
+          <div class="caja pt-3">
+            <p class="pl-3 pb-3 text-justify" id="currentCountry">{{$miPerfil->currentCountry??""}}</p>
+          </div>
+
 
 
           <!-- Modal -->
@@ -74,32 +82,54 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body divModalInfoBasica">
 
-                                      <form method='post' action="/formProfile" enctype="multipart/form-data">
+                                      <form class='formInfoBasica' method='post' action="/formProfile" enctype="multipart/form-data">
                                         @csrf
-                                        <div class="form-group ">
+
+                                        <div class="div">
+
+                                            <label for="avatar">Actualizar foto</label>
+                                            <div class="">
+
+
+                                          <input class = "avatarInput" name="image" type="file" id="avatar" >
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group divPersonalTitle">
                                            <label class="mt-3"for="tituloPersonal">Titulo</label>
-                                           <input name="personalTitle" type="text" class="form-control mb-2 " id="tituloPersonal" placeholder="Ingresa tu titulo o cargo actual">
+                                           <input name="personalTitle" type="text" class="form-control mb-2 " id="tituloPersonal" placeholder='{{$miPerfil->personalTitle??"Ingresa tu titulo o cargo actual"}}'>
                                          </div>
 
-                                         <div class="form-check form-check-inline">
+                                         <div class="form-check form-check-inline  divMale">
                                            <input class="form-check-input" type="radio" name="gender" id="hombre" value="Hombre">
                                            <label class="form-check-label" for="Hombre">Hombre</label>
                                          </div>
-                                         <div class="form-check form-check-inline">
+                                         <div class="form-check form-check-inline divFemale">
                                            <input class="form-check-input" type="radio" name="gender" id="mujer" value="Mujer">
                                            <label class="form-check-label" for="Mujer">Mujer</label>
                                          </div>
-  <div class="mb-2 divPosteo">
-     <label class="mt-3"for="aboutMe">Acerca de mí</label>
-  <textarea name="aboutMe" class="form-control textoAcerca text-left" rows="6" id="validationTextarea" placeholder="Escribe un corto resumen sobre tu experiencia y objetivos"></textarea>
-  </div>
+                                            <div class="mb-2 divPosteo divAbout">
+                                             <label class="mt-3"for="aboutMe">Acerca de mí</label>
+                                          <textarea name="aboutMe" class="form-control textoAcerca text-left" rows="6" id="validationTextarea" placeholder='{{$miPerfil->aboutMe??"Escribe un corto resumen sobre tu experiencia y objetivos"}}'></textarea>
+                                        </div>
 
-  <div class="mb-2 divPosteo">
-     <label class="mt-3"for="interest">Intereses</label>
-  <textarea name="interest" class="form-control textoAcerca text-left" rows="2" id="validationTextarea" placeholder="Lista tus intereses"></textarea>
-  </div>    <!--cierra el div del textArea-->
+                                        <div class="mb-2 divPosteo divInterests">
+                                           <label class="mt-3"for="interest">Intereses</label>
+                                           <textarea name="interest" class="form-control textoAcerca text-left" rows="2" id="validationTextarea" placeholder='{{$miPerfil->interest??"Lista tus intereses"}}'></textarea>
+                                        </div>    <!--cierra el div del textArea-->
+
+                                        <div class="divPaises">
+                                          <label class="mt-3"for="interest">Ubicación Actual</label>
+                                          <select class="selectPaises" name="paises">
+                                            <option value="">Selecciona tu ubicación actual</option>
+
+                                          </select>
+
+
+
+                                        </div>
 
 
 
@@ -107,7 +137,7 @@
 
                   <div class="modal-footer">
                           <button type="button " class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                          <button type="submit" class="btn btn-primary" value="Enviar">Guardar Cambios</button>
+                          <button type="submit" class="btn btn-primary btnEnviar1" value="Enviar">Guardar Cambios</button>
                   </div> <!--cierra el footer del modal-->
                 </form><!--cierra el form de Informacion Personal-->
                 </div>
@@ -122,8 +152,8 @@
 
                 <section>   <!-- Aca comienza la seccion de experiencia -->
                   <div class="row ">
-                  <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 col-12 mt-3 ">
-                    <div class="perfil ">
+                  <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 col-12 mt-3 mb-5">
+                    <div class="perfil mb-3 ">
 
 
                       <div class="Descripcion">
@@ -138,9 +168,10 @@
 
 
 
+                                                  <!--foreach (experiencias as experiencia) -->
                             <!-- Button trigger modal -->
                             <div class="d-flex justify-content-between">
-                              <h5 class="mb-0 ml-3 mt-0 d-inline align-middle">Mi cargo</h5>
+                              <h5 class="mb-0 ml-3 mt-0 d-inline align-middle"><!-- {{'experienciaposition'}}--></h5>
                           <button type="button" class="btn btn-white d-inline" data-toggle="modal" data-target="#experienciaModal1">
                             <i class="far fa-edit text-primary"></i>
                           </button>
@@ -148,15 +179,15 @@
 
 
 
-                        <!--  foreach ($experiencias as $experiencia) -->
 
 
-                          <h6 class="mb-0 ml-3">Experiencia[empresa]</h6>
-                          <p class="mb-0  ml-3">Aca ciudad y pais</p>
-                          <p class="pb-3 ml-3">
-                            Aca la fecha de inicio y de fin</p>
-                          <p class="pb-3 ml-3">Aca la descripcion del cargo</p>
 
+                          <h6 class="mb-0 ml-3 text-left"><!-- {{'experienciaorganization'}}--></h6>
+                          <p class="mb-0  ml-3 text-left"><!--{{'experienciacity.experienciacountry'}}--></p>
+                          <p class="pb-3 ml-3 text-left"><!--{{'experienciastart_date . experiencia end_date'}}--></p>
+                          <p class="pb-3 ml-3 text-left"><!--{{'experiencia description'}}--></p>
+
+                    <!-- endforeach-->
 
                       </div>
 
