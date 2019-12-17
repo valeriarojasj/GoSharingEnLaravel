@@ -1,19 +1,15 @@
 window.addEventListener('load', function(){
 
-  var btnSearch= document.querySelectorAll('.btnSearchPeople');
+console.log('estoy aqui en searchFriends');
+  var btnSearch= document.querySelector('.btnSearchPeople');
+  var string = document.querySelector('inputSearchPeople').value
 
 
-    btnSearchPeople.onclick= function(event){
+    btnSearch.onclick= function(event){
       event.preventDefault();
-      var noAmigoId = this.getAttribute('id');
-      var padre = this.parentElement;
 
 
-
-      var span = padre.querySelector('.solicitud');
-        console.log(span);
-
-      var mensaje = fetch('addFriend/'+noAmigoId,{
+      fetch('findFriends/'+string,{
       headers: {
         "Content-Type": "application/json",
         "Accept": "application/json",
@@ -28,7 +24,7 @@ window.addEventListener('load', function(){
       })
       .then(function(data){
 
-        span.innerHTML=data.message;
+      data.search;
 
 
       });
@@ -37,7 +33,7 @@ window.addEventListener('load', function(){
 
     }
 
-  }
+
 var btnAcceptFriend = document.querySelectorAll('.btnAcceptFriend');
 for(var pending of btnAcceptFriend){
   pending.onclick= function(event){

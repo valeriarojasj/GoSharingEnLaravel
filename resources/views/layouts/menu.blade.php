@@ -97,7 +97,7 @@
 </li>
 <form class="form-inline">
 
-    <input class="form-control mr-sm-2" type="search" placeholder="Buscar Amigos" aria-label="Search">
+    <input class="form-control mr-sm-2 inputSearchPeople" type="search" placeholder="Buscar Amigos" aria-label="Search">
     <button class="btn btn-warning my-2 my-sm-0 btnSearchPeople" type="submit"><i class="fas fa-search iconoHeader"></i></button>
 </form>
 

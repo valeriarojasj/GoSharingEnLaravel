@@ -16,6 +16,7 @@ class FriendsController extends Controller
 
     $solicitudes = Auth::user()->requestsOfThisUser()->get();
 
+
     $collectionSolicitudes = collect($solicitudes);
     $invitaciones = Auth::user()->invitationsOfThisUser()->get();
     $collectionInvitaciones = collect($invitaciones);
@@ -33,7 +34,18 @@ class FriendsController extends Controller
 
   public function findFriends()
 {
-  $otros = User::where('id','!=',Auth::user()->id)->get();
+  $otros = User::where('id','!=',Auth::user()->id);
+
+
+$search='Gomez';
+
+
+  $searchFirstName= $otros->where('first_name', 'LIKE',"%{$search}%")->get();
+  $searchLastName= $otros->where('last_name', 'LIKE',"%{$search}%")->get();
+SQLSTATE[HY000] [1045] Access denied for user 'gosharing'@'localhost' (using password: YES) (SQL: select count(*) as aggregate from `users` where `email` = luis@cano.com)
+$searchFullName=$searchLastName->merge($searchFirstName);
+
+
   $amigos = Auth::user()->allFriends();
   $collectionAmigos = collect($amigos);
   $solicitudes = Auth::user()->requestsOfThisUser()->get();
@@ -97,8 +109,12 @@ $cuantasInvitaciones = $collectionInvitaciones->count();
 
     $user = Auth::user();
     $otros = User::where('id','!=',Auth::user()->id)->get();
-    $search= otros::where('first_name', 'ilike','%'. $string .'%')
-                ->orWhere('last_name', 'ilike','%'. $string .'%')->get();
+
+
+    $searchLastName= $otros->where('last_name', 'ilike','%'. Ana .'%')->get();
+    $search = $searchLastName->merge($searchFirstName);
+
+
 
     return response()->json(['usuarios' => $search]);
   }
