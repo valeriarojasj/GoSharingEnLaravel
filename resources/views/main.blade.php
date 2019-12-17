@@ -17,7 +17,7 @@
   <div class="container-fluid">
 
 
-<div class="row">
+<div class="row mb-5">
         <div class="col-md-3 col-sm-12 col-lg-3 col-xl-3 seccionIzquierda mb-sm-3">
           <!--mi perfil-->
 
@@ -88,64 +88,61 @@
                       <div class="form-group">
 
                         <select class="custom-select" name="interest_area" id='interest_area'>
-                          <option value="">Área de Interés</option>
+                          <option value="0">Área de Interés</option>
                           @foreach($areasInteres as $interes)
                             <option value="{{$interes->id}}">{{$interes->name}}</option>
 
                           @endforeach
                         </select>
                       </div>     <!--cierra el div de las opciones de areas de interes-->
-
-                    <div class="form-group">
-                      <select class="custom-select" name="post_type" id='post_type'>
-                        <option value="">Tipo de Posteo</option>
-                        @foreach($tiposPosteos as $tipoPosteo)
-                        <option value="{{$tipoPosteo->id}}">{{$tipoPosteo->name}}</option>
-                          @endforeach
+                      <div class="form-group">
+                        <select class="custom-select" name="post_type" id='post_type'>
+                          <option value="0">Tipo de Posteo</option>
+                            @foreach($tiposPosteos as $tipoPosteo)
+                          <option value="{{$tipoPosteo->id}}">{{$tipoPosteo->name}}</option>
+                            @endforeach
                         </select>
-                    </div> <!--cierra el div de las opciones de tipo de posteo-->
+                      </div> <!--cierra el div de las opciones de tipo de posteo-->
 
-                    <div class="mb-3 divPosteo">
-                      <textarea name="post_text" class="form-control textoPost" rows="6" id="validationTextarea" placeholder="Escribe tu mensaje aquí" ></textarea>
-                      <div class="invalid-feedback">
+                      <div class="mb-3 divPosteo">
+                        <textarea name="post_text" class="form-control textoPost" rows="6" id="validationTextarea" placeholder="Escribe tu mensaje aquí" ></textarea>
+                          <div class="invalid-feedback">
 
-                      </div>     <!--cierra el div del  mensaje de error del text area-->
-                    </div>     <!--cierra el div del textArea-->
+                          </div>     <!--cierra el div del  mensaje de error del text area-->
+                      </div>     <!--cierra el div del textArea-->
+                      <div class="listaBotones">
+                        <ul class="list-group list-group-horizontal" type="none">
+                          <div class="form-group fotoUpload mr-3">
+                            <li>
+                              <label for="image-post"><i class="fas fa-camera align-middle"></i></label>
 
+                              <input name="image" type="file" id="image-post" class= "media" >
 
-  <div class="listaBotones">
-    <ul class="list-group list-group-horizontal" type="none">
-            <div class="form-group fotoUpload mr-3">
-              <li>
-              <label for="image-post"><i class="fas fa-camera align-middle"></i></label>
+                            </li>
+                          </div> <!--cierra el div de subir foto-->
+                          <div class="form-group videoUpload mr-3">
+                            <li>
+                              <label for="video-post"><i class="fas fa-video align-middle"></i></label>
+                              <input name="video" type="file" id="video-post" class= "media">
+                              <span></span>
+                            </li>
+                          </div><!--cierra el div de subir video-->
+                          <div class="form-group docUpload mr-3">
+                            <li>
+                              <label for="file-post"><i class="fas fa-paperclip align-middle"></i></label>
+                              <input name="file" type="file" id="file-post" class= "media">
+                              <span></span>
+                            </li>
+                          </div> <!--cierra el div de subir documento-->
+                        </ul>
+                        <div id="nombreArchivo">
 
-              <input name="image" type="file" id="image-post" class= "media" >
+                        </div>
+                      </div> <!--cierra el div de la lista de botones-->
 
-            </li>
-            </div> <!--cierra el div de subir foto-->
-        <div class="form-group videoUpload mr-3">
-            <li>
-              <label for="video-post"><i class="fas fa-video align-middle"></i></label>
-              <input name="video" type="file" id="video-post" class= "media">
-              <span></span>
-            </li>
-        </div><!--cierra el div de subir video-->
-        <div class="form-group docUpload mr-3">
-          <li>
-              <label for="file-post"><i class="fas fa-paperclip align-middle"></i></label>
-              <input name="file" type="file" id="file-post" class= "media">
-                <span></span>
-          </li>
-        </div> <!--cierra el div de subir documento-->
-      </ul>
-      <div id="nombreArchivo">
-
-      </div>
-  </div> <!--cierra el div de la lista de botones-->
-
-  <span> @error('video') {{$message}} @enderror </span>
-  <span> @error('image') {{$message}} @enderror </span>
-  <span> @error('file') {{$message}} @enderror </span>
+                      <span> @error('video') {{$message}} @enderror </span>
+                      <span> @error('image') {{$message}} @enderror </span>
+                      <span> @error('file') {{$message}} @enderror </span>
 
 
 
@@ -153,28 +150,28 @@
 
 
 
-</div> <!--cierra el div del body del modal-->
+                    </div> <!--cierra el div del body del modal-->
 
-                <div class="modal-footer">
-                        <button type="button " class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btnGuardar" value="Enviar">Guardar Cambios</button>
-                </div> <!--cierra el footer del modal-->
+                    <div class="modal-footer">
+                        <button type="submit " class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btnGuardar" value="Enviar">Guardar Cambios</button>
+                      </div> <!--cierra el footer del modal-->
                     </form><!--cierra el form de agregar posteo-->
 
-    </div><!--cierra el contenido del modal-->
-  </div> <!--cierra el dialogo del modal-->
-</div><!--cierra el modal-->
-</div>  <!--cierra posteos-->
-<div class="tituloSeccionCentral">
-<h2 class="text-left">Novedades</h2>
-</div>
+                  </div><!--cierra el contenido del modal-->
+                </div> <!--cierra el dialogo del modal-->
+              </div><!--cierra el modal-->
+            </div>  <!--cierra posteos-->
+            <div class="tituloSeccionCentral">
+              <h2 class="text-left">Novedades</h2>
+            </div>
 
 
 @forelse ($posteos as $posteo)
 
 
 
-<div class="novedadYcomentarios">
+<div class="novedadYcomentarios mb-5">
 <div class="novedad "><!--comienza un posteo-->
   <div class=" perfilPost media">
   <img class="avatarPosteo" src="/storage/{{$posteo->user->avatar}}" alt="">

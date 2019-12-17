@@ -12,6 +12,7 @@ use App\User;
 Use App\Like;
 use App\Profile;
 use App\Friendship;
+use Illuminate\Support\Facades\Route;
 class PostController extends Controller
 {
   public function showAllPosts()
@@ -98,14 +99,15 @@ class PostController extends Controller
       $posteo->file = $nombreDoc;
     }
     $posteo->post_text = $req->post_text;
-  $posteo->user_id = Auth::user()->id;
+    $posteo->user_id = Auth::user()->id;
     $posteo->interest_area_id = $req->interest_area;
     $posteo->post_type_id = $req->post_type;
 
 
 
     $posteo->save();
-    return redirect('/main');
+    $currentRoute= Route::getFacadeRoot()->current()->uri();
+    return redirect("/$currentRoute");
 
 
   }

@@ -46,33 +46,8 @@ class ProfileController extends Controller
       $usuarioLog = Auth::user();
       if($req->file('image')){
 
-        $imageFile = 'path/to/image';
-
-/* Set the width fixed at 200px; */
-$width = 200;
-
-
-
-
-
         $rutaImagen= $req->file('image')->store('public');
-
-
-
         $nombreImagen=basename($rutaImagen);
-
-        /* Get the image info */
-        list($width, $height, $type, $attr)= getimagesize('storage/'.$nombreImagen);
-
-        /* Calculate aspect ratio by dividing height by width */
-        $aspectRatio = $height / $width;
-
-        /* Keep the width fix at 100px,
-           but change the height according to the aspect ratio */
-        $newWidth = $width * ($aspectRatio * $height) . "px";
-
-        /* Use the 'newHeight' in the CSS height property below. */
-
 
 
         $miUsuario =\App\User::find($usuarioLogId);
@@ -83,6 +58,6 @@ $width = 200;
       }
     $miPerfil=  \App\Profile::updateOrCreate(['user_id' => $usuarioLogId] , ['personalTitle' => $personalTitle, 'aboutMe'=>$aboutMe, 'gender'=>$gender, 'interest'=>$interest, 'currentCountry'=>$currentCountry]);
 
-    return view('/formProfile', compact('miPerfil', 'miUsuario', 'newWidth'));
+    return view('/formProfile', compact('miPerfil', 'miUsuario'));
   }
 }

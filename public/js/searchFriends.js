@@ -9,7 +9,7 @@ window.addEventListener('load', function(){
     btnSearch.onclick= function(event){
     string = inputSearch.value;
     event.preventDefault();
-    var ruta = '/findFriends/'+string;
+    var ruta = '/searchFriends/'+string;
     console.log(ruta);
 
 
@@ -32,7 +32,7 @@ window.addEventListener('load', function(){
 
     })
     .then(function(data){
-      console.log(data.search)
+      return data.search;
     });
 
 }

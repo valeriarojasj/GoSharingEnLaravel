@@ -19,6 +19,7 @@
 
           <img value="" src="/storage/{{Auth::user()->avatar}}" alt="">
           <h1>{{Auth::user()->first_name }} {{Auth::user()->last_name}}</h1>
+            <h4 class="subtitulos text-center"><b class="" name=personalTitle>{{Auth::user()->profile->personalTitle??""}}</b></h4>
           <div class="caja perfilPrincipal pt-3">
             <h4 class="text-primary"><b class="titulos">Experiencia: </b></h4>
             <ul class="perfilContenido" type="none">
@@ -164,9 +165,11 @@
 <div class="novedadYcomentarios">
 <div class="novedad "><!--comienza un posteo-->
   <div class=" perfilPost media">
-  <img class="avatarPosteo" src="/storage/{{$posteo->avatar}}" alt="">
+  <img class="avatarPosteo" src="/storage/{{Auth::user()->avatar}}" alt="">
   <div class="media-body nombrePosteo">
-    <h5 class=quienPostea >{{$posteo->first_name}} {{$posteo->last_name}}</h5>
+  <h5 class="quienPostea" >{{$posteo->user->first_name}} {{$posteo->user->last_name}}</h5>
+  <h5 class="quienPostea" >{{$posteo->user->profile->personalTitle??""}}</h5>
+
 
     </div>
   </div>

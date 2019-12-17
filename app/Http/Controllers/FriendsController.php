@@ -115,17 +115,22 @@ $cuantasInvitaciones = $collectionInvitaciones->count();
     return response()->json(['search'=>$search]);
   }
 
-public function showSearch($string)
+public function showSearch($string="")
 {
   $user = Auth::user();
   $otros = User::where('id','!=',$user->id);
 
+if($string=""){
+  $results=$otros;
+}else{
 
   $searchFirstName= $otros->where('first_name', 'like',"%$string%");
   $search= $otros->orwhere('last_name', 'like',"%$string%")->get();
+$results = $search;
+}
+return view("searchFriends",compact('results'));
 
 
 
-
-
+}
 }

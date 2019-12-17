@@ -57,7 +57,7 @@ function validarTextoPosteo(textoPosteo){
     alert('El posteo está vacío')
   } return false;
 }
-function validarContenidoPosteo(media){
+function validarContenidoPosteo(){
   var contenidoPath = this.value;
   var allowedExtensions = /(.jpeg|.jpg|.bmp|.gif|.svg|.png|.doc|.docx|.ppt|.xls|.xlsx|.pptx|.pdf|.mp4|.vga)$/i;
   if(!allowedExtensions.exec(contenidoPath)){
@@ -67,6 +67,7 @@ function validarContenidoPosteo(media){
       return false;
   }else{
       //Image preview
+      console.log(this.files && this.files[0]);
       if (this.files && this.files[0]) {
           var reader = new FileReader();
           reader.onload = function(e) {
@@ -79,22 +80,54 @@ function validarContenidoPosteo(media){
 
 
 
-function submitPosteo(interestArea, postType, textoPosteo, contenidoPosteo){
-console.log(interestArea)
-    if(interestArea.getAtributte('value') == 0){
+function submitPosteo(){
+  var formPost = document.getElementById('form-post');
+  var interestArea = document.getElementById('interest_area');
+  var postType = document.getElementById('post_type');
+  var textoPosteo = document.getElementById('validationTextarea');
+  var media = document.querySelector('.media');
+  var hayErrores = false;
+
+    if(interestArea.selectedIndex == 0){
+      hayErrores=true;
       alert('No has elegido el area de interés');
       event.preventDefault();
     }
-    else if(postType.getAtributte('value') == 0){
+    else if(postType.selectedIndex == 0){
+     hayErrores=true;
       alert('No has elegido el tipo de posteo');
       event.preventDefault();
     }
 
-
     if(textoPosteo.value== ''){
+      hayErrores=true;
       alert('El posteo está vacío.');
       event.preventDefault();
     }
+    if(hayErrores==false){
+      fetch('/main',{
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+          "X-Requested-With": "XMLHttpRequest",
+          "X-CSRF-Token": $('input[name="_token"]').val()
+        },
+        method: "post",
+        credentials: "same-origin"
+
+      })
+      .then(function(response){
+
+        return response.json();
+
+
+      })
+      .then(function(data){
+        console.log(data.request);
+
+      });
+    }
+
 
 }
 

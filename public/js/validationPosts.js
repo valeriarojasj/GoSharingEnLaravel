@@ -1,6 +1,6 @@
 window.addEventListener('load', function(){
 
-var postsForm = document.getElementById('form-post');
+var botonEnviar = document.querySelector('.btnGuardar');
 var interestArea = document.getElementById('interest_area');
 var opcionesAreas = interestArea.querySelectorAll('option');
 var postType = document.getElementById('post_type');
@@ -11,7 +11,8 @@ var media = document.querySelector('.media');
 
 textoPosteo.onblur = validarTextoPosteo;
 media.onchange = validarContenidoPosteo;
-postsForm.onclick = submitPosteo;
+//botonEnviar.onclick = submitPosteo;//esto lo pondremos a funcionar despues. Hay que ver como pasar info de la validacion en javascript a el controlador funcion addPost en php
+
 
 
 
