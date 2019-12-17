@@ -1,15 +1,20 @@
 window.addEventListener('load', function(){
 
-console.log('estoy aqui en searchFriends');
+
   var btnSearch= document.querySelector('.btnSearchPeople');
-  var string = document.querySelector('inputSearchPeople').value
+  var inputSearch = document.querySelector('.inputSearchPeople');
+
 
 
     btnSearch.onclick= function(event){
-      event.preventDefault();
+    string = inputSearch.value;
+    event.preventDefault();
+    var ruta = '/findFriends/'+string;
+    console.log(ruta);
 
 
-      fetch('findFriends/'+string,{
+
+    fetch(ruta,{
       headers: {
         "Content-Type": "application/json",
         "Accept": "application/json",
@@ -18,20 +23,27 @@ console.log('estoy aqui en searchFriends');
       },
       method: "post",
       credentials: "same-origin"
+
     })
-      .then(function(response){
-        return response.json()
-      })
-      .then(function(data){
+    .then(function(response){
 
-      data.search;
+      return response.json();
 
 
-      });
+    })
+    .then(function(data){
+      console.log(data.search)
+    });
+
+}
 
 
 
-    }
+
+
+
+
+
 
 
 var btnAcceptFriend = document.querySelectorAll('.btnAcceptFriend');

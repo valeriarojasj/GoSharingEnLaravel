@@ -32,7 +32,7 @@
             <div class="paddingCentroA px-md-1 px-sm-1 px-lg-1 px-xl-1">
               <div class="areaContactosTitulo">
                 <div class="contactosTitulo">
-                  <h6 class="tituloSeccion">Sugerencias de amistad</h6>
+                  <h6 class="tituloSeccion">No amigos</h6>
                 </div>
               </div>
 

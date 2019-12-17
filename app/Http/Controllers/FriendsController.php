@@ -34,16 +34,9 @@ class FriendsController extends Controller
 
   public function findFriends()
 {
-  $otros = User::where('id','!=',Auth::user()->id);
+  $otros = User::where('id','!=',Auth::user()->id)->get();
 
 
-$search='Gomez';
-
-
-  $searchFirstName= $otros->where('first_name', 'LIKE',"%{$search}%")->get();
-  $searchLastName= $otros->where('last_name', 'LIKE',"%{$search}%")->get();
-SQLSTATE[HY000] [1045] Access denied for user 'gosharing'@'localhost' (using password: YES) (SQL: select count(*) as aggregate from `users` where `email` = luis@cano.com)
-$searchFullName=$searchLastName->merge($searchFirstName);
 
 
   $amigos = Auth::user()->allFriends();
@@ -52,6 +45,7 @@ $searchFullName=$searchLastName->merge($searchFirstName);
 
   $collectionSolicitudes = collect($solicitudes);
   $invitaciones = Auth::user()->invitationsOfThisUser()->get();
+
   $collectionInvitaciones = collect($invitaciones);
 
 $cuantosAmigos = $collectionAmigos->count();
@@ -104,20 +98,31 @@ $cuantasInvitaciones = $collectionInvitaciones->count();
     return response()->json(['message' => 'Invitación Aceptada']);
   }
 
-  public function searchFriend($string)
+  public function searchFriends($string)
   {
 
     $user = Auth::user();
-    $otros = User::where('id','!=',Auth::user()->id)->get();
+    $otros = User::where('id','!=',$user->id);
 
 
-    $searchLastName= $otros->where('last_name', 'ilike','%'. Ana .'%')->get();
-    $search = $searchLastName->merge($searchFirstName);
+    $searchFirstName= $otros->where('first_name', 'like',"%$string%");
+    $search= $otros->orwhere('last_name', 'like',"%$string%")->get();
 
 
 
-    return response()->json(['usuarios' => $search]);
+
+
+    return response()->json(['search'=>$search]);
   }
+
+public function showSearch($string)
+{
+  $user = Auth::user();
+  $otros = User::where('id','!=',$user->id);
+
+
+  $searchFirstName= $otros->where('first_name', 'like',"%$string%");
+  $search= $otros->orwhere('last_name', 'like',"%$string%")->get();
 
 
 

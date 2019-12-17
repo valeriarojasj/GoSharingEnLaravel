@@ -34,7 +34,7 @@
 
 
 @else
-
+<script type="text/javascript" src="/js/searchFriends.js"></script>
 <div class="navegacion">
   <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="/home"><img src="/images/icon3LU.png" alt="logoDeRedSocial"><span class="marca">GoSharing</span></a>
@@ -96,9 +96,10 @@
 </div>
 </li>
 <form class="form-inline">
+  @csrf
 
     <input class="form-control mr-sm-2 inputSearchPeople" type="search" placeholder="Buscar Amigos" aria-label="Search">
-    <button class="btn btn-warning my-2 my-sm-0 btnSearchPeople" type="submit"><i class="fas fa-search iconoHeader"></i></button>
+    <button class="btn btn-warning my-2 my-sm-0 btnSearchPeople" type="button"><i class="fas fa-search iconoHeader"></i></button>
 </form>
 
   </ul>
