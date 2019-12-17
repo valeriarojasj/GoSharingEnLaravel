@@ -11,7 +11,7 @@ class Answer extends Model
   public $timestamps = false;
   public $guarded = [];
   protected $fillable = [
-      'image','video','file','answer_text'
+      'image','video','file','answer_text'];
 
       public function user(){
        return  $this->belongsTo('App\User','user_id');

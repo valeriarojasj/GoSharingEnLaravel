@@ -8,23 +8,6 @@ window.addEventListener('load', function(){
 
   avatarImg.setAttribute('height',avatarWidth+"px");
   avatarImg.setAttribute('width',avatarWidth+"px");
-    var btnEnviar1 =document.querySelector(".btnEnviar1");
-
-
-    var input = document.querySelector('input[type="file"]')
-
-    var data = new FormData()
-    data.append('file', input.files[0])
-    data.append('user', 'hubot')
-
-    fetch('/formProfile', {
-      method: 'POST',
-      body: data
-    })
-
-
-
-
 
 
   var campoPaises=document.querySelector('select[name=paises]');
