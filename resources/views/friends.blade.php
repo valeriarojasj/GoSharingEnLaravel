@@ -113,7 +113,7 @@
 <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 card colTarjetaAmigo">
 <div class="row rowAmigo">
   <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0  card-img-left  media">
-    <img src="/images/avatar-man.png" alt="foto Perfil" class="align-self-center fotoInv  card-img img-fluid max-width:100% height:auto">
+    <img src="/storage/{{$invitacion->avatar}}"alt="foto Perfil" class="align-self-center fotoInv  card-img img-fluid max-width:100% height:auto">
   </div>
   <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 colTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
     <a href="#" class="btnAcceptInvitation" id ={{$invitacion->id}}><i class="fas fa-user-check"></i></a>
@@ -163,7 +163,7 @@
       <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 card colTarjetaAmigo">
         <div class="row rowAmigo">
           <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0  card-img-left  media">
-            <img src="/images/avatar-man.png" alt="foto Perfil" class="align-self-center fotoInv  card-img img-fluid max-width:100% height:auto">
+            <img src="/storage/{{$solicitud->avatar}}" alt="foto Perfil" class="align-self-center fotoInv  card-img img-fluid max-width:100% height:auto">
           </div>
           <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 colTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
           <span class = "solicitudText">Solicitud Enviada</span>

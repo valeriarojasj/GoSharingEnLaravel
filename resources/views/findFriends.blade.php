@@ -57,6 +57,9 @@
                         <span class="solicitud"></span>
                         <h4>{{$noAmigo->first_name}} {{$noAmigo->last_name}}</h4>
                         <p class="text-left">{{$noAmigo->profile->personalTitle??""}}</p>
+                        <?php if (isset($noAmigo->profile->currentCountry)):echo'<i class="fas fa-map-marker-alt"></i>'; ?>
+                          {{$noAmigo->profile->currentCountry??""}}
+                        <?php endif; ?>
                       </div>
 
 
@@ -112,7 +115,7 @@
   <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 card colTarjetaAmigo">
     <div class="row rowAmigo">
       <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0  card-img-left  media">
-        <img src="/images/avatar-man.png" alt="foto Perfil" class="align-self-center fotoInv  card-img img-fluid max-width:100% height:auto">
+        <img src="/storage/{{$invitacion->avatar}}"  alt="foto Perfil" class="align-self-center fotoInv  card-img img-fluid max-width:100% height:auto">
       </div>
       <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 colTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
         <a href="#" id={{$invitacion->id}} class= "btnAcceptFriend"><i class="fas fa-user-check"></i></a>
@@ -120,6 +123,9 @@
         <a href="#" ><i class="fas fa-user-times"></i></a>
         <h4>{{$invitacion->first_name}} {{$invitacion->last_name}}</h4>
         <p class="text-left">{{$invitacion->profile->personalTitle??""}}</p>
+        <?php if (isset($invitacion->profile->currentCountry)):echo'<i class="fas fa-map-marker-alt"></i>'; ?>
+          {{$invitacion->profile->currentCountry??""}}
+        <?php endif; ?>
       </div>
   </div>
 </div>
@@ -162,12 +168,16 @@
           <div class="col-md-12 col-sm-12 col-lg-12 col-xl-12 card colTarjetaAmigo">
             <div class="row rowAmigo">
               <div class="col-md-4 col-sm-4 col-lg-4 col-xl-4 areaFoto px-2 px-md-0 px-sm-0 px-lg-0 px-xl-0  card-img-left  media">
-                <img src="/images/avatar-man.png" alt="foto Perfil" class="align-self-center fotoInv  card-img img-fluid max-width:100% height:auto">
+                <img src="/storage/{{$solicitud->avatar}}" alt="foto Perfil" class="align-self-center fotoInv  card-img img-fluid max-width:100% height:auto">
               </div>
               <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 colTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
               <span class = "solicitudText">Solicitud Enviada</span>
                 <h4>{{$solicitud->first_name}} {{$solicitud->last_name}}</h4>
                 <p class="text-left">{{$solicitud->profile->personalTitle??""}}</p>
+                <?php if (isset($solicitud->profile->currentCountry)):echo'<i class="fas fa-map-marker-alt"></i>'; ?>
+                  {{$solicitud->profile->currentCountry??""}}
+                <?php endif; ?>
+
               </div>
             </div>
           </div>

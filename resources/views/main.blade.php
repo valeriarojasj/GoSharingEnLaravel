@@ -30,10 +30,11 @@
           <img value="" src="/storage/{{Auth::user()->avatar}}" alt="">
           </div>
           <h1>{{Auth::user()->first_name }} {{Auth::user()->last_name}}</h1>
-          <h4 class="subtitulos text-center"><b class="" name=personalTitle>{{$miPerfil->personalTitle??""}}</b></h4><?php if (isset($miPerfil->currentCountry)):echo'<i class="fas fa-map-marker-alt titulos">' ?>
-
+          <h4 class="subtitulos text-center"><b class="" name=personalTitle>{{$miPerfil->personalTitle??""}}</b></h4>
+          <?php if (isset($miPerfil->currentCountry)):echo'<i class="fas fa-map-marker-alt titulos"></i>'; ?>
+            {{$miPerfil->currentCountry??""}}
           <?php endif; ?>
-          </i>  {{$miPerfil->currentCountry??""}}
+
 
           <div class="caja perfilPrincipal pt-3">
 
