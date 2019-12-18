@@ -39,7 +39,9 @@ window.addEventListener('load', function(){
 
   }
 var btnAcceptFriend = document.querySelectorAll('.btnAcceptFriend');
+var btnRejectFriend = document.querySelectorAll('.btnRejectFriend');
 for(var pending of btnAcceptFriend){
+
   pending.onclick= function(event){
     event.preventDefault();
     var pendingId = this.getAttribute('id');
@@ -75,6 +77,45 @@ for(var pending of btnAcceptFriend){
   }
 
 }
+
+for(var reject of btnRejectFriend){
+
+  reject.onclick= function(event){
+    event.preventDefault();
+
+    var padre = this.parentElement;
+    var rejectId = padre.querySelector('.btnAcceptFriend').getAttribute('id');
+console.log(rejectId);
+
+    var span = padre.querySelector('.invitacion');
+
+
+    var mensaje = fetch('rejectFriend/'+rejectId,{
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+      "X-Requested-With": "XMLHttpRequest",
+      "X-CSRF-Token": $('input[name="_token"]').val()
+    },
+    method: "post",
+    credentials: "same-origin"
+  })
+    .then(function(response){
+      return response.json()
+    })
+    .then(function(data){
+
+      span.innerHTML=data.message;
+
+
+    });
+
+
+
+  }
+
+}
+
 
 
 

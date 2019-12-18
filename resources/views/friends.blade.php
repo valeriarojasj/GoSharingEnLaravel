@@ -118,7 +118,7 @@
   <div class="col-md-8 col-sm-8 col-lg-8 col-xl-8 colTextoAmigo px-md-2 px-sm-2 px-lg-2 px-xl-2    card-body media-body">
     <a href="#" class="btnAcceptInvitation" id ={{$invitacion->id}}><i class="fas fa-user-check"></i></a>
       <span class ="invitacion"></span>
-    <a href="#"><i class="fas fa-user-times"></i></a>
+    <a href="#" class= "btnRejectInvitation"><i class="fas fa-user-times"></i></a>
       <h4>{{$invitacion->first_name}} {{$invitacion->last_name}}</h4>
         <p class="text-left">{{$invitacion->profile->personalTitle??""}}</p>
   </div>

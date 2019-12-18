@@ -37,6 +37,8 @@ Route::post('addFriend/{id}','FriendsController@addFriend');
 Route::post('removeFriend/{id}','FriendsController@removeFriend');//para el view findFriends
 Route::post('/acceptInvitation/{id}', 'FriendsController@acceptFriend'); //para el view Friends
 Route::post('acceptFriend/{id}','FriendsController@acceptFriend');
+Route::post('rejectFriend/{id}','FriendsController@rejectFriend');
+Route::post('rejectInvitation/{id}','FriendsController@rejectFriend');
 Route::post('addLike/{idPosteo}','LikeController@addLike');
 Route::post('/removeLike/{idPosteo}','LikeController@removeLike');
 Route::get('/showLikes', 'LikeController@showLikes');

@@ -98,6 +98,16 @@ $cuantasInvitaciones = $collectionInvitaciones->count();
     return response()->json(['message' => 'Invitación Aceptada']);
   }
 
+
+  public function rejectFriend($id)
+  {
+    $user = Auth::user();
+    $estaSolicitud = Friendship::where('user_id', '=',$id )
+                                ->where('friend_id', '=',$user->id )
+                                ->first()->update(['status' => 'blocked']);
+
+    return response()->json(['message' => 'Invitación rechazada']);
+  }
   public function searchFriends($string)
   {
 
