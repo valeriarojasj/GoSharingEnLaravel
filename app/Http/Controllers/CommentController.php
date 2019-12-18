@@ -41,7 +41,7 @@ class CommentController extends Controller
 
           $rutaImagen= $req->file('image-comment')->store('public');
           $nombreImagen=basename($rutaImagen);
-          
+
           $comentario->image = $nombreImagen;
         }
         if($req->file('video-comment')){
@@ -54,7 +54,7 @@ class CommentController extends Controller
           $nombreDoc=basename($rutaDoc);
           $comentario->file = $nombreDoc;
         }
-        $comentario->comment_text = $req->comment_text;
+        $comentario->comment_text = $req->post_text;
         $comentario->user_id = Auth::user()->id;
         $comentario->post_id = $id;
 

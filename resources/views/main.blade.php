@@ -27,7 +27,7 @@
 
 
 
-          <img value="" src="/storage/{{Auth::user()->avatar}}" alt="">
+          <img value="" src="/storage/{{Auth::user()->avatar ?? 'avatar-man.png'}}" alt="">
           </div>
           <h1>{{Auth::user()->first_name }} {{Auth::user()->last_name}}</h1>
           <h4 class="subtitulos text-center"><b class="" name=personalTitle>{{$miPerfil->personalTitle??""}}</b></h4>

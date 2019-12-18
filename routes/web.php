@@ -43,8 +43,8 @@ Route::post('addLike/{idPosteo}','LikeController@addLike');
 Route::post('/removeLike/{idPosteo}','LikeController@removeLike');
 Route::get('/showLikes', 'LikeController@showLikes');
 Route::get('/searchFriends/{string?}', 'FriendsController@showSearch');
-Route::post('/searchFriends/{string?}', 'FriendsController@searchFriends');
-Route::post('/findFriends/{string}', 'FriendsController@searchFriends');
+Route::post('/searchFriends/{string?}', 'FriendsController@showSearch');
+Route::post('/findFriends/{string}', 'FriendsController@showSearch');
 
 /*Route::post('/login', function () {
   $title='login'; //para que aparezca el titulo en el tab del header.

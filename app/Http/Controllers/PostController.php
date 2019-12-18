@@ -17,14 +17,17 @@ class PostController extends Controller
 {
   public function showAllPosts()
   {
+    
     $title = 'main';
     //$posteos = Post::orderBy('id', 'DESC')->get();
-    $posteos = Post::with(['user', 'likes', 'comment'])->get();
+    $posteos = Post::with(['user', 'likes', 'comment'])
+    ->orderBy('id','desc')
+    ->get();
 
     $areasInteres = interestArea::all();
     $tiposPosteos = postType::all();
     $miPerfil = Profile::where('profiles.user_id', '=', Auth::user()->id)
-                ->get()->first();
+    ->get()->first();
 
 
                 $amigos = Auth::user()->allFriends();
@@ -48,7 +51,7 @@ class PostController extends Controller
 
 
     $title = 'profile';
-    $posteos = Auth::user()->posts;
+    $posteos = Auth::user()->posts->sortByDesc('id');
     $areasInteres = interestArea::all();
     $tiposPosteos = postType::all();
 

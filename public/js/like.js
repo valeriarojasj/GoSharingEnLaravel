@@ -31,6 +31,7 @@ window.addEventListener('load', function(){
       });
       this.style.color = color;
       imgLike.style.color = color;
+
     }
   }
 })

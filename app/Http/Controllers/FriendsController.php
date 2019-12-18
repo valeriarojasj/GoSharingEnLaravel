@@ -84,6 +84,7 @@ $cuantasInvitaciones = $collectionInvitaciones->count();
   public function removeFriend($id)
   {
     $removerAmigo =  Auth::user()->friendsOfThisUser()->detach($id);
+    $removerAmigo =  Auth::user()->thisUserFriendOf()->detach($id);
 
     return response()->json(['message' =>'Amigo Eliminado']);
   }
