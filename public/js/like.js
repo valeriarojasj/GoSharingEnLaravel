@@ -13,6 +13,7 @@ window.addEventListener('load', function(){
         color = "blue"
         ruta = 'addLike/'+idPosteo
       }
+      var span = this.querySelector('span')
       fetch(ruta,{
         headers: {
           "Content-Type": "application/json",
@@ -27,8 +28,9 @@ window.addEventListener('load', function(){
         return response.json()
       })
       .then(function(data){
-        console.log(data.mensaje);
+        span.innerHTML = data.mensaje
       });
+
       this.style.color = color;
       imgLike.style.color = color;
 

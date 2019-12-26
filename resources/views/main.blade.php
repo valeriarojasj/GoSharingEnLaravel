@@ -170,7 +170,7 @@
 
 @forelse ($posteos as $posteo)
 
-
+{{$posteo->likes[0]->user_id}}
 
 <div class="novedadYcomentarios mb-5">
 <div class="novedad "><!--comienza un posteo-->
@@ -207,9 +207,10 @@
 
    <div class="list-group list-group-horizontal acciones">
      <div class="divMeGusta">
-       <button class="btn btnAcciones meGustaButton" type="button" id="{{$posteo->id}}">
-         <i class=" iconosAcciones fas fa-thumbs-up">      </i> Me gusta {{$posteo->likes->count()}}
+        <button class="btn btnAcciones meGustaButton" type="button" id="{{$posteo->id}}">
+         <i class=" iconosAcciones fas fa-thumbs-up"> </i> Me gusta <span>{{$posteo->likes->count()}}</span>
 
+       </button>
      </div>
      <div class="dropdown dropComentar">
        <button class="btn btnAcciones" type="button" data-toggle="collapse" data-target="#collapseComentarios{{$posteo->id}}" aria-expanded="false" aria-controls="collapseComentarios{{$posteo->id}}">

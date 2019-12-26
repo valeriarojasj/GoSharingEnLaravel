@@ -13,21 +13,16 @@ class LikeController extends Controller
       $like = new Like();
       $like->user_id = Auth::user()->id;
       $like->post_id = $idPosteo;
-      try{
-        $like->save();
-        return ['mensaje' => 'Todo ok :)'];
-      }
-      catch(Exception $e){
-        $array = ['mensaje' => 'No se agrego'];
-        return $array;
-      }
+      $like->save();
+      return ['mensaje' => Post::find($idPosteo)->likes->count()];
+
 
     }
     public function removeLike($idPosteo){
       Like::where('user_id', '=', Auth::user()->id)->where('post_id', '=', $idPosteo)->delete();
 
-      $array = ['mensaje' => 'Elimino Like'];
-      return $array;
+      
+      return ['mensaje' => Post::find($idPosteo)->likes->count()];
     }
-  
+
 }

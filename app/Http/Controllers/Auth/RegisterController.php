@@ -23,17 +23,17 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    /*public function __construct()
     {
         $this->middleware('guest');
-    }
+    }*/
 
     /**
      * Get a validator for an incoming registration request.
@@ -70,8 +70,8 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
-     * @return \App\User
+     * @ param  array  $data
+     * @ return \App\User
      */
     protected function create(array $data)
     {
@@ -82,7 +82,8 @@ class RegisterController extends Controller
             $ruta = basename($ruta);
           }
 
-        return User::create([
+        //return 
+        User::create([
             'first_name' => $data['first_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
