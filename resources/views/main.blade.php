@@ -170,7 +170,7 @@
 
 @forelse ($posteos as $posteo)
 
-{{$posteo->likes[0]->user_id}}
+
 
 <div class="novedadYcomentarios mb-5">
 <div class="novedad "><!--comienza un posteo-->
